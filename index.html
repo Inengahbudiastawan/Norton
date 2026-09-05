@@ -1,144 +1,363 @@
+```html
 <!DOCTYPE html>
-
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Toko Komputer</title>
+
+<title>Toko Komputer - Era AI</title>
 
 <style>
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     margin:0;
     font-family:Arial,sans-serif;
-    background:#07111f;
+    background:#020817;
     color:white;
+    overflow-x:hidden;
 }
+
+/* =========================
+   BACKGROUND AI
+   ========================= */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        radial-gradient(circle at 20% 20%,rgba(34,217,255,.15),transparent 30%),
+        radial-gradient(circle at 80% 80%,rgba(0,100,255,.15),transparent 30%);
+    pointer-events:none;
+    z-index:-1;
+}
+
+/* =========================
+   SEMUA SLIDE
+   ========================= */
+
 .slide{
     min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:30px;
+    padding:40px 20px;
 }
+
 .card{
-    max-width:900px;
+    max-width:1100px;
     width:100%;
-    padding:40px;
-    background:#101f35;
-    border-radius:25px;
+    padding:55px 40px;
+    background:rgba(16,31,53,.92);
+    border:1px solid rgba(34,217,255,.2);
+    border-radius:30px;
+
+    box-shadow:
+        0 0 40px rgba(34,217,255,.12),
+        0 20px 70px rgba(0,0,0,.5);
 }
-img{
-    width:180px;
-    max-width:70%;
-    margin-bottom:25px;
+
+/* =========================
+   PEMBUKA
+   ========================= */
+
+.opening{
+    min-height:100vh;
+    flex-direction:column;
+    background:
+        radial-gradient(circle at center,
+        rgba(34,217,255,.15),
+        transparent 50%);
 }
-h1{font-size:clamp(40px,7vw,80px)}
-h2{font-size:clamp(30px,5vw,55px)}
-p{
-    font-size:20px;
-    line-height:1.6;
+
+.opening-logo{
+    width:700px;
+    max-width:90vw;
+    height:auto;
+    display:block;
+    margin:0 auto 35px;
+
+    filter:
+        drop-shadow(0 0 15px #22d9ff)
+        drop-shadow(0 0 40px rgba(34,217,255,.7))
+        drop-shadow(0 0 80px rgba(34,217,255,.3));
+
+    animation:
+        logoFloat 3s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+    0%,100%{
+        transform:translateY(0) scale(1);
+    }
+
+    50%{
+        transform:translateY(-15px) scale(1.03);
+    }
+}
+
+.opening h1{
+    font-size:clamp(45px,8vw,90px);
+    margin:10px 0;
+}
+
+.opening p{
+    font-size:22px;
     color:#bcd0e5;
 }
-span{color:#22d9ff}
+
+/* =========================
+   ISI
+   ========================= */
+
+h1{
+    font-size:clamp(40px,7vw,80px);
+    margin:15px 0;
+}
+
+h2{
+    font-size:clamp(30px,5vw,55px);
+    margin:15px 0;
+}
+
+p{
+    font-size:20px;
+    line-height:1.7;
+    color:#bcd0e5;
+}
+
+span{
+    color:#22d9ff;
+}
+
+/* =========================
+   PENUTUP
+   ========================= */
+
+.closing{
+    min-height:100vh;
+    flex-direction:column;
+
+    background:
+        radial-gradient(circle at center,
+        rgba(34,217,255,.18),
+        transparent 55%);
+}
+
+.closing-logo{
+    width:600px;
+    max-width:85vw;
+    height:auto;
+    display:block;
+    margin:0 auto 35px;
+
+    filter:
+        drop-shadow(0 0 20px #22d9ff)
+        drop-shadow(0 0 50px rgba(34,217,255,.7))
+        drop-shadow(0 0 100px rgba(34,217,255,.3));
+}
+
+.closing h1{
+    font-size:clamp(45px,8vw,90px);
+}
+
+.closing p{
+    max-width:750px;
+    margin:auto;
+}
+
+/* =========================
+   RESPONSIVE HP
+   ========================= */
+
+@media(max-width:600px){
+
+    .card{
+        padding:35px 20px;
+    }
+
+    .opening-logo{
+        width:500px;
+        max-width:100%;
+    }
+
+    .closing-logo{
+        width:450px;
+        max-width:100%;
+    }
+
+    p{
+        font-size:17px;
+    }
+}
 </style>
 
 </head>
 
 <body>
 
-<!-- SLIDE 1 -->
+
+<!-- ==================================================
+     PEMBUKA
+     ================================================== -->
+
+<section class="slide opening">
+
+    <img
+        class="opening-logo"
+        src="https://raw.githubusercontent.com/Inengahbudiastawan/Norton/main/SS-removebg-preview.png"
+        alt="Logo Toko Komputer"
+    >
+
+    <h1>
+        TOKO <span>KOMPUTER</span>
+    </h1>
+
+    <p>
+        Komputer • Teknologi • Artificial Intelligence
+    </p>
+
+</section>
+
+
+<!-- ==================================================
+     SLIDE 1
+     ================================================== -->
 
 <section class="slide">
 <div class="card">
 
-<img src="https://raw.githubusercontent.com/Inengahbudiastawan/Norton/main/SS-removebg-preview.png"
-  alt="Logo Toko">
+    <h1>
+        Pendapatan<br>
+        <span>Rp 100 Juta</span>
+    </h1>
 
-<h1>Pendapatan<br><span>Rp 100 Juta</span></h1>
-<p>Laporan penjualan toko komputer bulan Juli 2026.</p>
+    <p>
+        Laporan penjualan toko komputer
+        bulan Juli 2026.
+    </p>
 
 </div>
 </section>
 
-<!-- SLIDE 2 -->
+
+<!-- ==================================================
+     SLIDE 2
+     ================================================== -->
 
 <section class="slide">
 <div class="card">
 
-<h2>Laptop Semakin <span>Mahal</span></h2>
-<p>
-Kelangkaan chip dan komponen elektronik dapat
-menyebabkan ketersediaan laptop berkurang dan
-harga menjadi lebih tinggi.
-</p>
+    <h2>
+        Laptop Semakin <span>Mahal</span>
+    </h2>
+
+    <p>
+        Kelangkaan chip dan komponen elektronik
+        dapat menyebabkan ketersediaan laptop
+        berkurang dan harga menjadi lebih tinggi.
+    </p>
 
 </div>
 </section>
 
-<!-- SLIDE 3 -->
+
+<!-- ==================================================
+     SLIDE 3
+     ================================================== -->
 
 <section class="slide">
 <div class="card">
 
-<h2>🔥 PROMO TOKO</h2>
-<p>
-Laptop • PC Gaming • Keyboard • Mouse • Headset
-</p>
-<p><span>Harga spesial untuk pelanggan!</span></p>
+    <h2>🔥 PROMO TOKO</h2>
+
+    <p>
+        Laptop • PC Gaming • Keyboard • Mouse • Headset
+    </p>
+
+    <p>
+        <span>Harga spesial untuk pelanggan!</span>
+    </p>
 
 </div>
 </section>
 
-<!-- SLIDE 4 -->
+
+<!-- ==================================================
+     SLIDE 4
+     ================================================== -->
 
 <section class="slide">
 <div class="card">
 
-<h2>Pengeluaran <span>Rp 50 Juta</span></h2>
-<p>
-Dana digunakan untuk operasional toko,
-stok barang, promosi, dan kebutuhan lainnya.
-</p>
+    <h2>
+        Pengeluaran <span>Rp 50 Juta</span>
+    </h2>
+
+    <p>
+        Dana digunakan untuk operasional toko,
+        stok barang, promosi, dan kebutuhan lainnya.
+    </p>
 
 </div>
 </section>
 
-<!-- SLIDE 5 -->
+
+<!-- ==================================================
+     SLIDE 5
+     ================================================== -->
 
 <section class="slide">
 <div class="card">
 
-<h2>🎤 Pantun Team</h2>
+    <h2>🎤 Pantun Team</h2>
 
-<p>
-Ke toko komputer membeli keyboard,<br>
-Pulang membawa laptop baru.<br><br>
+    <p>
+        Ke toko komputer membeli keyboard,<br>
+        Pulang membawa laptop baru.
+        <br><br>
 
-Kalau team kompak dan hebat,<br>
-Target tercapai, semangat selalu!
-
-</p>
-
-</div>
-</section>
-
-<!-- SLIDE 6 -->
-
-<section class="slide">
-<div class="card">
-
-<h1>Terima Kasih<br><span>TEAM!</span></h1>
-
-<p>
-Terima kasih atas kerja keras,
-kekompakan, dan semangat seluruh team.
-</p>
+        Kalau team kompak dan hebat,<br>
+        Target tercapai, semangat selalu!
+    </p>
 
 </div>
 </section>
+
+
+<!-- ==================================================
+     PENUTUP
+     ================================================== -->
+
+<section class="slide closing">
+
+    <img
+        class="closing-logo"
+        src="https://raw.githubusercontent.com/Inengahbudiastawan/Norton/main/SS-removebg-preview.png"
+        alt="Logo Toko Komputer"
+    >
+
+    <h1>
+        TERIMA KASIH<br>
+        <span>TEAM!</span>
+    </h1>
+
+    <p>
+        Terima kasih atas kerja keras,
+        kekompakan, dan semangat seluruh team.
+    </p>
+
+</section>
+
 
 </body>
 </html>
+```
