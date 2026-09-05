@@ -1,363 +1,696 @@
-```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Toko Komputer - Era AI</title>
+<title>Norton Bali Computer</title>
 
 <style>
-*{
-    box-sizing:border-box;
+* {
+    box-sizing: border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#020817;
-    color:white;
-    overflow-x:hidden;
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #050816;
+    color: white;
+    overflow: hidden;
 }
 
 /* =========================
-   BACKGROUND AI
-   ========================= */
+   PRESENTATION
+========================= */
 
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
+.presentation {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+/* =========================
+   SLIDE
+========================= */
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 50px 30px 100px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide.active {
+    display: flex;
+}
+
+.content {
+    width: 100%;
+    max-width: 1100px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    margin-bottom: 25px;
+}
+
+.logo img {
+    width: 190px;
+    max-width: 55%;
+    height: auto;
+    object-fit: contain;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+h1 {
+    font-size: 58px;
+    margin: 10px 0 25px;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: 45px;
+    color: #38bdf8;
+    margin: 10px 0 25px;
+}
+
+p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: #dbeafe;
+}
+
+.highlight {
+    color: #facc15;
+    font-weight: bold;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 35px;
+}
+
+.card {
+    width: 260px;
+    min-height: 165px;
+    padding: 25px;
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.10);
+    border: 1px solid rgba(255,255,255,0.18);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    backdrop-filter: blur(10px);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: 0.3s;
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.card p {
+    font-size: 15px;
+    margin: 0;
+}
+
+/* =========================
+   BACKGROUND SLIDES
+========================= */
+
+.slide1 {
     background:
-        radial-gradient(circle at 20% 20%,rgba(34,217,255,.15),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(0,100,255,.15),transparent 30%);
-    pointer-events:none;
-    z-index:-1;
+        radial-gradient(circle at top right, #2563eb55, transparent 40%),
+        linear-gradient(135deg, #020617, #172554);
 }
 
-/* =========================
-   SEMUA SLIDE
-   ========================= */
-
-.slide{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:40px 20px;
-}
-
-.card{
-    max-width:1100px;
-    width:100%;
-    padding:55px 40px;
-    background:rgba(16,31,53,.92);
-    border:1px solid rgba(34,217,255,.2);
-    border-radius:30px;
-
-    box-shadow:
-        0 0 40px rgba(34,217,255,.12),
-        0 20px 70px rgba(0,0,0,.5);
-}
-
-/* =========================
-   PEMBUKA
-   ========================= */
-
-.opening{
-    min-height:100vh;
-    flex-direction:column;
+.slide2 {
     background:
-        radial-gradient(circle at center,
-        rgba(34,217,255,.15),
-        transparent 50%);
+        radial-gradient(circle at top left, #10b98155, transparent 40%),
+        linear-gradient(135deg, #022c22, #115e59);
 }
 
-.opening-logo{
-    width:700px;
-    max-width:90vw;
-    height:auto;
-    display:block;
-    margin:0 auto 35px;
-
-    filter:
-        drop-shadow(0 0 15px #22d9ff)
-        drop-shadow(0 0 40px rgba(34,217,255,.7))
-        drop-shadow(0 0 80px rgba(34,217,255,.3));
-
-    animation:
-        logoFloat 3s ease-in-out infinite;
-}
-
-@keyframes logoFloat{
-    0%,100%{
-        transform:translateY(0) scale(1);
-    }
-
-    50%{
-        transform:translateY(-15px) scale(1.03);
-    }
-}
-
-.opening h1{
-    font-size:clamp(45px,8vw,90px);
-    margin:10px 0;
-}
-
-.opening p{
-    font-size:22px;
-    color:#bcd0e5;
-}
-
-/* =========================
-   ISI
-   ========================= */
-
-h1{
-    font-size:clamp(40px,7vw,80px);
-    margin:15px 0;
-}
-
-h2{
-    font-size:clamp(30px,5vw,55px);
-    margin:15px 0;
-}
-
-p{
-    font-size:20px;
-    line-height:1.7;
-    color:#bcd0e5;
-}
-
-span{
-    color:#22d9ff;
-}
-
-/* =========================
-   PENUTUP
-   ========================= */
-
-.closing{
-    min-height:100vh;
-    flex-direction:column;
-
+.slide3 {
     background:
-        radial-gradient(circle at center,
-        rgba(34,217,255,.18),
-        transparent 55%);
-}
-
-.closing-logo{
-    width:600px;
-    max-width:85vw;
-    height:auto;
-    display:block;
-    margin:0 auto 35px;
-
-    filter:
-        drop-shadow(0 0 20px #22d9ff)
-        drop-shadow(0 0 50px rgba(34,217,255,.7))
-        drop-shadow(0 0 100px rgba(34,217,255,.3));
-}
-
-.closing h1{
-    font-size:clamp(45px,8vw,90px);
-}
-
-.closing p{
-    max-width:750px;
-    margin:auto;
+        radial-gradient(circle at top right, #a855f755, transparent 40%),
+        linear-gradient(135deg, #2e1065, #581c87);
 }
 
 /* =========================
-   RESPONSIVE HP
-   ========================= */
+   SLIDE NUMBER
+========================= */
 
-@media(max-width:600px){
+.number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    font-size: 16px;
+    color: #cbd5e1;
+}
 
-    .card{
-        padding:35px 20px;
+/* =========================
+   NAVIGATION
+========================= */
+
+.navigation {
+    position: fixed;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    z-index: 20;
+}
+
+button {
+    border: none;
+    background: white;
+    color: #111827;
+
+    padding: 12px 20px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+button:hover {
+    background: #38bdf8;
+    color: white;
+}
+
+/* =========================
+   DOTS
+========================= */
+
+.dots {
+    position: fixed;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.dot {
+    display: inline-block;
+
+    width: 10px;
+    height: 10px;
+
+    background: #64748b;
+
+    border-radius: 50%;
+
+    margin: 5px;
+}
+
+.dot.active {
+    background: #38bdf8;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    margin-top: 25px;
+    font-size: 18px;
+    color: #e0f2fe;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .slide {
+        padding: 30px 20px 110px;
     }
 
-    .opening-logo{
-        width:500px;
-        max-width:100%;
+    .logo img {
+        width: 140px;
     }
 
-    .closing-logo{
-        width:450px;
-        max-width:100%;
+    h1 {
+        font-size: 35px;
     }
 
-    p{
-        font-size:17px;
+    h2 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 17px;
+    }
+
+    .cards {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .card {
+        width: 100%;
+        min-height: auto;
+        padding: 15px;
+    }
+
+    .icon {
+        font-size: 30px;
+    }
+
+    .card h3 {
+        font-size: 18px;
+    }
+
+    .card p {
+        font-size: 14px;
+    }
+
+    button {
+        padding: 10px 15px;
+        font-size: 14px;
     }
 }
 </style>
-
 </head>
 
 <body>
 
-
-<!-- ==================================================
-     PEMBUKA
-     ================================================== -->
-
-<section class="slide opening">
-
-    <img
-        class="opening-logo"
-        src="https://raw.githubusercontent.com/Inengahbudiastawan/Norton/main/SS-removebg-preview.png"
-        alt="Logo Toko Komputer"
-    >
-
-    <h1>
-        TOKO <span>KOMPUTER</span>
-    </h1>
-
-    <p>
-        Komputer • Teknologi • Artificial Intelligence
-    </p>
-
-</section>
-
+<div class="presentation">
 
 <!-- ==================================================
      SLIDE 1
-     ================================================== -->
+================================================== -->
 
-<section class="slide">
-<div class="card">
+<section class="slide slide1 active">
+
+<div class="content">
+
+    <div class="logo">
+        <img
+            src=".github/nbc-removebg-preview.png"
+            alt="Norton Bali Computer">
+    </div>
 
     <h1>
-        Pendapatan<br>
-        <span>Rp 100 Juta</span>
+        Laptop Semakin <span class="highlight">Mahal?</span>
     </h1>
 
     <p>
-        Laporan penjualan toko komputer
-        bulan Juli 2026.
+        Kebutuhan teknologi semakin berkembang.
+        Namun, tidak semua kebutuhan membutuhkan
+        laptop dengan spesifikasi tinggi.
     </p>
 
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">💻</div>
+
+            <h3>Laptop</h3>
+
+            <p>
+                Pilihan tepat untuk pekerjaan
+                berat dan kebutuhan profesional.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💰</div>
+
+            <h3>Harga</h3>
+
+            <p>
+                Spesifikasi lebih tinggi biasanya
+                membutuhkan biaya lebih besar.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤔</div>
+
+            <h3>Pilih Sesuai Kebutuhan</h3>
+
+            <p>
+                Jangan membeli spesifikasi
+                yang tidak diperlukan.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact">
+        Norton Bali Computer — Solusi teknologi Anda
+    </div>
+
 </div>
+
+<div class="number">1 / 3</div>
+
 </section>
 
 
 <!-- ==================================================
      SLIDE 2
-     ================================================== -->
+================================================== -->
 
-<section class="slide">
-<div class="card">
+<section class="slide slide2">
+
+<div class="content">
+
+    <div class="logo">
+        <img
+            src=".github/nbc-removebg-preview.png"
+            alt="Norton Bali Computer">
+    </div>
 
     <h2>
-        Laptop Semakin <span>Mahal</span>
+        Tablet sebagai Alternatif
     </h2>
 
     <p>
-        Kelangkaan chip dan komponen elektronik
-        dapat menyebabkan ketersediaan laptop
-        berkurang dan harga menjadi lebih tinggi.
+        Untuk kebutuhan sehari-hari,
+        tablet dapat menjadi pilihan yang
+        ringan, praktis dan ekonomis.
     </p>
 
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">📱</div>
+
+            <h3>Ringan & Praktis</h3>
+
+            <p>
+                Mudah dibawa ke kantor,
+                sekolah maupun perjalanan.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⌨️</div>
+
+            <h3>Lebih Produktif</h3>
+
+            <p>
+                Bisa dipadukan dengan
+                keyboard dan mouse.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">📄</div>
+
+            <h3>Office</h3>
+
+            <p>
+                Dapat digunakan untuk dokumen,
+                spreadsheet dan presentasi.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact">
+        <span class="highlight">
+            Alternatif cerdas sesuai kebutuhan
+        </span>
+    </div>
+
 </div>
+
+<div class="number">2 / 3</div>
+
 </section>
 
 
 <!-- ==================================================
      SLIDE 3
-     ================================================== -->
+================================================== -->
 
-<section class="slide">
-<div class="card">
+<section class="slide slide3">
 
-    <h2>🔥 PROMO TOKO</h2>
+<div class="content">
 
-    <p>
-        Laptop • PC Gaming • Keyboard • Mouse • Headset
-    </p>
-
-    <p>
-        <span>Harga spesial untuk pelanggan!</span>
-    </p>
-
-</div>
-</section>
-
-
-<!-- ==================================================
-     SLIDE 4
-     ================================================== -->
-
-<section class="slide">
-<div class="card">
+    <div class="logo">
+        <img
+            src=".github/nbc-removebg-preview.png"
+            alt="Norton Bali Computer">
+    </div>
 
     <h2>
-        Pengeluaran <span>Rp 50 Juta</span>
+        Perkembangan AI Mendukung Kerja
     </h2>
 
     <p>
-        Dana digunakan untuk operasional toko,
-        stok barang, promosi, dan kebutuhan lainnya.
+        Artificial Intelligence membantu kita
+        bekerja lebih cepat, mencari informasi
+        dan meningkatkan produktivitas.
     </p>
 
-</div>
-</section>
+    <div class="cards">
 
+        <div class="card">
+            <div class="icon">🤖</div>
 
-<!-- ==================================================
-     SLIDE 5
-     ================================================== -->
+            <h3>AI Assistant</h3>
 
-<section class="slide">
-<div class="card">
+            <p>
+                Membantu mencari ide,
+                menjawab pertanyaan dan
+                menyusun informasi.
+            </p>
+        </div>
 
-    <h2>🎤 Pantun Team</h2>
+        <div class="card">
+            <div class="icon">📝</div>
 
-    <p>
-        Ke toko komputer membeli keyboard,<br>
-        Pulang membawa laptop baru.
+            <h3>Dokumen</h3>
+
+            <p>
+                Membantu membuat,
+                mengedit dan merangkum
+                berbagai dokumen.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚡</div>
+
+            <h3>Produktivitas</h3>
+
+            <p>
+                Membantu menghemat waktu
+                dalam pekerjaan sehari-hari.
+            </p>
+        </div>
+
+    </div>
+
+    <div class="contact">
+
+        <span class="highlight">
+            Teknologi + AI = Kerja lebih pintar
+        </span>
+
         <br><br>
 
-        Kalau team kompak dan hebat,<br>
-        Target tercapai, semangat selalu!
-    </p>
+        Norton Bali Computer
+
+    </div>
 
 </div>
+
+<div class="number">3 / 3</div>
+
 </section>
 
 
 <!-- ==================================================
-     PENUTUP
-     ================================================== -->
+     DOTS
+================================================== -->
 
-<section class="slide closing">
+<div class="dots">
 
-    <img
-        class="closing-logo"
-        src="https://raw.githubusercontent.com/Inengahbudiastawan/Norton/main/SS-removebg-preview.png"
-        alt="Logo Toko Komputer"
-    >
+    <span class="dot active"></span>
 
-    <h1>
-        TERIMA KASIH<br>
-        <span>TEAM!</span>
-    </h1>
+    <span class="dot"></span>
 
-    <p>
-        Terima kasih atas kerja keras,
-        kekompakan, dan semangat seluruh team.
-    </p>
+    <span class="dot"></span>
 
-</section>
+</div>
 
+
+<!-- ==================================================
+     BUTTON
+================================================== -->
+
+<div class="navigation">
+
+    <button onclick="previousSlide()">
+        ← Sebelumnya
+    </button>
+
+    <button onclick="nextSlide()">
+        Berikutnya →
+    </button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let currentSlide = 0;
+
+const slides = document.querySelectorAll(".slide");
+
+const dots = document.querySelectorAll(".dot");
+
+
+function showSlide(number) {
+
+    slides.forEach(function(slide) {
+
+        slide.classList.remove("active");
+
+    });
+
+
+    dots.forEach(function(dot) {
+
+        dot.classList.remove("active");
+
+    });
+
+
+    slides[number].classList.add("active");
+
+    dots[number].classList.add("active");
+
+}
+
+
+function nextSlide() {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+
+        currentSlide = 0;
+
+    }
+
+    showSlide(currentSlide);
+
+}
+
+
+function previousSlide() {
+
+    currentSlide--;
+
+    if (currentSlide < 0) {
+
+        currentSlide = slides.length - 1;
+
+    }
+
+    showSlide(currentSlide);
+
+}
+
+
+/* Keyboard komputer */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "ArrowRight") {
+
+        nextSlide();
+
+    }
+
+    if (event.key === "ArrowLeft") {
+
+        previousSlide();
+
+    }
+
+});
+
+
+/* Swipe HP */
+
+let startX = 0;
+
+let endX = 0;
+
+
+document.addEventListener("touchstart", function(event) {
+
+    startX = event.touches[0].clientX;
+
+});
+
+
+document.addEventListener("touchend", function(event) {
+
+    endX = event.changedTouches[0].clientX;
+
+    let distance = endX - startX;
+
+
+    if (distance < -50) {
+
+        nextSlide();
+
+    }
+
+
+    if (distance > 50) {
+
+        previousSlide();
+
+    }
+
+});
+
+</script>
 
 </body>
 </html>
-```
