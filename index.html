@@ -7,12 +7,14 @@
 <title>Norton Bali Computer</title>
 
 <style>
+
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: Arial, Helvetica, sans-serif;
     background: #050816;
     color: white;
@@ -20,7 +22,7 @@ body {
 }
 
 /* =========================
-   PRESENTATION
+   PRESENTASI
 ========================= */
 
 .presentation {
@@ -35,11 +37,15 @@ body {
 
 .slide {
     display: none;
+
     width: 100%;
     height: 100%;
-    padding: 50px 30px 100px;
+
+    padding: 30px;
+
     align-items: center;
     justify-content: center;
+
     text-align: center;
 }
 
@@ -53,7 +59,7 @@ body {
 }
 
 /* =========================
-   LOGO
+   LOGO NBC BESAR
 ========================= */
 
 .logo {
@@ -61,26 +67,27 @@ body {
 }
 
 .logo img {
-    width: 190px;
-    max-width: 55%;
+    width: 330px;
+    max-width: 75%;
     height: auto;
-    object-fit: contain;
+
+    filter: drop-shadow(0 10px 25px rgba(0,0,0,0.4));
 }
 
 /* =========================
-   TEXT
+   JUDUL
 ========================= */
 
 h1 {
-    font-size: 58px;
-    margin: 10px 0 25px;
+    font-size: 60px;
+    margin-bottom: 25px;
     line-height: 1.1;
 }
 
 h2 {
-    font-size: 45px;
+    font-size: 48px;
+    margin-bottom: 25px;
     color: #38bdf8;
-    margin: 10px 0 25px;
 }
 
 p {
@@ -91,143 +98,197 @@ p {
 
 .highlight {
     color: #facc15;
-    font-weight: bold;
 }
 
 /* =========================
-   CARDS
+   CARD
 ========================= */
 
 .cards {
     display: flex;
     justify-content: center;
-    gap: 22px;
-    flex-wrap: wrap;
+    gap: 20px;
+
     margin-top: 35px;
+
+    flex-wrap: wrap;
 }
 
 .card {
-    width: 260px;
-    min-height: 165px;
+    width: 270px;
+
     padding: 25px;
-    border-radius: 18px;
+
+    border-radius: 20px;
 
     background: rgba(255,255,255,0.10);
-    border: 1px solid rgba(255,255,255,0.18);
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.2);
 
     backdrop-filter: blur(10px);
-}
 
-.card:hover {
-    transform: translateY(-5px);
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.25);
+
     transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-8px);
+}
+
 .icon {
-    font-size: 45px;
-    margin-bottom: 10px;
+    font-size: 50px;
+    margin-bottom: 15px;
 }
 
 .card h3 {
     font-size: 21px;
-    margin: 8px 0;
+    margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 15px;
-    margin: 0;
+    font-size: 16px;
 }
 
 /* =========================
-   BACKGROUND SLIDES
+   BACKGROUND SLIDE
 ========================= */
 
 .slide1 {
+
     background:
-        radial-gradient(circle at top right, #2563eb55, transparent 40%),
-        linear-gradient(135deg, #020617, #172554);
+        radial-gradient(
+            circle at top right,
+            #2563eb66,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020617,
+            #172554
+        );
 }
 
 .slide2 {
+
     background:
-        radial-gradient(circle at top left, #10b98155, transparent 40%),
-        linear-gradient(135deg, #022c22, #115e59);
+        radial-gradient(
+            circle at top left,
+            #10b98166,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #022c22,
+            #115e59
+        );
 }
 
 .slide3 {
+
     background:
-        radial-gradient(circle at top right, #a855f755, transparent 40%),
-        linear-gradient(135deg, #2e1065, #581c87);
+        radial-gradient(
+            circle at top right,
+            #a855f766,
+            transparent 40%
+        ),
+
+        linear-gradient(
+            135deg,
+            #2e1065,
+            #581c87
+        );
 }
 
 /* =========================
-   SLIDE NUMBER
+   NOMOR SLIDE
 ========================= */
 
 .number {
+
     position: absolute;
-    top: 25px;
+
+    top: 20px;
     right: 30px;
+
     font-size: 16px;
+
     color: #cbd5e1;
 }
 
 /* =========================
-   NAVIGATION
+   NAVIGASI
 ========================= */
 
 .navigation {
+
     position: fixed;
+
     bottom: 25px;
+
     left: 0;
     right: 0;
 
     display: flex;
-    justify-content: center;
-    gap: 12px;
 
-    z-index: 20;
+    justify-content: center;
+
+    gap: 15px;
+
+    z-index: 10;
 }
 
 button {
+
     border: none;
+
     background: white;
+
     color: #111827;
 
-    padding: 12px 20px;
+    padding: 12px 22px;
 
     border-radius: 10px;
 
     font-size: 16px;
+
     font-weight: bold;
 
     cursor: pointer;
 }
 
 button:hover {
+
     background: #38bdf8;
+
     color: white;
 }
 
 /* =========================
-   DOTS
+   DOT
 ========================= */
 
 .dots {
+
     position: fixed;
+
     bottom: 80px;
+
     left: 0;
     right: 0;
+
     text-align: center;
 }
 
 .dot {
+
     display: inline-block;
 
-    width: 10px;
-    height: 10px;
+    width: 11px;
+    height: 11px;
 
     background: #64748b;
 
@@ -237,35 +298,40 @@ button:hover {
 }
 
 .dot.active {
+
     background: #38bdf8;
+
 }
 
 /* =========================
-   CONTACT
+   FOOTER
 ========================= */
 
 .contact {
+
     margin-top: 25px;
+
     font-size: 18px;
+
     color: #e0f2fe;
 }
 
 /* =========================
-   MOBILE
+   HP
 ========================= */
 
 @media (max-width: 700px) {
 
     .slide {
-        padding: 30px 20px 110px;
+        padding: 25px 15px 110px;
     }
 
     .logo img {
-        width: 140px;
+        width: 220px;
     }
 
     h1 {
-        font-size: 35px;
+        font-size: 36px;
     }
 
     h2 {
@@ -283,12 +349,12 @@ button:hover {
 
     .card {
         width: 100%;
-        min-height: auto;
         padding: 15px;
     }
 
     .icon {
         font-size: 30px;
+        margin-bottom: 5px;
     }
 
     .card h3 {
@@ -304,354 +370,518 @@ button:hover {
         font-size: 14px;
     }
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <div class="presentation">
 
-<!-- ==================================================
+
+<!-- =================================================
      SLIDE 1
-================================================== -->
+================================================= -->
 
 <section class="slide slide1 active">
 
 <div class="content">
 
-    <div class="logo">
-        <img
-            src=".github/nbc-removebg-preview.png"
-            alt="Norton Bali Computer">
-    </div>
 
-    <h1>
-        Laptop Semakin <span class="highlight">Mahal?</span>
-    </h1>
+<div class="logo">
 
-    <p>
-        Kebutuhan teknologi semakin berkembang.
-        Namun, tidak semua kebutuhan membutuhkan
-        laptop dengan spesifikasi tinggi.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">💻</div>
-
-            <h3>Laptop</h3>
-
-            <p>
-                Pilihan tepat untuk pekerjaan
-                berat dan kebutuhan profesional.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">💰</div>
-
-            <h3>Harga</h3>
-
-            <p>
-                Spesifikasi lebih tinggi biasanya
-                membutuhkan biaya lebih besar.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">🤔</div>
-
-            <h3>Pilih Sesuai Kebutuhan</h3>
-
-            <p>
-                Jangan membeli spesifikasi
-                yang tidak diperlukan.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="contact">
-        Norton Bali Computer — Solusi teknologi Anda
-    </div>
+<img
+src="nbc-removebg-preview.png"
+alt="Norton Bali Computer">
 
 </div>
 
-<div class="number">1 / 3</div>
+
+<h1>
+
+Laptop Semakin
+<span class="highlight">
+Mahal?
+</span>
+
+</h1>
+
+
+<p>
+
+Kebutuhan teknologi semakin berkembang.
+Namun tidak semua kebutuhan membutuhkan
+laptop dengan spesifikasi tinggi.
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">
+💻
+</div>
+
+<h3>
+Laptop
+</h3>
+
+<p>
+
+Cocok untuk pekerjaan berat
+dan kebutuhan profesional.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+💰
+</div>
+
+<h3>
+Harga
+</h3>
+
+<p>
+
+Laptop dengan spesifikasi tinggi
+dapat membutuhkan biaya lebih besar.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+🤔
+</div>
+
+<h3>
+Pilih Sesuai Kebutuhan
+</h3>
+
+<p>
+
+Gunakan perangkat sesuai
+kebutuhan dan anggaran.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="contact">
+
+Norton Bali Computer
+— Solusi Teknologi Anda
+
+</div>
+
+
+</div>
+
+
+<div class="number">
+1 / 3
+</div>
 
 </section>
 
 
-<!-- ==================================================
+
+<!-- =================================================
      SLIDE 2
-================================================== -->
+================================================= -->
 
 <section class="slide slide2">
 
 <div class="content">
 
-    <div class="logo">
-        <img
-            src=".github/nbc-removebg-preview.png"
-            alt="Norton Bali Computer">
-    </div>
 
-    <h2>
-        Tablet sebagai Alternatif
-    </h2>
+<div class="logo">
 
-    <p>
-        Untuk kebutuhan sehari-hari,
-        tablet dapat menjadi pilihan yang
-        ringan, praktis dan ekonomis.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">📱</div>
-
-            <h3>Ringan & Praktis</h3>
-
-            <p>
-                Mudah dibawa ke kantor,
-                sekolah maupun perjalanan.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⌨️</div>
-
-            <h3>Lebih Produktif</h3>
-
-            <p>
-                Bisa dipadukan dengan
-                keyboard dan mouse.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📄</div>
-
-            <h3>Office</h3>
-
-            <p>
-                Dapat digunakan untuk dokumen,
-                spreadsheet dan presentasi.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="contact">
-        <span class="highlight">
-            Alternatif cerdas sesuai kebutuhan
-        </span>
-    </div>
+<img
+src="nbc-removebg-preview.png"
+alt="Norton Bali Computer">
 
 </div>
 
-<div class="number">2 / 3</div>
+
+<h2>
+
+Tablet sebagai
+Alternatif
+
+</h2>
+
+
+<p>
+
+Lebih ringan, praktis dan mudah dibawa.
+Tablet dapat menjadi pilihan untuk berbagai
+kebutuhan sehari-hari.
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">
+📱
+</div>
+
+<h3>
+Ringan
+</h3>
+
+<p>
+
+Mudah dibawa ke kantor,
+sekolah dan perjalanan.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+⌨️
+</div>
+
+<h3>
+Produktif
+</h3>
+
+<p>
+
+Bisa dipadukan dengan
+keyboard dan mouse.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📄
+</div>
+
+<h3>
+Office
+</h3>
+
+<p>
+
+Bisa digunakan untuk dokumen,
+Excel dan presentasi.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="contact">
+
+<span class="highlight">
+
+Alternatif cerdas sesuai kebutuhan
+
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="number">
+2 / 3
+</div>
 
 </section>
 
 
-<!-- ==================================================
+
+<!-- =================================================
      SLIDE 3
-================================================== -->
+================================================= -->
 
 <section class="slide slide3">
 
 <div class="content">
 
-    <div class="logo">
-        <img
-            src=".github/nbc-removebg-preview.png"
-            alt="Norton Bali Computer">
-    </div>
 
-    <h2>
-        Perkembangan AI Mendukung Kerja
-    </h2>
+<div class="logo">
 
-    <p>
-        Artificial Intelligence membantu kita
-        bekerja lebih cepat, mencari informasi
-        dan meningkatkan produktivitas.
-    </p>
-
-    <div class="cards">
-
-        <div class="card">
-            <div class="icon">🤖</div>
-
-            <h3>AI Assistant</h3>
-
-            <p>
-                Membantu mencari ide,
-                menjawab pertanyaan dan
-                menyusun informasi.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">📝</div>
-
-            <h3>Dokumen</h3>
-
-            <p>
-                Membantu membuat,
-                mengedit dan merangkum
-                berbagai dokumen.
-            </p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⚡</div>
-
-            <h3>Produktivitas</h3>
-
-            <p>
-                Membantu menghemat waktu
-                dalam pekerjaan sehari-hari.
-            </p>
-        </div>
-
-    </div>
-
-    <div class="contact">
-
-        <span class="highlight">
-            Teknologi + AI = Kerja lebih pintar
-        </span>
-
-        <br><br>
-
-        Norton Bali Computer
-
-    </div>
+<img
+src="nbc-removebg-preview.png"
+alt="Norton Bali Computer">
 
 </div>
 
-<div class="number">3 / 3</div>
+
+<h2>
+
+Perkembangan AI
+Mendukung Kerja
+
+</h2>
+
+
+<p>
+
+Artificial Intelligence membantu kita
+bekerja lebih cepat, mencari informasi
+dan meningkatkan produktivitas.
+
+</p>
+
+
+<div class="cards">
+
+
+<div class="card">
+
+<div class="icon">
+🤖
+</div>
+
+<h3>
+AI Assistant
+</h3>
+
+<p>
+
+Membantu mencari ide,
+menjawab pertanyaan
+dan menyusun informasi.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+📝
+</div>
+
+<h3>
+Dokumen
+</h3>
+
+<p>
+
+Membantu membuat,
+mengedit dan merangkum
+dokumen.
+
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">
+⚡
+</div>
+
+<h3>
+Produktivitas
+</h3>
+
+<p>
+
+Membantu menghemat waktu
+dalam pekerjaan sehari-hari.
+
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="contact">
+
+<span class="highlight">
+
+Teknologi + AI =
+Kerja Lebih Pintar
+
+</span>
+
+<br><br>
+
+Norton Bali Computer
+
+</div>
+
+
+</div>
+
+
+<div class="number">
+3 / 3
+</div>
 
 </section>
 
 
-<!-- ==================================================
+
+<!-- =================================================
      DOTS
-================================================== -->
+================================================= -->
 
 <div class="dots">
 
-    <span class="dot active"></span>
+<span class="dot active"></span>
 
-    <span class="dot"></span>
+<span class="dot"></span>
 
-    <span class="dot"></span>
+<span class="dot"></span>
 
 </div>
 
 
-<!-- ==================================================
+
+<!-- =================================================
      BUTTON
-================================================== -->
+================================================= -->
 
 <div class="navigation">
 
-    <button onclick="previousSlide()">
-        ← Sebelumnya
-    </button>
+<button onclick="previousSlide()">
 
-    <button onclick="nextSlide()">
-        Berikutnya →
-    </button>
+← Sebelumnya
+
+</button>
+
+
+<button onclick="nextSlide()">
+
+Berikutnya →
+
+</button>
 
 </div>
 
+
 </div>
+
 
 
 <script>
 
 let currentSlide = 0;
 
-const slides = document.querySelectorAll(".slide");
+const slides =
+document.querySelectorAll(".slide");
 
-const dots = document.querySelectorAll(".dot");
+const dots =
+document.querySelectorAll(".dot");
 
 
 function showSlide(number) {
 
-    slides.forEach(function(slide) {
+slides.forEach(function(slide) {
 
-        slide.classList.remove("active");
+slide.classList.remove("active");
 
-    });
-
-
-    dots.forEach(function(dot) {
-
-        dot.classList.remove("active");
-
-    });
+});
 
 
-    slides[number].classList.add("active");
+dots.forEach(function(dot) {
 
-    dots[number].classList.add("active");
+dot.classList.remove("active");
+
+});
+
+
+slides[number].classList.add("active");
+
+dots[number].classList.add("active");
 
 }
 
 
 function nextSlide() {
 
-    currentSlide++;
+currentSlide++;
 
-    if (currentSlide >= slides.length) {
+if (currentSlide >= slides.length) {
 
-        currentSlide = 0;
+currentSlide = 0;
 
-    }
+}
 
-    showSlide(currentSlide);
+showSlide(currentSlide);
 
 }
 
 
 function previousSlide() {
 
-    currentSlide--;
+currentSlide--;
 
-    if (currentSlide < 0) {
+if (currentSlide < 0) {
 
-        currentSlide = slides.length - 1;
+currentSlide = slides.length - 1;
 
-    }
+}
 
-    showSlide(currentSlide);
+showSlide(currentSlide);
 
 }
 
 
 /* Keyboard komputer */
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener(
+"keydown",
+function(event) {
 
-    if (event.key === "ArrowRight") {
+if (event.key === "ArrowRight") {
 
-        nextSlide();
+nextSlide();
 
-    }
+}
 
-    if (event.key === "ArrowLeft") {
+if (event.key === "ArrowLeft") {
 
-        previousSlide();
+previousSlide();
 
-    }
+}
 
-});
+}
+);
 
 
 /* Swipe HP */
@@ -661,36 +891,46 @@ let startX = 0;
 let endX = 0;
 
 
-document.addEventListener("touchstart", function(event) {
+document.addEventListener(
+"touchstart",
+function(event) {
 
-    startX = event.touches[0].clientX;
+startX =
+event.touches[0].clientX;
 
-});
-
-
-document.addEventListener("touchend", function(event) {
-
-    endX = event.changedTouches[0].clientX;
-
-    let distance = endX - startX;
+}
+);
 
 
-    if (distance < -50) {
+document.addEventListener(
+"touchend",
+function(event) {
 
-        nextSlide();
+endX =
+event.changedTouches[0].clientX;
 
-    }
+let distance =
+endX - startX;
 
 
-    if (distance > 50) {
+if (distance < -50) {
 
-        previousSlide();
+nextSlide();
 
-    }
+}
 
-});
+
+if (distance > 50) {
+
+previousSlide();
+
+}
+
+}
+);
 
 </script>
+
 
 </body>
 </html>
