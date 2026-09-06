@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Norton Bali Computer - Modern Presentation</title>
+<title>Norton Bali Computer - Presentasi</title>
 
 <style>
 
@@ -62,45 +62,38 @@ body {
 
 
 /* =====================================================
-   BACKGROUND IMAGE
+   OVERLAY
 ===================================================== */
 
 .slide::before {
     content: "";
-
     position: absolute;
     inset: 0;
 
     background:
         linear-gradient(
             90deg,
-            rgba(2,6,23,.94) 0%,
-            rgba(2,6,23,.76) 42%,
-            rgba(2,6,23,.58) 100%
+            rgba(2,6,23,.94),
+            rgba(2,6,23,.72),
+            rgba(2,6,23,.58)
         );
 
     z-index: 0;
 }
 
-
-/* =====================================================
-   DARK OVERLAY
-===================================================== */
-
 .slide::after {
     content: "";
-
     position: absolute;
     inset: 0;
 
     background:
         radial-gradient(
-            circle at 75% 25%,
+            circle at 80% 20%,
             rgba(56,189,248,.25),
             transparent 30%
         ),
         radial-gradient(
-            circle at 20% 80%,
+            circle at 15% 85%,
             rgba(37,99,235,.18),
             transparent 35%
         );
@@ -111,7 +104,6 @@ body {
 }
 
 @keyframes glowMove {
-
     from {
         transform: scale(1);
         opacity: .7;
@@ -121,15 +113,14 @@ body {
         transform: scale(1.15);
         opacity: 1;
     }
-
 }
 
 
 /* =====================================================
-   MODERN GRID
+   GRID
 ===================================================== */
 
-.slide .grid {
+.grid {
     position: absolute;
     inset: 0;
 
@@ -149,12 +140,6 @@ body {
     z-index: 2;
 
     pointer-events: none;
-
-    mask-image: linear-gradient(
-        to bottom,
-        black,
-        transparent
-    );
 }
 
 
@@ -178,8 +163,6 @@ body {
     font-weight: bold;
 
     margin-bottom: 18px;
-
-    text-transform: uppercase;
 }
 
 h1 {
@@ -237,7 +220,7 @@ p {
 
 
 /* =====================================================
-   SLIDE NUMBER
+   NOMOR SLIDE
 ===================================================== */
 
 .slide-number {
@@ -246,9 +229,9 @@ p {
     top: 27px;
     right: 30px;
 
-    color: rgba(255,255,255,.75);
+    color: rgba(255,255,255,.8);
 
-    font-size: 15px;
+    font-size: 14px;
 
     z-index: 20;
 
@@ -256,7 +239,7 @@ p {
 
     border-radius: 20px;
 
-    background: rgba(0,0,0,.25);
+    background: rgba(0,0,0,.3);
 
     border: 1px solid rgba(255,255,255,.12);
 
@@ -265,16 +248,13 @@ p {
 
 
 /* =====================================================
-   GLASS CARD
+   CARD
 ===================================================== */
 
 .cards {
     display: flex;
-
     justify-content: center;
-
     gap: 20px;
-
     flex-wrap: wrap;
 
     margin-top: 35px;
@@ -291,40 +271,33 @@ p {
         linear-gradient(
             135deg,
             rgba(255,255,255,.14),
-            rgba(255,255,255,.045)
+            rgba(255,255,255,.04)
         );
 
     border: 1px solid rgba(255,255,255,.18);
 
     backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
 
     box-shadow:
-        0 20px 50px rgba(0,0,0,.35),
-        inset 0 1px 0 rgba(255,255,255,.08);
+        0 20px 50px rgba(0,0,0,.35);
 
     transition: .3s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
+    transform: translateY(-7px);
 
-    border-color: rgba(56,189,248,.55);
-
-    box-shadow:
-        0 25px 60px rgba(0,0,0,.45),
-        0 0 30px rgba(56,189,248,.12);
+    border-color:
+        rgba(56,189,248,.6);
 }
 
 .card-icon {
     font-size: 45px;
-
     margin-bottom: 12px;
 }
 
 .card h3 {
     font-size: 21px;
-
     margin-bottom: 8px;
 }
 
@@ -344,7 +317,6 @@ p {
 
 .money {
     font-size: 75px;
-
     margin-bottom: 15px;
 }
 
@@ -354,7 +326,6 @@ p {
     color: #facc15;
 
     font-size: 21px;
-
     font-weight: bold;
 }
 
@@ -370,7 +341,6 @@ p {
 
 .profile-box {
     max-width: 850px;
-
     margin: auto;
 
     padding: 30px;
@@ -382,9 +352,6 @@ p {
     border: 1px solid rgba(255,255,255,.18);
 
     backdrop-filter: blur(15px);
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.3);
 }
 
 .profile-list {
@@ -456,9 +423,6 @@ p {
         );
 
     font-weight: bold;
-
-    box-shadow:
-        0 10px 30px rgba(124,58,237,.3);
 }
 
 
@@ -473,7 +437,6 @@ p {
 
 .ranger {
     font-size: 75px;
-
     margin: 15px;
 }
 
@@ -485,14 +448,10 @@ p {
     color: #facc15;
 
     margin: 20px 0;
-
-    text-shadow:
-        0 0 25px rgba(250,204,21,.25);
 }
 
 .motivation {
     max-width: 850px;
-
     margin: auto;
 }
 
@@ -508,7 +467,6 @@ p {
 
 .heart {
     font-size: 75px;
-
     margin-bottom: 15px;
 }
 
@@ -520,9 +478,6 @@ p {
     color: #34d399;
 
     margin-bottom: 20px;
-
-    text-shadow:
-        0 0 30px rgba(52,211,153,.2);
 }
 
 
@@ -555,9 +510,6 @@ p {
     font-size: clamp(20px,3vw,32px);
 
     line-height: 1.8;
-
-    box-shadow:
-        0 20px 50px rgba(0,0,0,.35);
 }
 
 .pantun strong {
@@ -580,9 +532,6 @@ p {
     font-weight: bold;
 
     margin-bottom: 25px;
-
-    text-shadow:
-        0 5px 35px rgba(0,0,0,.5);
 }
 
 .nbc-final {
@@ -608,7 +557,7 @@ p {
 
 
 /* =====================================================
-   NAVIGATION
+   NAVIGASI
 ===================================================== */
 
 .navigation {
@@ -627,8 +576,7 @@ p {
 .navigation button {
     border: 1px solid rgba(255,255,255,.2);
 
-    background:
-        rgba(255,255,255,.9);
+    background: rgba(255,255,255,.9);
 
     color: #111827;
 
@@ -637,7 +585,7 @@ p {
 
     border-radius: 50%;
 
-    font-size: 23px;
+    font-size: 22px;
 
     cursor: pointer;
 
@@ -653,6 +601,50 @@ p {
     color: white;
 
     transform: scale(1.1);
+}
+
+
+/* =====================================================
+   TOMBOL CATATAN
+===================================================== */
+
+.notes-button {
+    position: fixed;
+
+    left: 25px;
+    bottom: 25px;
+
+    z-index: 150;
+
+    border: none;
+
+    padding: 13px 20px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #facc15,
+            #f59e0b
+        );
+
+    color: #111827;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.4);
+
+    transition: .25s;
+}
+
+.notes-button:hover {
+    transform: translateY(-3px) scale(1.03);
 }
 
 
@@ -687,30 +679,385 @@ p {
 
 
 /* =====================================================
-   DECORATIVE LIGHT
+   PANEL CATATAN
 ===================================================== */
 
-.light {
+.notes-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(0,0,0,.65);
+
+    backdrop-filter: blur(7px);
+
+    z-index: 500;
+
+    display: none;
+}
+
+.notes-overlay.show {
+    display: block;
+}
+
+
+/* =====================================================
+   NOTES PANEL
+===================================================== */
+
+.notes-panel {
     position: absolute;
 
-    width: 400px;
-    height: 400px;
+    top: 0;
+    right: 0;
+
+    width: min(470px, 100%);
+
+    height: 100%;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #020617
+        );
+
+    border-left:
+        1px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        -20px 0 70px rgba(0,0,0,.5);
+
+    padding: 25px;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+
+    animation: panelIn .3s forwards;
+}
+
+@keyframes panelIn {
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+.notes-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.notes-header h2 {
+    font-size: 27px;
+
+    margin: 0;
+
+    color: #facc15;
+}
+
+.close-notes {
+    width: 40px;
+    height: 40px;
+
+    border: none;
 
     border-radius: 50%;
 
+    background: rgba(255,255,255,.1);
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   INPUT
+===================================================== */
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.input-group input,
+.input-group textarea {
+    width: 100%;
+
+    border: 1px solid rgba(255,255,255,.15);
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,.07);
+
+    color: white;
+
+    padding: 13px 14px;
+
+    font-family: inherit;
+
+    font-size: 15px;
+
+    outline: none;
+
+    resize: vertical;
+}
+
+.input-group input:focus,
+.input-group textarea:focus {
+    border-color: #38bdf8;
+
+    box-shadow:
+        0 0 0 3px rgba(56,189,248,.1);
+}
+
+.input-group textarea {
+    min-height: 110px;
+}
+
+
+/* =====================================================
+   SAVE BUTTON
+===================================================== */
+
+.save-note {
+    width: 100%;
+
+    border: none;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
     background:
-        radial-gradient(
-            circle,
-            rgba(56,189,248,.13),
-            transparent 70%
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #0891b2
         );
 
-    right: -150px;
-    bottom: -150px;
+    color: white;
 
-    z-index: 3;
+    font-weight: bold;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-bottom: 25px;
+}
+
+.save-note:hover {
+    opacity: .9;
+}
+
+
+/* =====================================================
+   TOOLBAR
+===================================================== */
+
+.notes-toolbar {
+    display: flex;
+
+    gap: 8px;
+
+    margin-bottom: 20px;
+}
+
+.notes-toolbar button {
+    flex: 1;
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    background: rgba(255,255,255,.07);
+
+    color: white;
+
+    padding: 10px 8px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 12px;
+}
+
+.notes-toolbar button:hover {
+    background: rgba(255,255,255,.14);
+}
+
+.notes-toolbar .danger {
+    color: #fca5a5;
+}
+
+
+/* =====================================================
+   DAFTAR CATATAN
+===================================================== */
+
+.notes-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.note-empty {
+    padding: 25px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    border:
+        1px dashed rgba(255,255,255,.15);
+
+    border-radius: 15px;
+}
+
+.note-item {
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+
+    border-radius: 15px;
+
+    padding: 15px;
+}
+
+.note-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 8px;
+}
+
+.note-name {
+    color: #38bdf8;
+
+    font-weight: bold;
+
+    font-size: 15px;
+}
+
+.note-slide {
+    color: #facc15;
+
+    font-size: 11px;
+
+    background: rgba(250,204,21,.1);
+
+    padding: 4px 7px;
+
+    border-radius: 10px;
+}
+
+.note-text {
+    color: #e2e8f0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    white-space: pre-wrap;
+
+    margin-bottom: 10px;
+}
+
+.note-date {
+    color: #64748b;
+
+    font-size: 10px;
+}
+
+.delete-note {
+    margin-top: 10px;
+
+    border: none;
+
+    background: rgba(239,68,68,.12);
+
+    color: #fca5a5;
+
+    padding: 7px 10px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast {
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 90px;
+
+    transform:
+        translateX(-50%) translateY(20px);
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 12px 20px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    z-index: 1000;
+
+    opacity: 0;
 
     pointer-events: none;
+
+    transition: .3s;
+}
+
+.toast.show {
+    opacity: 1;
+
+    transform:
+        translateX(-50%) translateY(0);
 }
 
 
@@ -721,8 +1068,7 @@ p {
 @media(max-width:700px) {
 
     .slide {
-        padding:
-            75px 20px 80px;
+        padding: 75px 20px 80px;
     }
 
     .logo {
@@ -738,53 +1084,48 @@ p {
         top: 20px;
         right: 18px;
 
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .small-title {
-        font-size: 12px;
-
+        font-size: 11px;
         letter-spacing: 3px;
     }
 
     .cards {
         gap: 10px;
-
         margin-top: 20px;
     }
 
     .card {
         width: 100%;
-
-        padding: 14px;
+        padding: 13px;
     }
 
     .card-icon {
-        font-size: 30px;
-
-        margin-bottom: 5px;
+        font-size: 28px;
+        margin-bottom: 4px;
     }
 
     .card h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .card p {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .ai-image {
-        height: 150px;
+        height: 145px;
     }
 
     .ranger {
-        font-size: 55px;
+        font-size: 50px;
     }
 
     .pantun {
         padding: 20px;
-
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .navigation {
@@ -797,6 +1138,19 @@ p {
         height: 43px;
 
         font-size: 18px;
+    }
+
+    .notes-button {
+        left: 15px;
+        bottom: 15px;
+
+        padding: 11px 15px;
+
+        font-size: 12px;
+    }
+
+    .notes-panel {
+        padding: 20px;
     }
 
 }
@@ -832,7 +1186,6 @@ p {
 <section class="slide slide1 active">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -869,33 +1222,25 @@ p {
 
             <div class="card">
                 <div class="card-icon">📈</div>
-
                 <h3>Pertumbuhan</h3>
-
                 <p>
                     Fokus pada peningkatan
                     kualitas dan hasil kerja.
                 </p>
             </div>
 
-
             <div class="card">
                 <div class="card-icon">🌎</div>
-
                 <h3>Visi Global</h3>
-
                 <p>
                     Berpikir lebih luas dan
                     berani punya target besar.
                 </p>
             </div>
 
-
             <div class="card">
                 <div class="card-icon">🚀</div>
-
                 <h3>Naik Level</h3>
-
                 <p>
                     Terus belajar dan berkembang
                     bersama tim.
@@ -920,7 +1265,6 @@ p {
 <section class="slide slide2">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -998,7 +1342,6 @@ p {
 <section class="slide slide3">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -1040,56 +1383,36 @@ p {
         <div class="cards">
 
             <div class="card">
+                <div class="card-icon">💡</div>
 
-                <div class="card-icon">
-                    💡
-                </div>
-
-                <h3>
-                    Ide
-                </h3>
+                <h3>Ide</h3>
 
                 <p>
                     Membantu mencari ide
                     dan solusi pekerjaan.
                 </p>
-
             </div>
 
-
             <div class="card">
+                <div class="card-icon">⚡</div>
 
-                <div class="card-icon">
-                    ⚡
-                </div>
-
-                <h3>
-                    Cepat
-                </h3>
+                <h3>Cepat</h3>
 
                 <p>
                     Membantu menyelesaikan
                     pekerjaan lebih efisien.
                 </p>
-
             </div>
 
-
             <div class="card">
+                <div class="card-icon">📊</div>
 
-                <div class="card-icon">
-                    📊
-                </div>
-
-                <h3>
-                    Data
-                </h3>
+                <h3>Data</h3>
 
                 <p>
                     Membantu mengolah
                     informasi.
                 </p>
-
             </div>
 
         </div>
@@ -1106,7 +1429,6 @@ p {
 <section class="slide slide4">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -1173,7 +1495,6 @@ p {
 <section class="slide slide5">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -1231,7 +1552,6 @@ p {
 
             </div>
 
-
             <div class="card">
 
                 <div class="card-icon">
@@ -1247,7 +1567,6 @@ p {
                 </p>
 
             </div>
-
 
             <div class="card">
 
@@ -1280,7 +1599,6 @@ p {
 <section class="slide slide6">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -1342,7 +1660,6 @@ p {
 <section class="slide slide7">
 
     <div class="grid"></div>
-    <div class="light"></div>
 
     <div class="logo">
         <img src="nbc-removebg-preview.png"
@@ -1390,7 +1707,20 @@ p {
 
 
 <!-- =====================================================
-     NAVIGATION
+     TOMBOL CATATAN
+===================================================== -->
+
+<button
+    class="notes-button"
+    onclick="openNotes()">
+
+    📝 Catatan Kritik
+
+</button>
+
+
+<!-- =====================================================
+     NAVIGASI
 ===================================================== -->
 
 <div class="navigation">
@@ -1410,9 +1740,131 @@ p {
 </div>
 
 
-<!-- PROGRESS -->
+<!-- =====================================================
+     PROGRESS
+===================================================== -->
 
-<div class="progress" id="progress"></div>
+<div
+    class="progress"
+    id="progress">
+</div>
+
+
+<!-- =====================================================
+     NOTES OVERLAY
+===================================================== -->
+
+<div
+    class="notes-overlay"
+    id="notesOverlay">
+
+    <div class="notes-panel">
+
+        <div class="notes-header">
+
+            <h2>
+                📝 Kritik & Saran
+            </h2>
+
+            <button
+                class="close-notes"
+                onclick="closeNotes()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <!-- INPUT NAMA -->
+
+        <div class="input-group">
+
+            <label>
+                Nama
+            </label>
+
+            <input
+                type="text"
+                id="noteName"
+                placeholder="Masukkan nama...">
+
+        </div>
+
+
+        <!-- INPUT CATATAN -->
+
+        <div class="input-group">
+
+            <label>
+                Kritik / Saran
+            </label>
+
+            <textarea
+                id="noteText"
+                placeholder="Tuliskan kritik atau saran..."></textarea>
+
+        </div>
+
+
+        <!-- SAVE -->
+
+        <button
+            class="save-note"
+            onclick="saveNote()">
+
+            💾 Simpan Catatan
+
+        </button>
+
+
+        <!-- TOOLBAR -->
+
+        <div class="notes-toolbar">
+
+            <button
+                onclick="exportNotes()">
+
+                📥 Export TXT
+
+            </button>
+
+            <button
+                class="danger"
+                onclick="deleteAllNotes()">
+
+                🗑️ Hapus Semua
+
+            </button>
+
+        </div>
+
+
+        <!-- LIST -->
+
+        <div
+            class="notes-list"
+            id="notesList">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     TOAST
+===================================================== -->
+
+<div
+    class="toast"
+    id="toast">
+
+    Catatan berhasil disimpan!
+
+</div>
 
 
 <script>
@@ -1429,10 +1881,6 @@ const slides =
 const progress =
     document.getElementById("progress");
 
-
-/* =====================================================
-   SHOW SLIDE
-===================================================== */
 
 function showSlide(number) {
 
@@ -1455,49 +1903,41 @@ function showSlide(number) {
     currentSlide = number;
 
     updateProgress();
-
 }
 
-
-/* =====================================================
-   PROGRESS BAR
-===================================================== */
 
 function updateProgress() {
 
     const percentage =
-        ((currentSlide + 1) / slides.length) * 100;
+        ((currentSlide + 1) /
+        slides.length) * 100;
 
     progress.style.width =
         percentage + "%";
-
 }
 
 
-/* =====================================================
-   NEXT
-===================================================== */
-
 function nextSlide() {
 
-    if (currentSlide < slides.length - 1) {
+    if (currentSlide <
+        slides.length - 1) {
 
-        showSlide(currentSlide + 1);
+        showSlide(
+            currentSlide + 1
+        );
 
     }
 
 }
 
 
-/* =====================================================
-   PREVIOUS
-===================================================== */
-
 function previousSlide() {
 
     if (currentSlide > 0) {
 
-        showSlide(currentSlide - 1);
+        showSlide(
+            currentSlide - 1
+        );
 
     }
 
@@ -1511,6 +1951,35 @@ function previousSlide() {
 document.addEventListener(
     "keydown",
     function(event) {
+
+        /* Jika panel catatan terbuka,
+           ESC untuk menutup */
+
+        if (
+            event.key === "Escape" &&
+            document
+                .getElementById("notesOverlay")
+                .classList.contains("show")
+        ) {
+
+            closeNotes();
+
+            return;
+        }
+
+
+        /* Jangan pindah slide ketika
+           sedang mengetik di input */
+
+        if (
+            event.target.tagName === "INPUT" ||
+            event.target.tagName === "TEXTAREA"
+        ) {
+
+            return;
+
+        }
+
 
         if (
             event.key === "ArrowRight" ||
@@ -1543,7 +2012,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   SWIPE HP
+   SWIPE
 ===================================================== */
 
 let startX = 0;
@@ -1581,41 +2050,29 @@ document.addEventListener(
             endY - startY;
 
 
-        /* Horizontal swipe */
-
         if (
             Math.abs(distanceX) >
             Math.abs(distanceY)
         ) {
 
             if (distanceX < -70) {
-
                 nextSlide();
-
             }
 
             if (distanceX > 70) {
-
                 previousSlide();
-
             }
 
             return;
         }
 
 
-        /* Vertical swipe */
-
         if (distanceY < -70) {
-
             nextSlide();
-
         }
 
         if (distanceY > 70) {
-
             previousSlide();
-
         }
 
     }
@@ -1623,8 +2080,507 @@ document.addEventListener(
 
 
 /* =====================================================
-   INITIAL
+   NOTES SYSTEM
 ===================================================== */
+
+let notes = [];
+
+
+/* =====================================================
+   LOAD NOTES
+===================================================== */
+
+function loadNotes() {
+
+    const saved =
+        localStorage.getItem(
+            "nortonBaliNotes"
+        );
+
+    if (saved) {
+
+        try {
+
+            notes = JSON.parse(saved);
+
+        } catch (error) {
+
+            notes = [];
+
+        }
+
+    }
+
+    renderNotes();
+}
+
+
+/* =====================================================
+   OPEN NOTES
+===================================================== */
+
+function openNotes() {
+
+    document
+        .getElementById("notesOverlay")
+        .classList.add("show");
+
+    renderNotes();
+
+    setTimeout(function() {
+
+        document
+            .getElementById("noteName")
+            .focus();
+
+    }, 300);
+
+}
+
+
+/* =====================================================
+   CLOSE NOTES
+===================================================== */
+
+function closeNotes() {
+
+    document
+        .getElementById("notesOverlay")
+        .classList.remove("show");
+
+}
+
+
+/* =====================================================
+   SAVE NOTE
+===================================================== */
+
+function saveNote() {
+
+    const name =
+        document
+            .getElementById("noteName")
+            .value
+            .trim();
+
+    const text =
+        document
+            .getElementById("noteText")
+            .value
+            .trim();
+
+
+    if (!name) {
+
+        alert(
+            "Silakan masukkan nama."
+        );
+
+        return;
+
+    }
+
+
+    if (!text) {
+
+        alert(
+            "Silakan masukkan kritik atau saran."
+        );
+
+        return;
+
+    }
+
+
+    const newNote = {
+
+        id: Date.now(),
+
+        name: name,
+
+        text: text,
+
+        slide:
+            currentSlide + 1,
+
+        date:
+            new Date().toLocaleString(
+                "id-ID"
+            )
+
+    };
+
+
+    notes.unshift(newNote);
+
+
+    localStorage.setItem(
+        "nortonBaliNotes",
+        JSON.stringify(notes)
+    );
+
+
+    document
+        .getElementById("noteName")
+        .value = "";
+
+    document
+        .getElementById("noteText")
+        .value = "";
+
+
+    renderNotes();
+
+    showToast(
+        "Catatan berhasil disimpan!"
+    );
+
+}
+
+
+/* =====================================================
+   RENDER NOTES
+===================================================== */
+
+function renderNotes() {
+
+    const list =
+        document.getElementById(
+            "notesList"
+        );
+
+
+    if (notes.length === 0) {
+
+        list.innerHTML = `
+            <div class="note-empty">
+                Belum ada kritik atau saran.
+                <br><br>
+                Silakan masukkan catatan pertama.
+            </div>
+        `;
+
+        return;
+
+    }
+
+
+    list.innerHTML = "";
+
+
+    notes.forEach(function(note) {
+
+        const item =
+            document.createElement("div");
+
+        item.className =
+            "note-item";
+
+
+        item.innerHTML = `
+
+            <div class="note-top">
+
+                <div class="note-name">
+                    ${escapeHTML(note.name)}
+                </div>
+
+                <div class="note-slide">
+                    Slide ${note.slide}
+                </div>
+
+            </div>
+
+            <div class="note-text">
+                ${escapeHTML(note.text)}
+            </div>
+
+            <div class="note-date">
+                ${escapeHTML(note.date)}
+            </div>
+
+            <button
+                class="delete-note"
+                onclick="deleteNote(${note.id})">
+
+                🗑️ Hapus
+
+            </button>
+
+        `;
+
+
+        list.appendChild(item);
+
+    });
+
+}
+
+
+/* =====================================================
+   DELETE NOTE
+===================================================== */
+
+function deleteNote(id) {
+
+    if (
+        !confirm(
+            "Hapus catatan ini?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    notes =
+        notes.filter(
+            function(note) {
+
+                return note.id !== id;
+
+            }
+        );
+
+
+    localStorage.setItem(
+        "nortonBaliNotes",
+        JSON.stringify(notes)
+    );
+
+
+    renderNotes();
+
+    showToast(
+        "Catatan dihapus."
+    );
+
+}
+
+
+/* =====================================================
+   DELETE ALL
+===================================================== */
+
+function deleteAllNotes() {
+
+    if (notes.length === 0) {
+
+        alert(
+            "Belum ada catatan."
+        );
+
+        return;
+
+    }
+
+
+    if (
+        !confirm(
+            "Yakin ingin menghapus SEMUA catatan?"
+        )
+    ) {
+
+        return;
+
+    }
+
+
+    notes = [];
+
+
+    localStorage.removeItem(
+        "nortonBaliNotes"
+    );
+
+
+    renderNotes();
+
+    showToast(
+        "Semua catatan telah dihapus."
+    );
+
+}
+
+
+/* =====================================================
+   EXPORT TXT
+===================================================== */
+
+function exportNotes() {
+
+    if (notes.length === 0) {
+
+        alert(
+            "Belum ada catatan untuk diekspor."
+        );
+
+        return;
+
+    }
+
+
+    let content =
+        "NORTON BALI COMPUTER\n";
+
+    content +=
+        "CATATAN KRITIK & SARAN\n";
+
+    content +=
+        "========================================\n\n";
+
+
+    notes.forEach(
+        function(note, index) {
+
+            content +=
+                (index + 1) +
+                ". Nama: " +
+                note.name +
+                "\n";
+
+            content +=
+                "   Slide: " +
+                note.slide +
+                "\n";
+
+            content +=
+                "   Waktu: " +
+                note.date +
+                "\n";
+
+            content +=
+                "   Kritik/Saran:\n" +
+                note.text +
+                "\n";
+
+            content +=
+                "----------------------------------------\n\n";
+
+        }
+    );
+
+
+    const blob =
+        new Blob(
+            [content],
+            {
+                type:
+                    "text/plain;charset=utf-8"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(blob);
+
+
+    const link =
+        document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+        "catatan-kritik-norton-bali-computer.txt";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+
+    URL.revokeObjectURL(url);
+
+    showToast(
+        "Catatan berhasil diekspor!"
+    );
+
+}
+
+
+/* =====================================================
+   ESCAPE HTML
+===================================================== */
+
+function escapeHTML(value) {
+
+    const div =
+        document.createElement("div");
+
+    div.textContent =
+        value;
+
+    return div.innerHTML;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message) {
+
+    const toast =
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent =
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+        function() {
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+        2500
+    );
+
+}
+
+
+/* =====================================================
+   CLOSE PANEL KLIK LUAR
+===================================================== */
+
+document
+    .getElementById("notesOverlay")
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target ===
+                this
+            ) {
+
+                closeNotes();
+
+            }
+
+        }
+    );
+
+
+/* =====================================================
+   START
+===================================================== */
+
+loadNotes();
 
 showSlide(0);
 
