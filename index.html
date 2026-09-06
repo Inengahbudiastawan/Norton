@@ -1,1115 +1,290 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```css
+/* =====================================================
+   MODERN BACKGROUND SYSTEM
+===================================================== */
 
-<title>Norton Bali Computer - 7 Slide</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #050816;
-    color: white;
+.slide {
     overflow: hidden;
 }
 
-/* =========================
-   SLIDE
-========================= */
-
-.slide {
-    width: 100vw;
-    height: 100vh;
-
+/* Layer dekorasi */
+.slide::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
 
-    display: none;
+    background:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
 
-    align-items: center;
-    justify-content: center;
+    background-size: 45px 45px;
 
-    padding: 70px 7vw 80px;
-
-    text-align: center;
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 90%
+    );
 }
 
-.slide.active {
-    display: flex;
-}
-
-/* =========================
-   LOGO NBC KECIL
-========================= */
-
-.logo {
+/* Glow utama */
+.slide::after {
+    content: "";
     position: absolute;
-    top: 22px;
-    left: 30px;
-    z-index: 10;
-}
-
-.logo img {
-    width: 110px;
-    max-height: 65px;
-    object-fit: contain;
-
-    filter: drop-shadow(0 4px 10px rgba(0,0,0,.5));
-}
-
-/* =========================
-   NOMOR
-========================= */
-
-.slide-number {
-    position: absolute;
-    top: 27px;
-    right: 30px;
-
-    color: rgba(255,255,255,.75);
-    font-size: 15px;
-}
-
-/* =========================
-   CONTENT
-========================= */
-
-.content {
-    width: 100%;
-    max-width: 1150px;
-}
-
-.small-title {
-    color: #38bdf8;
-    font-size: 18px;
-    letter-spacing: 4px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
-
-h1 {
-    font-size: clamp(42px, 7vw, 85px);
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-h2 {
-    font-size: clamp(35px, 5vw, 65px);
-    line-height: 1.1;
-    margin-bottom: 25px;
-}
-
-p {
-    font-size: clamp(18px, 2vw, 25px);
-    line-height: 1.6;
-    color: #dbeafe;
-}
-
-.highlight {
-    color: #facc15;
-}
-
-.blue {
-    color: #38bdf8;
-}
-
-/* =========================
-   CARD
-========================= */
-
-.cards {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 35px;
-}
-
-.card {
-    width: 270px;
-
-    padding: 24px;
-
-    border-radius: 20px;
-
-    background: rgba(255,255,255,.09);
-
-    border: 1px solid rgba(255,255,255,.18);
-
-    backdrop-filter: blur(10px);
-
-    box-shadow: 0 15px 35px rgba(0,0,0,.25);
-}
-
-.card-icon {
-    font-size: 45px;
-    margin-bottom: 12px;
-}
-
-.card h3 {
-    font-size: 21px;
-    margin-bottom: 8px;
-}
-
-.card p {
-    font-size: 15px;
-}
-
-/* =========================
-   SLIDE 1
-========================= */
-
-.slide1 {
-    background:
-        radial-gradient(circle at 80% 20%, #2563eb88, transparent 35%),
-        linear-gradient(135deg,#020617,#172554);
-}
-
-.money {
-    font-size: 75px;
-    margin-bottom: 15px;
-}
-
-.quote {
-    margin-top: 30px;
-    color: #facc15;
-    font-size: 21px;
-    font-weight: bold;
-}
-
-/* =========================
-   SLIDE 2
-========================= */
-
-.slide2 {
-    background:
-        radial-gradient(circle at 20% 20%, #0891b288, transparent 35%),
-        linear-gradient(135deg,#042f2e,#164e63);
-}
-
-.profile-box {
-    max-width: 850px;
-    margin: auto;
-
-    padding: 30px;
-
-    background: rgba(0,0,0,.2);
-
-    border-radius: 25px;
-
-    border: 1px solid rgba(255,255,255,.15);
-}
-
-.profile-list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 25px;
-}
-
-.profile-item {
-    padding: 13px 20px;
-    background: rgba(255,255,255,.1);
-    border-radius: 12px;
-    font-size: 17px;
-}
-
-/* =========================
-   SLIDE 3
-========================= */
-
-.slide3 {
-    background:
-        linear-gradient(135deg,#09090b,#312e81);
-}
-
-.ai-image {
-    width: min(600px,90%);
-    height: 210px;
-
-    object-fit: cover;
-
-    border-radius: 22px;
-
-    margin: 20px auto;
-
-    display: block;
-
-    box-shadow: 0 15px 45px rgba(0,0,0,.5);
-
-    border: 2px solid rgba(255,255,255,.2);
-}
-
-.collaboration {
-    display: inline-block;
-
-    padding: 12px 23px;
-
-    border-radius: 50px;
-
-    background: #7c3aed;
-
-    font-weight: bold;
-}
-
-/* =========================
-   SLIDE 4
-========================= */
-
-.slide4 {
-    background:
-        radial-gradient(circle at center,#dc262655,transparent 45%),
-        linear-gradient(135deg,#450a0a,#7f1d1d);
-}
-
-.ranger {
-    font-size: 75px;
-    margin: 15px;
-}
-
-.power {
-    font-size: clamp(28px,5vw,55px);
-    font-weight: bold;
-    color: #facc15;
-    margin: 20px 0;
-}
-
-.motivation {
-    max-width: 850px;
-    margin: auto;
-}
-
-/* =========================
-   SLIDE 5
-========================= */
-
-.slide5 {
-    background:
-        radial-gradient(circle at top,#05966966,transparent 45%),
-        linear-gradient(135deg,#022c22,#064e3b);
-}
-
-.heart {
-    font-size: 75px;
-    margin-bottom: 15px;
-}
-
-.team {
-    font-size: clamp(30px,5vw,60px);
-    font-weight: bold;
-    color: #34d399;
-    margin-bottom: 20px;
-}
-
-/* =========================
-   SLIDE 6
-========================= */
-
-.slide6 {
-    background:
-        radial-gradient(circle at center,#f59e0b55,transparent 45%),
-        linear-gradient(135deg,#451a03,#78350f);
-}
-
-.pantun {
-    max-width: 850px;
-    margin: 25px auto;
-
-    padding: 30px;
-
-    border-radius: 25px;
-
-    background: rgba(255,255,255,.1);
-
-    border: 1px solid rgba(255,255,255,.2);
-
-    font-size: clamp(20px,3vw,32px);
-
-    line-height: 1.8;
-}
-
-.pantun strong {
-    color: #facc15;
-}
-
-/* =========================
-   SLIDE 7
-========================= */
-
-.slide7 {
-    background:
-        radial-gradient(circle at center,#2563eb99,transparent 45%),
-        linear-gradient(135deg,#020617,#1e3a8a);
-}
-
-.thanks {
-    font-size: clamp(50px,8vw,100px);
-    font-weight: bold;
-    margin-bottom: 25px;
-}
-
-.nbc-final {
-    width: 170px;
-    max-width: 45%;
-    margin: 25px auto;
-    display: block;
-}
-
-.final-message {
-    color: #facc15;
-    font-size: clamp(20px,3vw,30px);
-    font-weight: bold;
-}
-
-/* =========================
-   NAVIGASI
-========================= */
-
-.navigation {
-    position: fixed;
-
-    right: 25px;
-    bottom: 25px;
-
-    z-index: 100;
-
-    display: flex;
-    gap: 10px;
-}
-
-.navigation button {
-    border: none;
-
-    background: rgba(255,255,255,.95);
-
-    color: #111827;
-
-    width: 50px;
-    height: 50px;
+    width: 650px;
+    height: 650px;
+
+    top: -250px;
+    right: -180px;
 
     border-radius: 50%;
 
-    font-size: 23px;
+    background: radial-gradient(
+        circle,
+        rgba(56,189,248,.22),
+        rgba(37,99,235,.08) 40%,
+        transparent 70%
+    );
 
-    cursor: pointer;
+    filter: blur(20px);
 
-    box-shadow: 0 5px 20px rgba(0,0,0,.3);
+    pointer-events: none;
 }
 
-.navigation button:hover {
-    background: #38bdf8;
-    color: white;
-}
-
-/* =========================
-   HP
-========================= */
-
-@media(max-width:700px) {
-
-    .slide {
-        padding: 75px 20px 80px;
-    }
-
-    .logo {
-        top: 17px;
-        left: 18px;
-    }
-
-    .logo img {
-        width: 80px;
-    }
-
-    .slide-number {
-        top: 22px;
-        right: 18px;
-    }
-
-    .cards {
-        gap: 10px;
-        margin-top: 20px;
-    }
-
-    .card {
-        width: 100%;
-        padding: 14px;
-    }
-
-    .card-icon {
-        font-size: 30px;
-        margin-bottom: 5px;
-    }
-
-    .card h3 {
-        font-size: 18px;
-    }
-
-    .card p {
-        font-size: 13px;
-    }
-
-    .ai-image {
-        height: 150px;
-    }
-
-    .ranger {
-        font-size: 55px;
-    }
-
-    .navigation {
-        right: 15px;
-        bottom: 15px;
-    }
-
-    .navigation button {
-        width: 43px;
-        height: 43px;
-        font-size: 18px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-
-<!-- =====================================================
-     SLIDE 1
-===================================================== -->
-
-<section class="slide slide1 active">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        01 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="money">💰</div>
-
-        <div class="small-title">
-            NORTON BALI COMPUTER
-        </div>
-
-        <h1>
-            Menuju
-            <span class="highlight">
-                Pendapatan
-            </span>
-            Kelas Dunia
-        </h1>
-
-        <p>
-            Membangun semangat, pelayanan,
-            inovasi dan kerja sama untuk menuju
-            pertumbuhan yang lebih besar.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">📈</div>
-                <h3>Pertumbuhan</h3>
-                <p>
-                    Fokus pada peningkatan
-                    kualitas dan hasil kerja.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🌎</div>
-                <h3>Visi Global</h3>
-                <p>
-                    Berpikir lebih luas dan
-                    berani punya target besar.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🚀</div>
-                <h3>Naik Level</h3>
-                <p>
-                    Terus belajar dan berkembang
-                    bersama tim.
-                </p>
-            </div>
-
-        </div>
-
-        <div class="quote">
-            "Target besar dimulai dari langkah kecil."
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 2
-===================================================== -->
-
-<section class="slide slide2">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        02 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="small-title">
-            PROFILE PERUSAHAAN
-        </div>
-
-        <h2>
-            Norton Bali Computer
-        </h2>
-
-        <div class="profile-box">
-
-            <p>
-                Norton Bali Computer hadir sebagai
-                pusat solusi teknologi untuk kebutuhan
-                komputer, laptop, printer dan aksesori.
-            </p>
-
-            <div class="profile-list">
-
-                <div class="profile-item">💻 Komputer</div>
-                <div class="profile-item">🖥️ Laptop</div>
-                <div class="profile-item">🖨️ Printer</div>
-                <div class="profile-item">🎧 Aksesori</div>
-                <div class="profile-item">🛠️ Service</div>
-
-            </div>
-
-        </div>
-
-        <p style="margin-top:25px">
-
-            <span class="highlight">
-                Visi:
-            </span>
-
-            menjadi bagian dari perkembangan
-            teknologi dunia dari Bali.
-
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 3
-===================================================== -->
-
-<section class="slide slide3">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        03 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="small-title">
-            TECHNOLOGY + HUMAN
-        </div>
-
-        <h2>
-            🤖 AI & Norton
-            <span class="blue">
-                Berkolaborasi
-            </span>
-        </h2>
-
-        <p>
-            AI membantu manusia bekerja lebih
-            cepat, mencari informasi dan
-            meningkatkan produktivitas.
-        </p>
-
-        <img
-            class="ai-image"
-            src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80"
-            alt="Artificial Intelligence">
-
-        <div class="collaboration">
-            🤖 AI + 👨‍💻 TEAM = 🚀 PRODUKTIVITAS
-        </div>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">💡</div>
-                <h3>Ide</h3>
-                <p>
-                    Membantu mencari ide
-                    dan solusi pekerjaan.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">⚡</div>
-                <h3>Cepat</h3>
-                <p>
-                    Membantu menyelesaikan
-                    pekerjaan lebih efisien.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">📊</div>
-                <h3>Data</h3>
-                <p>
-                    Membantu mengolah
-                    informasi.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 4
-===================================================== -->
-
-<section class="slide slide4">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        04 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="small-title">
-            SEMANGAT TEAM
-        </div>
-
-        <div class="ranger">
-            🦸‍♂️ 🦸‍♀️
-        </div>
-
-        <h2>
-            Team Norton
-            <span class="highlight">
-                Siap!
-            </span>
-        </h2>
-
-        <div class="power">
-            ⚡ POWER RANGER MODE ⚡
-        </div>
-
-        <div class="motivation">
-
-            <p>
-                Kita adalah manusia. Kita bisa lelah
-                dan bisa sakit.
-            </p>
-
-            <br>
-
-            <p>
-                Tetapi ketika menghadapi tantangan,
-                mari saling membantu dan menguatkan.
-            </p>
-
-            <br>
-
-            <p class="highlight">
-                "Satu Team. Satu Semangat.
-                Satu Tujuan."
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 5
-===================================================== -->
-
-<section class="slide slide5">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        05 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="heart">
-            ❤️
-        </div>
-
-        <div class="small-title">
-            APRESIASI TEAM
-        </div>
-
-        <div class="team">
-            TERIMA KASIH TEAM!
-        </div>
-
-        <h2>
-            Kerja Keras Kalian
-            <span class="highlight">
-                Berarti
-            </span>
-        </h2>
-
-        <p>
-            Setiap pelayanan kepada pelanggan,
-            setiap masalah yang diselesaikan,
-            dan setiap target yang dikejar
-            adalah bagian dari perjalanan kita.
-        </p>
-
-        <div class="cards">
-
-            <div class="card">
-                <div class="card-icon">🤝</div>
-                <h3>Kerja Sama</h3>
-                <p>
-                    Kita kuat karena bekerja
-                    sebagai satu team.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🔥</div>
-                <h3>Semangat</h3>
-                <p>
-                    Terus belajar dan berkembang.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🏆</div>
-                <h3>Prestasi</h3>
-                <p>
-                    Hasil besar lahir dari
-                    kerja keras bersama.
-                </p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 6
-===================================================== -->
-
-<section class="slide slide6">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        06 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="small-title">
-            PANTUN UNTUK TEAM
-        </div>
-
-        <h2>
-            🥁 Pantun Semangat
-        </h2>
-
-        <div class="pantun">
-
-            <strong>
-                Pergi ke Bali membeli komputer,
-            </strong>
-
-            <br>
-
-            Pulangnya membawa printer.
-
-            <br><br>
-
-            <strong>
-                Team Norton terus kompak dan pintar,
-            </strong>
-
-            <br>
-
-            <strong>
-                Bersama sukses semakin besar!
-            </strong>
-
-        </div>
-
-        <p>
-            😄 Jangan lupa senyum,
-            karena pelanggan juga ikut bahagia!
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     SLIDE 7
-===================================================== -->
-
-<section class="slide slide7">
-
-    <div class="logo">
-        <img src="nbc-removebg-preview.png"
-             alt="Norton Bali Computer">
-    </div>
-
-    <div class="slide-number">
-        07 / 07
-    </div>
-
-    <div class="content">
-
-        <div class="small-title">
-            NORTON BALI COMPUTER
-        </div>
-
-        <div class="thanks">
-            TERIMA KASIH
-        </div>
-
-        <p>
-            Untuk seluruh team yang telah bekerja keras,
-            memberikan pelayanan terbaik,
-            dan terus berjuang bersama.
-        </p>
-
-        <img
-            class="nbc-final"
-            src="nbc-removebg-preview.png"
-            alt="NBC Logo">
-
-        <div class="final-message">
-            SATU TEAM • SATU SEMANGAT • SATU TUJUAN
-        </div>
-
-        <br>
-
-        <p>
-            💙 Norton Bali Computer
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================================
-     TOMBOL
-===================================================== -->
-
-<div class="navigation">
-
-    <button onclick="previousSlide()" title="Slide sebelumnya">
-        ↑
-    </button>
-
-    <button onclick="nextSlide()" title="Slide berikutnya">
-        ↓
-    </button>
-
-</div>
-
-
-<script>
-
-/* ==========================================
-   SISTEM 7 SLIDE
-========================================== */
-
-let currentSlide = 0;
-
-const slides = document.querySelectorAll(".slide");
-
-
-/* TAMPILKAN SLIDE */
-
-function showSlide(number) {
-
-    if (number < 0) {
-        number = 0;
-    }
-
-    if (number >= slides.length) {
-        number = slides.length - 1;
-    }
-
-    slides.forEach(function(slide) {
-        slide.classList.remove("active");
-    });
-
-    slides[number].classList.add("active");
-
-    currentSlide = number;
+/* Pastikan konten berada di atas background */
+.slide > * {
+    position: relative;
+    z-index: 2;
 }
 
 
-/* ==========================================
-   SLIDE BERIKUTNYA
-========================================== */
+/* =====================================================
+   SLIDE 1 — BLUE FUTURE
+===================================================== */
 
-function nextSlide() {
-
-    if (currentSlide < slides.length - 1) {
-
-        showSlide(currentSlide + 1);
-
-    }
-
+.slide1 {
+    background:
+        radial-gradient(
+            circle at 80% 15%,
+            rgba(59,130,246,.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 15% 85%,
+            rgba(14,165,233,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0f172a 45%,
+            #172554 100%
+        );
 }
 
 
-/* ==========================================
-   SLIDE SEBELUMNYA
-========================================== */
+/* =====================================================
+   SLIDE 2 — CYBER TEAL
+===================================================== */
 
-function previousSlide() {
-
-    if (currentSlide > 0) {
-
-        showSlide(currentSlide - 1);
-
-    }
-
+.slide2 {
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(20,184,166,.32),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            rgba(6,182,212,.20),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #042f2e 50%,
+            #083344 100%
+        );
 }
 
 
-/* ==========================================
-   KEYBOARD KOMPUTER / PROYEKTOR
-========================================== */
+/* =====================================================
+   SLIDE 3 — AI FUTURE
+===================================================== */
 
-document.addEventListener("keydown", function(event) {
+.slide3 {
+    background:
+        radial-gradient(
+            circle at 50% 15%,
+            rgba(139,92,246,.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 85%,
+            rgba(59,130,246,.25),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #030712 0%,
+            #111827 45%,
+            #312e81 100%
+        );
+}
 
-    if (
-        event.key === "ArrowDown" ||
-        event.key === "ArrowRight" ||
-        event.key === "PageDown"
-    ) {
 
-        event.preventDefault();
+/* =====================================================
+   SLIDE 4 — POWER RED
+===================================================== */
 
-        nextSlide();
+.slide4 {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(239,68,68,.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(249,115,22,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #09090b 0%,
+            #450a0a 50%,
+            #7f1d1d 100%
+        );
+}
 
+
+/* =====================================================
+   SLIDE 5 — TEAM GREEN
+===================================================== */
+
+.slide5 {
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(16,185,129,.32),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(34,197,94,.18),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #022c22 50%,
+            #064e3b 100%
+        );
+}
+
+
+/* =====================================================
+   SLIDE 6 — GOLD ENERGY
+===================================================== */
+
+.slide6 {
+    background:
+        radial-gradient(
+            circle at 50% 30%,
+            rgba(245,158,11,.32),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 90%,
+            rgba(234,88,12,.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #09090b 0%,
+            #451a03 50%,
+            #78350f 100%
+        );
+}
+
+
+/* =====================================================
+   SLIDE 7 — FINAL BLUE
+===================================================== */
+
+.slide7 {
+    background:
+        radial-gradient(
+            circle at 50% 40%,
+            rgba(37,99,235,.40),
+            transparent 38%
+        ),
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(56,189,248,.20),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #020617 0%,
+            #0f172a 45%,
+            #1e3a8a 100%
+        );
+}
+
+
+/* =====================================================
+   MODERN CARD
+===================================================== */
+
+.card,
+.profile-box,
+.pantun {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.12),
+            rgba(255,255,255,.035)
+        );
+
+    border: 1px solid rgba(255,255,255,.16);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,.30),
+        inset 0 1px 0 rgba(255,255,255,.08);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+/* =====================================================
+   ANIMASI GLOW
+===================================================== */
+
+.slide::after {
+    animation: floatingGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes floatingGlow {
+
+    from {
+        transform: translate(0,0) scale(1);
+        opacity: .7;
     }
 
-
-    if (
-        event.key === "ArrowUp" ||
-        event.key === "ArrowLeft" ||
-        event.key === "PageUp"
-    ) {
-
-        event.preventDefault();
-
-        previousSlide();
-
+    to {
+        transform: translate(-80px,80px) scale(1.25);
+        opacity: 1;
     }
 
-});
-
-
-/* ==========================================
-   SWIPE HP
-========================================== */
-
-let startY = 0;
-
-document.addEventListener("touchstart", function(event) {
-
-    startY = event.touches[0].clientY;
-
-});
-
-
-document.addEventListener("touchend", function(event) {
-
-    const endY = event.changedTouches[0].clientY;
-
-    const distance = endY - startY;
-
-
-    /* Geser ke atas = berikutnya */
-
-    if (distance < -70) {
-
-        nextSlide();
-
-    }
-
-
-    /* Geser ke bawah = sebelumnya */
-
-    if (distance > 70) {
-
-        previousSlide();
-
-    }
-
-});
-
-</script>
-
-</body>
-</html>
+}
+```
