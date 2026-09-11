@@ -53,25 +53,21 @@
     opacity: 1;
   }
 
+  /* Header Layout tanpa elemen di pojok kiri atas */
   .slide-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     margin-bottom: 30px;
     border-bottom: 1px solid #334155;
     padding-bottom: 15px;
   }
 
-  .slide-title-left {
+  .slide-title-right {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #f8fafc;
-  }
-
-  .slide-title-right {
-    font-size: 1.2rem;
-    font-weight: 600;
     color: #38bdf8;
+    text-align: right;
   }
 
   .slide-body {
@@ -82,6 +78,7 @@
     gap: 20px;
   }
 
+  /* Grid Layouts */
   .agenda-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -128,23 +125,13 @@
     border: 1px solid #334155;
   }
 
+  /* Footer Controls */
   .slide-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-top: 15px;
     border-top: 1px solid #334155;
-  }
-
-  .footer-left {
-    display: flex;
-    align-items: center;
-  }
-
-  .footer-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
   }
 
   .nav-btn {
@@ -182,7 +169,6 @@
   <!-- Slide 1: Agenda -->
   <div class="slide active" id="slide-0">
     <div class="slide-header">
-      <div class="slide-title-left">Norton Bali Computer</div>
       <div class="slide-title-right">Agenda Utama</div>
     </div>
     <div class="slide-body">
@@ -206,19 +192,15 @@
       </div>
     </div>
     <div class="slide-footer">
-      <div class="footer-left"></div>
-      <div class="footer-right">
-        <button class="nav-btn" onclick="previousSlide()" id="prev-btn-0" disabled>Sebelumnya</button>
-        <span class="slide-number">Slide 1 dari 5</span>
-        <button class="nav-btn" onclick="nextSlide()" id="next-btn-0">Selanjutnya</button>
-      </div>
+      <button class="nav-btn" onclick="previousSlide()" id="prev-btn-0" disabled>Sebelumnya</button>
+      <span class="slide-number">Slide 1 dari 5</span>
+      <button class="nav-btn" onclick="nextSlide()" id="next-btn-0">Selanjutnya</button>
     </div>
   </div>
 
   <!-- Slide 2: Laporan Pendapatan -->
   <div class="slide" id="slide-1">
     <div class="slide-header">
-      <div class="slide-title-left">Norton Bali Computer</div>
       <div class="slide-title-right">Laporan Pendapatan</div>
     </div>
     <div class="slide-body">
@@ -227,19 +209,15 @@
       </div>
     </div>
     <div class="slide-footer">
-      <div class="footer-left"></div>
-      <div class="footer-right">
-        <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
-        <span class="slide-number">Slide 2 dari 5</span>
-        <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
-      </div>
+      <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
+      <span class="slide-number">Slide 2 dari 5</span>
+      <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
     </div>
   </div>
 
   <!-- Slide 3: Perbandingan Pendapatan -->
   <div class="slide" id="slide-2">
     <div class="slide-header">
-      <div class="slide-title-left">Norton Bali Computer</div>
       <div class="slide-title-right">Perbandingan Pendapatan (2025 vs 2026)</div>
     </div>
     <div class="slide-body">
@@ -248,19 +226,15 @@
       </div>
     </div>
     <div class="slide-footer">
-      <div class="footer-left"></div>
-      <div class="footer-right">
-        <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
-        <span class="slide-number">Slide 3 dari 5</span>
-        <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
-      </div>
+      <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
+      <span class="slide-number">Slide 3 dari 5</span>
+      <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
     </div>
   </div>
 
   <!-- Slide 4: Transaksi Belanja Online -->
   <div class="slide" id="slide-3">
     <div class="slide-header">
-      <div class="slide-title-left">Norton Bali Computer</div>
       <div class="slide-title-right">Transaksi Belanja Online</div>
     </div>
     <div class="slide-body">
@@ -269,19 +243,15 @@
       </div>
     </div>
     <div class="slide-footer">
-      <div class="footer-left"></div>
-      <div class="footer-right">
-        <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
-        <span class="slide-number">Slide 4 dari 5</span>
-        <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
-      </div>
+      <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
+      <span class="slide-number">Slide 4 dari 5</span>
+      <button class="nav-btn" onclick="nextSlide()">Selanjutnya</button>
     </div>
   </div>
 
   <!-- Slide 5: Pertumbuhan Pelanggan -->
   <div class="slide" id="slide-4">
     <div class="slide-header">
-      <div class="slide-title-left">Norton Bali Computer</div>
       <div class="slide-title-right">Pertumbuhan Pelanggan</div>
     </div>
     <div class="slide-body">
@@ -290,12 +260,9 @@
       </div>
     </div>
     <div class="slide-footer">
-      <div class="footer-left"></div>
-      <div class="footer-right">
-        <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
-        <span class="slide-number">Slide 5 dari 5</span>
-        <button class="nav-btn" onclick="nextSlide()" id="next-btn-4" disabled>Selanjutnya</button>
-      </div>
+      <button class="nav-btn" onclick="previousSlide()">Sebelumnya</button>
+      <span class="slide-number">Slide 5 dari 5</span>
+      <button class="nav-btn" onclick="nextSlide()" id="next-btn-4" disabled>Selanjutnya</button>
     </div>
   </div>
 
