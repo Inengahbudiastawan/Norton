@@ -77,12 +77,32 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .feedback-status{margin-top:12px;color:#4ade80;font-size:13px;text-align:center}
 .feedback-list{max-height:220px;overflow:auto;margin-top:15px}.feedback-item{padding:10px;margin:8px 0;background:rgba(255,255,255,.06);border-radius:10px;font-size:12px;color:#cbd5e1}
 
+
+.revenue-content{max-width:1500px}.revenue-slide h2{margin-bottom:16px}
+.revenue-layout{display:grid;grid-template-columns:1.35fr .85fr;gap:20px;text-align:left}
+.chart-panel,.analysis-panel{background:rgba(0,0,0,.72);border:1px solid #075b7d;border-radius:8px;padding:18px 20px;box-shadow:0 8px 25px rgba(0,0,0,.35)}
+.panel-title{font-size:18px;font-weight:900;letter-spacing:2px;color:#fff;margin-bottom:12px}
+.chart-area{height:360px;display:flex;align-items:flex-end;border-left:2px solid #aaa;border-bottom:2px solid #aaa;padding:15px 18px 0 30px;position:relative}
+.y-labels{position:absolute;left:-2px;top:15px;height:calc(100% - 15px);transform:translateX(-105%);display:flex;flex-direction:column;justify-content:space-between;color:#8fa0aa;font-size:10px;font-weight:bold}
+.bars{width:100%;height:100%;display:flex;align-items:flex-end;justify-content:space-around;gap:12px}
+.bar{width:7%;min-width:22px;background:linear-gradient(180deg,#ff7a20,#e75d12);border:1px solid #ffd2ad;border-radius:5px 5px 0 0;position:relative;box-shadow:0 0 12px rgba(255,106,30,.18)}
+.bar b{position:absolute;bottom:-25px;left:50%;transform:translateX(-50%);font-size:12px;color:#cbd5e1}.bar.peak{box-shadow:0 0 22px rgba(255,122,32,.45)}
+.chart-caption{font-size:12px;color:#aebbc4;margin-top:28px;text-align:center}
+.analysis-panel{display:flex;flex-direction:column;gap:10px}.analysis-card{display:flex;gap:12px;padding:13px;border:1px solid rgba(56,189,248,.25);border-radius:10px;background:rgba(255,255,255,.045)}
+.analysis-icon{font-size:25px;line-height:1}.analysis-card strong{font-size:15px;color:#fff}.analysis-card p{font-size:12px;line-height:1.35;color:#b9c5ce;margin-top:4px}
+.revenue-summary{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:15px;text-align:left}.revenue-summary>div{padding:13px 16px;border-left:4px solid #16a9df;background:rgba(255,255,255,.06);border-radius:6px}.revenue-summary b{display:block;color:#38bdf8;font-size:13px;letter-spacing:1px;margin-bottom:4px}.revenue-summary span{font-size:13px;color:#dbeafe}
+
+.curve-panel{background:rgba(0,0,0,.72);border:1px solid #075b7d;border-radius:8px;padding:15px 20px 12px;box-shadow:0 8px 25px rgba(0,0,0,.35);text-align:left}
+.curve-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.curve-head .panel-title{margin-bottom:0}
+.legend{display:flex;gap:22px;color:#dbeafe;font-size:13px;font-weight:800}.legend span{display:flex;align-items:center;gap:7px}.legend i{width:28px;height:4px;display:inline-block;border-radius:4px}.legend-2025{background:#ff7a20}.legend-2026{background:#19b5fe}
+.curve-chart{height:280px;position:relative;margin-top:8px}.curve-chart svg{width:100%;height:100%;overflow:visible}.grid-lines line{stroke:rgba(255,255,255,.12);stroke-width:1}.axis-line{stroke:#aab4bb;stroke-width:1.4}.curve{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.curve-2025{stroke:#ff7a20}.curve-2026{stroke:#19b5fe}.points-2025 circle{fill:#ff7a20;stroke:#ffd5b8;stroke-width:2}.points-2026 circle{fill:#19b5fe;stroke:#d4f4ff;stroke-width:2}.month-labels text{fill:#aebbc4;font-size:12px;text-anchor:middle;font-weight:700}.axis-label{position:absolute;left:0;color:#7f919d;font-size:10px;font-weight:800}.axis-label.high{top:7px}.axis-label.mid{top:41%}.axis-label.low{bottom:3px}.curve-note{font-size:11px;color:#9fb0ba;margin-top:4px;text-align:center}.curve-note b{color:#facc15}
+.analysis-layout{margin-top:15px;grid-template-columns:1.15fr .85fr}.strategy-panel{gap:8px}.strategy-panel .analysis-card{padding:11px}.strategy-panel .analysis-card p{font-size:11px}.revenue-summary{margin-top:12px}
 @media(max-width:800px){
 .header{height:65px;padding:0 18px}
 .header-brand{gap:10px}
 .header-logo{width:42px;height:42px}
 .header-title{font-size:19px;letter-spacing:1.5px}
-.slide{padding:85px 20px 85px}.material-menu{grid-template-columns:1fr;gap:12px;margin-top:18px;max-width:650px}
+.slide{padding:85px 20px 85px}.revenue-layout{grid-template-columns:1fr}.revenue-summary{grid-template-columns:1fr}.chart-area{height:230px}.bar{min-width:14px}.analysis-card p{font-size:11px}.material-menu{grid-template-columns:1fr;gap:12px;margin-top:18px;max-width:650px}
 .menu-col{gap:12px}.menu-item{gap:10px}.menu-number{width:48px;height:48px;flex-basis:48px;font-size:20px}
 .menu-item span:last-child{min-width:0;min-height:48px;flex:1;font-size:15px;padding:7px 10px}
 .material{padding:16px;display:flex;align-items:center;text-align:left;gap:15px}.material-icon{font-size:35px;margin:0}
@@ -124,12 +144,60 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 </div>
 </section>
 
-<section class="slide slide2">
+<section class="slide slide2 revenue-slide">
 <div class="grid"></div><div class="slide-number">02 / 11</div>
-<div class="content">
-<div class="small-title">MATERI 01</div><h2>📈 <span class="highlight">PENDAPATAN</span></h2>
-<div class="box"><p>Pendapatan menjadi salah satu indikator utama perkembangan Norton Bali Computer.</p>
-<div class="list"><div>💰 Target Pendapatan</div><div>📊 Realisasi Pendapatan</div><div>📈 Pertumbuhan Pendapatan</div><div>🎯 Evaluasi Pencapaian Target</div></div></div>
+<div class="content revenue-content">
+  <div class="small-title">MATERI 01 • PERBANDINGAN PENDAPATAN</div>
+  <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
+
+  <div class="curve-panel">
+    <div class="curve-head">
+      <div class="panel-title">CURVE PERBANDINGAN PENDAPATAN</div>
+      <div class="legend"><span><i class="legend-2025"></i>2025</span><span><i class="legend-2026"></i>2026</span></div>
+    </div>
+    <div class="curve-chart">
+      <div class="axis-label high">TINGGI</div><div class="axis-label mid">MENENGAH</div><div class="axis-label low">RENDAH</div>
+      <svg viewBox="0 0 1000 370" preserveAspectRatio="none" aria-label="Curve perbandingan pendapatan 2025 dan 2026">
+        <g class="grid-lines">
+          <line x1="60" y1="55" x2="960" y2="55"></line>
+          <line x1="60" y1="150" x2="960" y2="150"></line>
+          <line x1="60" y1="245" x2="960" y2="245"></line>
+          <line x1="60" y1="335" x2="960" y2="335"></line>
+        </g>
+        <line class="axis-line" x1="60" y1="20" x2="60" y2="335"></line>
+        <line class="axis-line" x1="60" y1="335" x2="960" y2="335"></line>
+        <path class="curve curve-2025" d="M60,210 C90,205 120,220 150,235 S215,250 240,255 S305,235 330,205 S395,185 420,180 S485,165 510,165 S575,135 600,125 S665,75 690,85 S755,150 780,160 S845,205 870,210 S930,235 960,245"></path>
+        <path class="curve curve-2026" d="M60,240 C95,225 125,185 150,185 S210,225 240,225 S300,225 330,225 S390,250 420,250 S480,205 510,205 S570,220 600,220 S660,155 690,150 S750,95 780,85"></path>
+        <g class="points-2025">
+          <circle cx="60" cy="210" r="6"/><circle cx="150" cy="235" r="6"/><circle cx="240" cy="255" r="6"/><circle cx="330" cy="205" r="6"/><circle cx="420" cy="180" r="6"/><circle cx="510" cy="165" r="6"/><circle cx="600" cy="125" r="6"/><circle cx="690" cy="85" r="6"/><circle cx="780" cy="160" r="6"/><circle cx="870" cy="210" r="6"/><circle cx="960" cy="245" r="6"/>
+        </g>
+        <g class="points-2026">
+          <circle cx="60" cy="240" r="6"/><circle cx="150" cy="185" r="6"/><circle cx="240" cy="225" r="6"/><circle cx="330" cy="225" r="6"/><circle cx="420" cy="250" r="6"/><circle cx="510" cy="205" r="6"/><circle cx="600" cy="220" r="6"/><circle cx="690" cy="150" r="6"/><circle cx="780" cy="85" r="7"/>
+        </g>
+        <g class="month-labels">
+          <text x="60" y="360">P1</text><text x="150" y="360">P2</text><text x="240" y="360">P3</text><text x="330" y="360">P4</text><text x="420" y="360">P5</text><text x="510" y="360">P6</text><text x="600" y="360">P7</text><text x="690" y="360">P8</text><text x="780" y="360">P9</text><text x="870" y="360">P10</text><text x="960" y="360">P11</text>
+        </g>
+      </svg>
+    </div>
+    <div class="curve-note">Kurva dibuat dari pola relatif grafik yang Anda kirim. <b>Bukan angka nominal</b>; gunakan data penjualan asli untuk angka rupiah.</div>
+  </div>
+
+  <div class="revenue-layout analysis-layout">
+    <div class="analysis-panel">
+      <div class="panel-title">ANALISA LEBIH DALAM • 2026</div>
+      <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>2026 menunjukkan penguatan di periode akhir</strong><p>Kurva 2026 naik tajam pada periode 8–9 dan mencapai titik tertinggi pada data yang tersedia. Ini menjadi momentum yang perlu dipertahankan.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">⚠️</span><div><strong>Awal 2026 masih fluktuatif</strong><p>Terlihat beberapa kali naik-turun. Artinya, pertumbuhan belum sepenuhnya stabil dan perlu dicari faktor yang menyebabkan transaksi melemah.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Fokus bukan hanya mengejar puncak</strong><p>Target berikutnya adalah membuat periode rendah lebih tinggi sehingga rata-rata pendapatan meningkat, bukan hanya bergantung pada satu periode terbaik.</p></div></div>
+    </div>
+    <div class="analysis-panel strategy-panel">
+      <div class="panel-title">STRATEGI PENINGKATAN 2026</div>
+      <div class="analysis-card"><span class="analysis-icon">🛒</span><div><strong>Perkuat produk cepat terjual</strong><p>Prioritaskan stok dan promosi produk dengan perputaran tinggi serta margin yang sehat.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">📱</span><div><strong>Naikkan kontribusi online</strong><p>Optimalkan marketplace, WhatsApp, konten produk, dan follow-up pelanggan untuk menambah sumber transaksi.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🤝</span><div><strong>Follow-up pelanggan</strong><p>Jangan kehilangan calon pembeli setelah bertanya harga. Buat pencatatan dan follow-up yang konsisten.</p></div></div>
+    </div>
+  </div>
+
+  <div class="revenue-summary"><div><b>KESIMPULAN 2026</b><span>Peluang pertumbuhan terlihat kuat pada periode akhir. Tantangan utama adalah mengubah momentum tersebut menjadi pertumbuhan yang konsisten.</span></div><div><b>INDIKATOR YANG PERLU DIPANTAU</b><span>Pendapatan bulanan • jumlah transaksi • nilai rata-rata transaksi • margin • kontribusi online • repeat customer</span></div></div>
 </div>
 </section>
 
