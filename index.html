@@ -21,29 +21,40 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== HEADER ===== */
+/* ===== HEADER (LEBIH BESAR & TEPAT DI TENGAH) ===== */
 .header {
   position: fixed;
   top: 0; left: 0; width: 100%;
-  height: 64px;
+  height: 80px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center; /* Memaksa header berada di tengah */
   padding: 0 24px;
   z-index: 1000;
   background: rgba(2, 6, 23, 0.95);
-  border-bottom: 1px solid rgba(56, 189, 248, 0.2);
+  border-bottom: 2px solid rgba(56, 189, 248, 0.25);
   backdrop-filter: blur(12px);
 }
-.header-brand { display: flex; align-items: center; gap: 12px; }
-.header-logo { width: 38px; height: 38px; object-fit: contain; filter: drop-shadow(0 0 6px rgba(56,189,248,0.4)); }
-.header-title { font-size: 20px; font-weight: 900; letter-spacing: 1.5px; color: #fff; }
-.header-title span { color: #38bdf8; }
-.header-badge {
-  font-size: 11px; font-weight: 800; letter-spacing: 1px;
-  background: rgba(56, 189, 248, 0.1); color: #38bdf8;
-  padding: 5px 12px; border-radius: 20px; border: 1px solid rgba(56, 189, 248, 0.3);
+.header-brand { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 16px; 
 }
+.header-logo { 
+  width: 52px; 
+  height: 52px; 
+  object-fit: contain; 
+  filter: drop-shadow(0 0 10px rgba(56,189,248,0.5)); 
+}
+.header-title { 
+  font-size: 28px; 
+  font-weight: 900; 
+  letter-spacing: 2px; 
+  color: #fff; 
+  text-align: center;
+}
+.header-title span { color: #38bdf8; }
 
 /* ===== SLIDE CONTAINER (1 VIEWPORT FULL) ===== */
 .slide {
@@ -55,7 +66,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 74px 24px 60px;
+  padding: 90px 24px 60px;
   background-size: cover;
   background-position: center;
 }
@@ -183,7 +194,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 
 /* ===== NAVIGATION & FOOTER ===== */
 .slide-number {
-  position: fixed; top: 18px; right: 24px; z-index: 1001;
+  position: fixed; top: 26px; right: 24px; z-index: 1001;
   padding: 4px 12px; border-radius: 20px; background: rgba(0,0,0,0.6);
   border: 1px solid rgba(255,255,255,0.2); font-size: 12px; font-weight: 800; color: #38bdf8;
 }
@@ -199,11 +210,13 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 
 /* ===== RESPONSIVE MOBILE OPTIMIZATION ===== */
 @media (max-width: 850px) {
-  .header { height: 56px; padding: 0 16px; }
-  .header-title { font-size: 16px; }
-  .header-badge { display: none; }
-  .slide { padding: 64px 12px 50px; }
-  .slide-number { top: 14px; right: 16px; font-size: 11px; }
+  .header { height: 68px; padding: 0 12px; }
+  .header-brand { gap: 10px; }
+  .header-logo { width: 40px; height: 40px; }
+  .header-title { font-size: 18px; letter-spacing: 1px; }
+  
+  .slide { padding: 76px 12px 50px; }
+  .slide-number { top: 20px; right: 12px; font-size: 11px; }
   .footer-text { display: none; }
   
   .material-menu { grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
@@ -230,7 +243,6 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
     <img src="nbc-removebg-preview.png" alt="NBC Logo" class="header-logo" onerror="this.style.display='none'">
     <div class="header-title">NORTON <span>BALI COMPUTER</span></div>
   </div>
-  <div class="header-badge">EXECUTIVE PRESENTATION</div>
 </header>
 
 <div class="slide-number" id="slideNum">01 / 10</div>
@@ -260,7 +272,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   </div>
 </section>
 
-<!-- SLIDE 2: GRAFIK PENDAPATAN (1 VIEWPORT FOCUS) -->
+<!-- SLIDE 2: GRAFIK PENDAPATAN -->
 <section class="slide slide2">
   <div class="grid-bg"></div>
   <div class="content">
