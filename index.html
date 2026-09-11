@@ -137,6 +137,95 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 }
 
 </style>
+
+<style>
+/* RESPONSIVE FINAL POLISH */
+*{box-sizing:border-box}
+html,body{width:100%;height:100%;margin:0;overflow:hidden}
+.header{height:clamp(62px,8vh,82px);padding:0 clamp(12px,3vw,38px)}
+.header-brand{gap:clamp(8px,1.3vw,16px)}
+.header-logo{width:clamp(38px,4vw,52px);height:clamp(38px,4vw,52px)}
+.header-title{font-size:clamp(17px,2.35vw,30px);letter-spacing:clamp(1px,.25vw,3px)}
+.slide{padding:clamp(78px,11vh,100px) clamp(14px,3vw,48px) clamp(60px,8vh,85px)}
+.content{width:100%;max-width:min(1200px,95vw)}
+.material-menu{width:100%;max-width:980px;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(12px,2.5vw,28px) clamp(18px,6vw,90px)}
+.menu-item{min-width:0}
+.menu-number{width:clamp(44px,5vw,76px);height:clamp(44px,5vw,76px);flex-basis:clamp(44px,5vw,76px);font-size:clamp(18px,2.5vw,30px)}
+.menu-item span:last-child{min-width:0;width:100%;font-size:clamp(15px,2vw,23px)}
+.box{width:min(900px,95vw);padding:clamp(16px,3vw,35px)}
+.list{width:100%}
+.navigation{right:clamp(10px,2vw,25px);bottom:clamp(10px,2vw,25px)}
+.footer{left:clamp(12px,2vw,30px);bottom:clamp(12px,2vw,22px)}
+.revenue-content{width:min(1500px,96vw)!important}
+.revenue-slide .curve-panel{height:auto;min-height:300px}
+.revenue-slide .curve-chart{height:clamp(230px,32vh,325px)}
+.revenue-slide .analysis-layout .analysis-card{width:calc(20% - 9px);margin-right:1%;min-height:82px}
+.revenue-slide .revenue-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.revenue-slide .bottom-card{padding:9px;border:1px solid #18485c;border-radius:6px;background:#0b1114}
+.revenue-slide .bottom-card h3{font-size:11px;margin-bottom:4px}
+.revenue-slide .bottom-card p{font-size:10px;line-height:1.3}
+
+@media(max-width:900px){
+ .material-menu{grid-template-columns:1fr}
+ .revenue-slide{overflow:auto!important}
+ .revenue-content{max-height:none}
+ .revenue-slide .analysis-layout .analysis-card{width:100%;margin:3px 0}
+ .revenue-slide .revenue-bottom{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .header{height:62px}
+ .header-title{font-size:16px;letter-spacing:1px}
+ .header-logo{width:38px;height:38px}
+ .slide{padding:74px 10px 64px}
+ .small-title{font-size:10px;letter-spacing:2px;margin-bottom:9px}
+ h1{font-size:clamp(32px,10vw,48px)!important}
+ h2{font-size:clamp(27px,8vw,40px);margin-bottom:14px}
+ p{font-size:15px;line-height:1.45}
+ .material-menu{gap:8px;margin-top:12px}
+ .menu-item{gap:7px}
+ .menu-number{width:42px;height:42px;flex-basis:42px;font-size:18px}
+ .menu-item span:last-child{min-height:44px;font-size:14px;padding:6px 8px;border-radius:9px}
+ .box{padding:14px;border-radius:15px;margin-top:12px}
+ .list{margin-top:10px}
+ .list div{padding:9px 11px;margin:6px 0;font-size:13px}
+ .slide-number{top:69px;right:10px;font-size:9px;padding:5px 8px}
+ .footer{display:none}
+ .navigation{gap:6px}
+ .navigation button{width:40px;height:40px}
+ .progress{height:3px}
+ .revenue-slide{padding:70px 7px 60px!important}
+ .revenue-slide .revenue-content{width:100%!important}
+ .revenue-slide .curve-head{height:auto;gap:5px}
+ .revenue-slide .panel-title{font-size:12px}
+ .revenue-slide .legend{gap:8px;font-size:9px}
+ .revenue-slide .legend i{width:18px;height:4px}
+ .revenue-slide .curve-panel{padding:7px 4px 4px;min-height:250px}
+ .revenue-slide .curve-chart{height:215px}
+ .revenue-slide .value-2025,.revenue-slide .value-2026{font-size:8px!important}
+ .revenue-slide .ytext,.revenue-slide .xtext{font-size:8px!important}
+ .revenue-slide .analysis-panel{padding:7px}
+ .revenue-slide .analysis-panel .panel-title{font-size:12px}
+ .revenue-slide .analysis-card{min-height:0!important;padding:7px!important}
+ .revenue-slide .analysis-icon{font-size:17px}
+ .revenue-slide .analysis-card strong{font-size:10px}
+ .revenue-slide .analysis-card p{font-size:9px}
+ .revenue-slide .revenue-summary{grid-template-columns:1fr 1fr;gap:5px}
+ .revenue-slide .revenue-summary>div{padding:5px 6px}
+ .revenue-slide .revenue-summary b{font-size:7px}
+ .revenue-slide .revenue-summary span{font-size:9px}
+ .revenue-slide .bottom-card h3{font-size:9px}
+ .revenue-slide .bottom-card p{font-size:8px}
+}
+@media(max-height:700px) and (min-width:601px){
+ .slide{padding-top:78px;padding-bottom:55px}
+ .revenue-slide .curve-chart{height:205px}
+ .revenue-slide .curve-panel{min-height:240px}
+ .revenue-slide .analysis-layout{margin-top:5px}
+ .revenue-slide .analysis-layout .analysis-card{min-height:60px;padding:6px}
+ .revenue-slide .analysis-card p{font-size:8px}
+}
+</style>
+
 </head>
 <body>
 
