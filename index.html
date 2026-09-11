@@ -26,7 +26,7 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Arial,Helvetica,san
     text-shadow:0 0 20px rgba(56,189,248,.25);
 }
 .header-title span{color:#38bdf8}
-.slide{width:100vw;height:100vh;position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:100px 7vw 80px;text-align:center;overflow:hidden;background-size:cover;background-position:center}
+.slide{width:100vw;height:100vh;position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:100px 3vw 70px;text-align:center;overflow:hidden;background-size:cover;background-position:center}
 .slide.active{display:flex}
 .slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,23,.96),rgba(2,6,23,.78),rgba(2,6,23,.60));z-index:0}
 .slide::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(56,189,248,.25),transparent 30%),radial-gradient(circle at 15% 85%,rgba(37,99,235,.20),transparent 35%);z-index:1}
@@ -61,56 +61,10 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .progress{position:fixed;left:0;bottom:0;height:4px;width:9%;background:linear-gradient(90deg,#38bdf8,#2563eb);z-index:200;transition:width .35s ease}
 .footer{position:fixed;bottom:22px;left:30px;z-index:100;color:#94a3b8;font-size:12px}
 
-/* Saran & Kritik */
-.feedback-button{position:fixed;right:25px;bottom:25px;z-index:500;padding:14px 22px;border:none;border-radius:30px;background:linear-gradient(135deg,#38bdf8,#2563eb);color:#fff;font-size:15px;font-weight:bold;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,.4),0 0 25px rgba(56,189,248,.2);transition:.3s}
-.feedback-button:hover{transform:translateY(-4px) scale(1.03)}
-.feedback-modal{display:none;position:fixed;inset:0;z-index:2000;align-items:center;justify-content:center;background:rgba(0,0,0,.72);backdrop-filter:blur(8px)}
-.feedback-modal.active{display:flex}
-.feedback-box{width:min(500px,90%);padding:30px;background:linear-gradient(145deg,rgba(15,23,42,.98),rgba(2,6,23,.98));border:1px solid rgba(56,189,248,.3);border-radius:25px;box-shadow:0 30px 80px rgba(0,0,0,.6);text-align:left}
-.feedback-box h2{font-size:28px;margin-bottom:8px}.subtitle{color:#94a3b8;font-size:14px;margin-bottom:22px}
-.feedback-box label{display:block;margin:14px 0 7px;font-size:14px;color:#cbd5e1}
-.feedback-box input,.feedback-box textarea{width:100%;padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.07);color:#fff;outline:none;font-size:14px}
-.feedback-box input:focus,.feedback-box textarea:focus{border-color:#38bdf8}
-.feedback-box textarea{height:130px;resize:none}
-.feedback-actions{display:flex;gap:10px;margin-top:20px}.feedback-actions button{flex:1;padding:13px;border:none;border-radius:12px;font-weight:bold;cursor:pointer}
-.btn-save{background:#38bdf8;color:#082f49}.btn-close{background:rgba(255,255,255,.1);color:#fff}
-.feedback-status{margin-top:12px;color:#4ade80;font-size:13px;text-align:center}
-.feedback-list{max-height:220px;overflow:auto;margin-top:15px}.feedback-item{padding:10px;margin:8px 0;background:rgba(255,255,255,.06);border-radius:10px;font-size:12px;color:#cbd5e1}
 
-
-
-/* Accurate revenue comparison based on user-provided data */
-.revenue-slide{background:#000}
-.revenue-content{max-width:1540px}
-.revenue-slide h2{margin-bottom:10px}
-.revenue-subtitle{font-size:14px;color:#b9c7d0;margin-bottom:12px}
-.curve-panel{background:rgba(0,0,0,.88);border:1px solid #08769d;border-radius:8px;padding:12px 18px 10px;box-shadow:0 8px 25px rgba(0,0,0,.4);text-align:left}
-.curve-head{display:flex;align-items:center;justify-content:space-between;gap:20px}
-.curve-head .panel-title{margin-bottom:0;font-size:18px}
-.legend{display:flex;gap:20px;color:#e5eef4;font-size:13px;font-weight:800}
-.legend span{display:flex;align-items:center;gap:7px}.legend i{width:28px;height:4px;display:inline-block;border-radius:4px}
-.legend-2025{background:#ff7a20}.legend-2026{background:#19b5fe}
-.curve-chart{height:365px;position:relative;margin-top:4px}
-.curve-chart svg{width:100%;height:100%;overflow:visible}
-.curve-grid line{stroke:rgba(255,255,255,.13);stroke-width:1}
-.curve-axis{stroke:#89959c;stroke-width:1.4}
-.curve{fill:none;stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
-.curve-2025{stroke:#ff7a20}.curve-2026{stroke:#19b5fe}
-.point-2025{fill:#ff7a20;stroke:#ffd6bc;stroke-width:2}
-.point-2026{fill:#19b5fe;stroke:#d8f6ff;stroke-width:2}
-.value-2025,.value-2026{font-size:12px;font-weight:900;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:4px;stroke-linejoin:round}
-.value-2025{fill:#ffb27a}.value-2026{fill:#8cddff}
-.ytext{fill:#9aa9b2;font-size:11px;font-weight:800}
-.xtext{fill:#c3cdd3;font-size:11px;text-anchor:middle;font-weight:800}
-.curve-note{font-size:11px;color:#9fb0ba;margin-top:3px;text-align:center;line-height:1.4}
-.analysis-layout{margin-top:12px;display:grid;grid-template-columns:1.25fr .75fr;gap:12px}
-.analysis-panel{background:rgba(0,0,0,.72);border:1px solid #075b7d;border-radius:8px;padding:12px 15px;display:flex;flex-direction:column;gap:7px}
-.panel-title{font-size:17px;font-weight:900;letter-spacing:1.5px;color:#fff;margin-bottom:3px}
-.analysis-card{display:flex;gap:10px;padding:9px 11px;border:1px solid rgba(56,189,248,.25);border-radius:8px;background:rgba(255,255,255,.045)}
-.analysis-icon{font-size:22px;line-height:1}.analysis-card strong{font-size:13px;color:#fff}.analysis-card p{font-size:11px;line-height:1.32;color:#c3cdd3;margin-top:3px}
-.revenue-summary{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:10px;text-align:left}
-.revenue-summary>div{padding:9px 12px;border-left:4px solid #16a9df;background:rgba(255,255,255,.06);border-radius:5px}
-.revenue-summary b{display:block;color:#38bdf8;font-size:11px;letter-spacing:.8px;margin-bottom:3px}.revenue-summary span{font-size:12px;color:#dbeafe;font-weight:700}
+@media(max-width:800px){
+  .revenue-slide{padding:82px 12px 58px;overflow:auto}.revenue-content{height:auto;display:flex;flex-direction:column;gap:8px}.revenue-content>.small-title,.revenue-content>.revenue-subtitle{width:100%}.curve-panel{height:390px}.analysis-layout{width:100%}.revenue-summary{width:100%}.revenue-bottom{width:100%;grid-template-columns:1fr}.curve-chart{min-height:300px}.value-2025,.value-2026{font-size:9px}
+}
 @media(max-width:800px){
   .curve-chart{height:285px}.curve-panel{padding:10px}.value-2025,.value-2026{font-size:9px}
   .analysis-layout{grid-template-columns:1fr}.revenue-summary{grid-template-columns:1fr 1fr}
@@ -127,8 +81,61 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .material{padding:16px;display:flex;align-items:center;text-align:left;gap:15px}.material-icon{font-size:35px;margin:0}
 .material h3{font-size:18px}.material p{font-size:12px}.slide-number{top:75px;right:18px;font-size:10px}
 .navigation{right:15px;bottom:15px}.navigation button{width:43px;height:43px;font-size:18px}
-.feedback-button{right:15px;bottom:70px;padding:11px 16px;font-size:13px}.footer{left:15px;bottom:20px;font-size:10px}
+.footer{left:15px;bottom:20px;font-size:10px}
 }
+
+/* Final slide */
+.final-slide .content{max-width:1100px}
+.final-slide h2{font-size:clamp(38px,5vw,68px)}
+.final-slide .box{border-color:rgba(56,189,248,.45);}
+
+/* ===== SLIDE 2 CURVE - FIXED ===== */
+.revenue-slide{background:#000!important;color:#fff;overflow:hidden}
+.revenue-slide .revenue-content{position:relative;z-index:10;max-width:1500px;width:calc(100% - 40px);margin:0 auto}
+.revenue-slide .curve-panel{display:block!important;visibility:visible!important;opacity:1!important;background:#050505;border:2px solid #08769d;border-radius:8px;padding:12px 18px 8px;height:390px;box-sizing:border-box}
+.revenue-slide .curve-head{display:flex;align-items:center;justify-content:space-between;height:30px}
+.revenue-slide .panel-title{font-size:18px;font-weight:900;letter-spacing:1.5px;color:#fff}
+.revenue-slide .legend{display:flex;gap:24px;font-size:13px;font-weight:900;color:#fff}
+.revenue-slide .legend span{display:flex;align-items:center;gap:7px}
+.revenue-slide .legend i{display:inline-block;width:30px;height:5px;border-radius:4px}
+.revenue-slide .legend-2025{background:#ff7a20}
+.revenue-slide .legend-2026{background:#19b5fe}
+.revenue-slide .curve-chart{display:block!important;height:325px;width:100%;position:relative}
+.revenue-slide .curve-chart svg{display:block!important;width:100%!important;height:100%!important;overflow:visible}
+.revenue-slide .curve-grid line{stroke:#26343c!important;stroke-width:1!important}
+.revenue-slide .curve-axis{stroke:#aab5bb!important;stroke-width:1.5!important}
+.revenue-slide .curve{fill:none!important;stroke-width:5!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.revenue-slide .curve-2025{stroke:#ff7a20!important}
+.revenue-slide .curve-2026{stroke:#19b5fe!important}
+.revenue-slide .point-2025{fill:#ff7a20!important;stroke:#fff!important;stroke-width:2!important}
+.revenue-slide .point-2026{fill:#19b5fe!important;stroke:#fff!important;stroke-width:2!important}
+.revenue-slide .value-2025,.revenue-slide .value-2026{font-family:Arial,sans-serif!important;font-size:12px!important;font-weight:900!important;text-anchor:middle!important;paint-order:stroke!important;stroke:#000!important;stroke-width:4px!important}
+.revenue-slide .value-2025{fill:#ffb27a!important}
+.revenue-slide .value-2026{fill:#8cddff!important}
+.revenue-slide .ytext,.revenue-slide .xtext{fill:#d5dde2!important;font-family:Arial,sans-serif!important;font-weight:800!important}
+.revenue-slide .ytext{font-size:11px!important}
+.revenue-slide .xtext{font-size:11px!important;text-anchor:middle!important}
+.revenue-slide .curve-note{font-size:10px;color:#8fa3ad;text-align:center;margin:0}
+.revenue-slide .analysis-layout{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+.revenue-slide .analysis-panel{background:#070707;border:1px solid #075b7d;border-radius:8px;padding:10px 14px}
+.revenue-slide .analysis-panel .panel-title{font-size:16px;margin-bottom:5px}
+.revenue-slide .analysis-layout .analysis-card{display:inline-flex;vertical-align:top;width:19%;margin-right:.7%;box-sizing:border-box;min-height:82px;padding:8px;gap:7px;background:#0b1114;border:1px solid #18485c;border-radius:6px}
+.revenue-slide .analysis-layout .analysis-card:last-child{margin-right:0}
+.revenue-slide .analysis-icon{font-size:20px}
+.revenue-slide .analysis-card strong{font-size:11px}
+.revenue-slide .analysis-card p{font-size:9px;line-height:1.25;margin:2px 0 0;color:#c8d2d8}
+.revenue-slide .revenue-summary{display:flex;gap:10px;margin-top:8px}
+.revenue-slide .revenue-summary>div{flex:1;padding:7px 10px;background:#091015;border-left:3px solid #19b5fe;border-radius:4px}
+.revenue-slide .revenue-summary b{font-size:9px;color:#65cfff;display:block}
+.revenue-slide .revenue-summary span{font-size:11px;color:#fff;font-weight:800}
+@media(max-width:900px){
+ .revenue-slide{overflow:auto!important}
+ .revenue-slide .curve-panel{height:340px}
+ .revenue-slide .curve-chart{height:275px}
+ .revenue-slide .analysis-layout .analysis-card{width:100%;margin:3px 0}
+ .revenue-slide .revenue-summary{display:grid;grid-template-columns:1fr 1fr}
+}
+
 </style>
 </head>
 <body>
@@ -168,55 +175,54 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 <div class="content revenue-content">
   <div class="small-title">MATERI 01 • ANALISA PERBANDINGAN</div>
   <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
-  <div class="revenue-subtitle">Satuan: juta rupiah (JT) • 2026 merupakan data Januari–September</div>
+  <div class="revenue-subtitle">Satuan: juta rupiah (JT) • 2026: Januari–September</div>
 
   <div class="curve-panel">
     <div class="curve-head">
-      <div class="panel-title">CURVE PENDAPATAN 2025 &amp; 2026</div>
+      <div class="panel-title">CURVE PENDAPATAN</div>
       <div class="legend"><span><i class="legend-2025"></i>2025</span><span><i class="legend-2026"></i>2026</span></div>
     </div>
     <div class="curve-chart">
-<svg viewBox="0 0 1200 390" preserveAspectRatio="none" aria-label="Curve pendapatan 2025 dan 2026 dalam juta rupiah">
-  <g class="curve-grid"><line x1="65" y1="330.0" x2="1165" y2="330.0"/><line x1="65" y1="271.0" x2="1165" y2="271.0"/><line x1="65" y1="212.0" x2="1165" y2="212.0"/><line x1="65" y1="153.0" x2="1165" y2="153.0"/><line x1="65" y1="94.0" x2="1165" y2="94.0"/><line x1="65" y1="35.0" x2="1165" y2="35.0"/></g>
-  <line class="curve-axis" x1="65" y1="35" x2="65" y2="330"/>
-  <line class="curve-axis" x1="65" y1="330" x2="1165" y2="330"/>
-  <g><text x="15" y="334.0" class="ytext">80 JT</text><text x="15" y="275.0" class="ytext">100 JT</text><text x="15" y="216.0" class="ytext">120 JT</text><text x="15" y="157.0" class="ytext">140 JT</text><text x="15" y="98.0" class="ytext">160 JT</text><text x="15" y="39.0" class="ytext">180 JT</text></g>
-  <path class="curve curve-2025" d="M 65.0 262.1 C 115.0 262.1, 115.0 288.7, 165.0 288.7 C 215.0 288.7, 215.0 300.5, 265.0 300.5 C 315.0 300.5, 315.0 300.5, 365.0 300.5 C 415.0 300.5, 415.0 238.6, 465.0 238.6 C 515.0 238.6, 515.0 212.0, 565.0 212.0 C 615.0 212.0, 615.0 203.2, 665.0 203.2 C 715.0 203.2, 715.0 161.9, 765.0 161.9 C 815.0 161.9, 815.0 73.4, 865.0 73.4 C 915.0 73.4, 915.0 164.8, 965.0 164.8 C 1015.0 164.8, 1015.0 217.9, 1065.0 217.9 C 1115.0 217.9, 1115.0 271.0, 1165.0 271.0"/>
-  <path class="curve curve-2026" d="M 65.0 241.5 C 115.0 241.5, 115.0 167.8, 165.0 167.8 C 215.0 167.8, 215.0 238.6, 265.0 238.6 C 315.0 238.6, 315.0 235.6, 365.0 235.6 C 415.0 235.6, 415.0 250.3, 465.0 250.3 C 515.0 250.3, 515.0 197.2, 565.0 197.2 C 615.0 197.2, 615.0 212.0, 665.0 212.0 C 715.0 212.0, 715.0 123.5, 765.0 123.5 C 815.0 123.5, 815.0 73.4, 865.0 73.4"/>
-  <g><circle class="point-2025" cx="65.0" cy="262.1" r="5.5"/><circle class="point-2025" cx="165.0" cy="288.7" r="5.5"/><circle class="point-2025" cx="265.0" cy="300.5" r="5.5"/><circle class="point-2025" cx="365.0" cy="300.5" r="5.5"/><circle class="point-2025" cx="465.0" cy="238.6" r="5.5"/><circle class="point-2025" cx="565.0" cy="212.0" r="5.5"/><circle class="point-2025" cx="665.0" cy="203.2" r="5.5"/><circle class="point-2025" cx="765.0" cy="161.9" r="5.5"/><circle class="point-2025" cx="865.0" cy="73.4" r="5.5"/><circle class="point-2025" cx="965.0" cy="164.8" r="5.5"/><circle class="point-2025" cx="1065.0" cy="217.9" r="5.5"/><circle class="point-2025" cx="1165.0" cy="271.0" r="5.5"/></g>
-  <g><circle class="point-2026" cx="65.0" cy="241.5" r="5.5"/><circle class="point-2026" cx="165.0" cy="167.8" r="5.5"/><circle class="point-2026" cx="265.0" cy="238.6" r="5.5"/><circle class="point-2026" cx="365.0" cy="235.6" r="5.5"/><circle class="point-2026" cx="465.0" cy="250.3" r="5.5"/><circle class="point-2026" cx="565.0" cy="197.2" r="5.5"/><circle class="point-2026" cx="665.0" cy="212.0" r="5.5"/><circle class="point-2026" cx="765.0" cy="123.5" r="5.5"/><circle class="point-2026" cx="865.0" cy="73.4" r="5.5"/></g>
-  <g class="labels-2025"><text class="value-2025" x="65.0" y="250.1">Rp103 JT</text><text class="value-2025" x="165.0" y="276.7">Rp94 JT</text><text class="value-2025" x="265.0" y="288.5">Rp90 JT</text><text class="value-2025" x="365.0" y="288.5">Rp90 JT</text><text class="value-2025" x="465.0" y="226.6">Rp111 JT</text><text class="value-2025" x="565.0" y="200.0">Rp120 JT</text><text class="value-2025" x="665.0" y="191.2">Rp123 JT</text><text class="value-2025" x="765.0" y="149.9">Rp137 JT</text><text class="value-2025" x="865.0" y="61.4">Rp167 JT</text><text class="value-2025" x="965.0" y="152.8">Rp136 JT</text><text class="value-2025" x="1065.0" y="205.9">Rp118 JT</text><text class="value-2025" x="1165.0" y="259.0">Rp100 JT</text></g>
-  <g class="labels-2026"><text class="value-2026" x="65.0" y="260.5">Rp110 JT</text><text class="value-2026" x="165.0" y="186.8">Rp135 JT</text><text class="value-2026" x="265.0" y="257.6">Rp111 JT</text><text class="value-2026" x="365.0" y="254.6">Rp112 JT</text><text class="value-2026" x="465.0" y="269.4">Rp107 JT</text><text class="value-2026" x="565.0" y="216.2">Rp125 JT</text><text class="value-2026" x="665.0" y="231.0">Rp120 JT</text><text class="value-2026" x="765.0" y="142.5">Rp150 JT</text><text class="value-2026" x="865.0" y="92.4">Rp167 JT</text></g>
-  <g><text x="65.0" y="365" class="xtext">JAN</text><text x="165.0" y="365" class="xtext">FEB</text><text x="265.0" y="365" class="xtext">MAR</text><text x="365.0" y="365" class="xtext">APR</text><text x="465.0" y="365" class="xtext">MEI</text><text x="565.0" y="365" class="xtext">JUN</text><text x="665.0" y="365" class="xtext">JUL</text><text x="765.0" y="365" class="xtext">AGT</text><text x="865.0" y="365" class="xtext">SEP</text><text x="965.0" y="365" class="xtext">OKT</text><text x="1065.0" y="365" class="xtext">NOV</text><text x="1165.0" y="365" class="xtext">DES</text></g>
-</svg>
-</div>
-    <div class="curve-note"><b>Data asli:</b> angka pada curve menggunakan data pendapatan yang Anda berikan. 2025 lengkap Januari–Desember, sedangkan 2026 sampai September.</div>
-  </div>
-
-  <div class="revenue-summary">
-    <div><b>JAN–SEP 2025</b><span>Rp1,035 juta</span></div>
-    <div><b>JAN–SEP 2026</b><span>Rp1,137 juta</span></div>
-    <div><b>PERTUMBUHAN</b><span>+Rp102 juta • +9.86%</span></div>
-    <div><b>PROYEKSI 2026*</b><span>±Rp1,516 juta</span></div>
+      <svg viewBox="0 0 1200 390" preserveAspectRatio="none" aria-label="Curve pendapatan 2025 dan 2026">
+        <g class="curve-grid"><line x1="65" y1="330" x2="1165" y2="330"/><line x1="65" y1="271" x2="1165" y2="271"/><line x1="65" y1="212" x2="1165" y2="212"/><line x1="65" y1="153" x2="1165" y2="153"/><line x1="65" y1="94" x2="1165" y2="94"/><line x1="65" y1="35" x2="1165" y2="35"/></g>
+        <line class="curve-axis" x1="65" y1="35" x2="65" y2="330"/><line class="curve-axis" x1="65" y1="330" x2="1165" y2="330"/>
+        <g><text x="15" y="334" class="ytext">80</text><text x="15" y="275" class="ytext">100</text><text x="15" y="216" class="ytext">120</text><text x="15" y="157" class="ytext">140</text><text x="15" y="98" class="ytext">160</text><text x="15" y="39" class="ytext">180</text></g>
+        <path class="curve curve-2025" d="M65 262.1 C115 262.1 115 288.7 165 288.7 C215 288.7 215 300.5 265 300.5 C315 300.5 315 300.5 365 300.5 C415 300.5 415 238.6 465 238.6 C515 238.6 515 212 565 212 C615 212 615 203.2 665 203.2 C715 203.2 715 161.9 765 161.9 C815 161.9 815 73.4 865 73.4 C915 73.4 915 164.8 965 164.8 C1015 164.8 1015 217.9 1065 217.9 C1115 217.9 1115 271 1165 271"/>
+        <path class="curve curve-2026" d="M65 241.5 C115 241.5 115 167.8 165 167.8 C215 167.8 215 238.6 265 238.6 C315 238.6 315 235.6 365 235.6 C415 235.6 415 250.3 465 250.3 C515 250.3 515 197.2 565 197.2 C615 197.2 615 212 665 212 C715 212 715 123.5 765 123.5 C815 123.5 815 73.4 865 73.4"/>
+        <g>
+          <circle class="point-2025" cx="65" cy="262.1" r="5.5"/><circle class="point-2025" cx="165" cy="288.7" r="5.5"/><circle class="point-2025" cx="265" cy="300.5" r="5.5"/><circle class="point-2025" cx="365" cy="300.5" r="5.5"/><circle class="point-2025" cx="465" cy="238.6" r="5.5"/><circle class="point-2025" cx="565" cy="212" r="5.5"/><circle class="point-2025" cx="665" cy="203.2" r="5.5"/><circle class="point-2025" cx="765" cy="161.9" r="5.5"/><circle class="point-2025" cx="865" cy="73.4" r="5.5"/><circle class="point-2025" cx="965" cy="164.8" r="5.5"/><circle class="point-2025" cx="1065" cy="217.9" r="5.5"/><circle class="point-2025" cx="1165" cy="271" r="5.5"/>
+          <circle class="point-2026" cx="65" cy="241.5" r="5.5"/><circle class="point-2026" cx="165" cy="167.8" r="5.5"/><circle class="point-2026" cx="265" cy="238.6" r="5.5"/><circle class="point-2026" cx="365" cy="235.6" r="5.5"/><circle class="point-2026" cx="465" cy="250.3" r="5.5"/><circle class="point-2026" cx="565" cy="197.2" r="5.5"/><circle class="point-2026" cx="665" cy="212" r="5.5"/><circle class="point-2026" cx="765" cy="123.5" r="5.5"/><circle class="point-2026" cx="865" cy="73.4" r="5.5"/>
+        </g>
+        
+        <g class="labels-2025"><text class="value-2025" x="65" y="250">Rp103</text><text class="value-2025" x="165" y="277">Rp94</text><text class="value-2025" x="265" y="289">Rp90</text><text class="value-2025" x="365" y="289">Rp90</text><text class="value-2025" x="465" y="227">Rp111</text><text class="value-2025" x="565" y="200">Rp120</text><text class="value-2025" x="665" y="191">Rp123</text><text class="value-2025" x="765" y="150">Rp137</text><text class="value-2025" x="865" y="61">Rp167</text><text class="value-2025" x="965" y="153">Rp136</text><text class="value-2025" x="1065" y="206">Rp118</text><text class="value-2025" x="1165" y="259">Rp100</text></g>
+        <g class="labels-2026"><text class="value-2026" x="65" y="261">Rp110</text><text class="value-2026" x="165" y="187">Rp135</text><text class="value-2026" x="265" y="258">Rp111</text><text class="value-2026" x="365" y="255">Rp112</text><text class="value-2026" x="465" y="269">Rp107</text><text class="value-2026" x="565" y="216">Rp125</text><text class="value-2026" x="665" y="231">Rp120</text><text class="value-2026" x="765" y="143">Rp150</text><text class="value-2026" x="865" y="92">Rp167</text></g>
+        <g><text x="65" y="365" class="xtext">JAN</text><text x="165" y="365" class="xtext">FEB</text><text x="265" y="365" class="xtext">MAR</text><text x="365" y="365" class="xtext">APR</text><text x="465" y="365" class="xtext">MEI</text><text x="565" y="365" class="xtext">JUN</text><text x="665" y="365" class="xtext">JUL</text><text x="765" y="365" class="xtext">AGS</text><text x="865" y="365" class="xtext">SEP</text><text x="965" y="365" class="xtext">OKT</text><text x="1065" y="365" class="xtext">NOV</text><text x="1165" y="365" class="xtext">DES</text></g>
+      </svg>
+    </div>
+    <div class="curve-note">Angka adalah data pendapatan yang Anda berikan • 2026 tersedia sampai September</div>
   </div>
 
   <div class="analysis-layout">
     <div class="analysis-panel">
       <div class="panel-title">ANALISA POSITIF 2026</div>
-      <div class="analysis-card"><span class="analysis-icon">📈</span><div><strong>2026 tumbuh dibanding periode yang sama</strong><p>Januari–September 2026 mencapai <b>Rp1,137 juta</b>, lebih tinggi Rp102 juta atau <b>+9.86%</b> dibanding Januari–September 2025 yang sebesar Rp1,035 juta.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>Kenaikan paling kuat terjadi di Februari–April</strong><p>Februari 2026 mencapai Rp135 juta vs Rp94 juta pada 2025 (+43,6%). Maret Rp111 juta vs Rp90 juta (+23,3%), dan April Rp112 juta vs Rp90 juta (+24,4%). Ini menunjukkan awal 2026 memiliki momentum penjualan yang lebih baik.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🏆</span><div><strong>Agustus 2026 menunjukkan penguatan kembali</strong><p>Pendapatan naik menjadi <b>Rp150 juta</b>, dibanding Rp137 juta pada Agustus 2025. September 2026 juga mencapai <b>Rp167 juta</b>, sama dengan September 2025 dan menjadi salah satu titik tertinggi.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Fokus 2026: menjaga konsistensi level tinggi</strong><p>Rata-rata Januari–September 2026 sekitar <b>Rp126,3 juta/bulan</b>, lebih tinggi dari Rp115 juta/bulan pada periode yang sama 2025. Tantangan berikutnya adalah mempertahankan performa tersebut sampai akhir tahun.</p></div></div>
-    </div>
-
-    <div class="analysis-panel">
-      <div class="panel-title">KESIMPULAN 2026</div>
-      <div class="analysis-card"><span class="analysis-icon">✅</span><div><strong>Tren secara keseluruhan positif</strong><p>2026 memiliki rata-rata pendapatan yang lebih tinggi pada periode Januari–September dibanding 2025.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">💰</span><div><strong>Potensi akhir tahun masih besar</strong><p>Jika rata-rata Jan–Sep 2026 dapat dipertahankan, proyeksi setahun sekitar <b>Rp1,516 juta</b>, atau sekitar <b>+9.14%</b> dibanding total 2025.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🔥</span><div><strong>Prioritas</strong><p>Perkuat stok produk cepat laku, penjualan online, follow-up pelanggan, bundling/cross-selling, dan evaluasi target secara mingguan.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">📈</span><div><strong>Pendapatan 2026 lebih kuat pada periode yang sama</strong><p>Januari–September 2026 mencapai Rp1.137 juta, lebih tinggi Rp102 juta dibanding periode yang sama 2025.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>Momentum awal 2026 sangat baik</strong><p>Februari mencapai Rp135 juta, Maret Rp111 juta, dan April Rp112 juta. Performa ini berada di atas bulan yang sama pada 2025.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🏆</span><div><strong>Agustus–September kembali menguat</strong><p>Agustus 2026 mencapai Rp150 juta dan September Rp167 juta. September menjadi titik tertinggi 2026 sejauh data tersedia.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">💡</span><div><strong>Nilai barang tetap berada pada kisaran yang hampir sama</strong><p>Nilai barang pada 2025 dan 2026 berada di kisaran Rp700–800 juta. Dengan nilai barang yang relatif sama, pendapatan 2026 menunjukkan hasil yang lebih baik.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Tantangan sekaligus peluang</strong><p>Kenaikan harga dan kelangkaan chip dapat menekan daya beli. Namun, kondisi ini dapat menjadi peluang untuk mengatur stok lebih cepat, memilih produk yang tepat, dan meningkatkan nilai transaksi.</p></div></div>
     </div>
   </div>
-  <div class="curve-note" style="text-align:left;margin-top:5px">*Proyeksi 2026 adalah simulasi sederhana jika rata-rata Januari–September tetap bertahan hingga Desember; bukan angka realisasi.</div>
+
+  <div class="revenue-summary">
+    <div><b>JAN–SEP 2025</b><span>Rp1.035 juta</span></div>
+    <div><b>JAN–SEP 2026</b><span>Rp1.137 juta</span></div>
+  </div>
+
+  <div class="revenue-bottom">
+    <div class="bottom-card"><h3>⚠ TANTANGAN 2026</h3><p>Kenaikan harga komponen, logistik, kurs, serta <strong>kelangkaan chip</strong> membuat pengelolaan stok dan harga harus lebih cermat.</p></div>
+    <div class="bottom-card"><h3>💡 PELUANG</h3><p>Dengan nilai barang yang hampir sama di kisaran <strong>Rp700–800 juta</strong>, peningkatan pendapatan menunjukkan ruang untuk memperbaiki strategi penjualan.</p></div>
+    <div class="bottom-card"><h3>✅ ARAH 2026</h3><p>Perkuat produk cepat laku, penjualan online, follow-up pelanggan, bundling/cross-selling, dan evaluasi target secara rutin.</p></div>
+  </div>
 </div>
 </section>
 <section class="slide slide3">
@@ -244,26 +250,7 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 <section class="slide"><div class="grid"></div><div class="slide-number">08 / 11</div><div class="content"><div class="small-title">MATERI 07</div><h2>⭐ <span class="highlight">MENJADI SDM UNGGUL</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
 <section class="slide"><div class="grid"></div><div class="slide-number">09 / 11</div><div class="content"><div class="small-title">MATERI 08</div><h2>📋 <span class="blue">PROKER</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
 <section class="slide"><div class="grid"></div><div class="slide-number">10 / 11</div><div class="content"><div class="small-title">MATERI 09</div><h2>🕐 <span class="highlight">ABSENSI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">11 / 11</div><div class="content"><div class="small-title">MATERI 10</div><h2>🎯 <span class="blue">SEMAKIN TAHUN, TANTANGAN BERBEDA</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-
-<button class="feedback-button" onclick="openFeedback()">💬 Saran & Kritik</button>
-
-<div class="feedback-modal" id="feedbackModal">
-<div class="feedback-box">
-<h2>💬 Saran & Kritik</h2>
-<div class="subtitle">Berikan masukan untuk perkembangan Norton Bali Computer.</div>
-<label>Nama</label>
-<input type="text" id="feedbackName" placeholder="Masukkan nama">
-<label>Saran / Kritik</label>
-<textarea id="feedbackMessage" placeholder="Tuliskan saran atau kritik Anda..."></textarea>
-<div class="feedback-actions">
-<button class="btn-close" onclick="closeFeedback()">Tutup</button>
-<button class="btn-save" onclick="saveFeedback()">💾 Simpan</button>
-</div>
-<div class="feedback-status" id="feedbackStatus"></div>
-<div class="feedback-list" id="feedbackList"></div>
-</div>
-</div>
+<section class="slide final-slide"><div class="grid"></div><div class="slide-number">11 / 11 • SLIDE TERAKHIR</div><div class="content"><div class="small-title">MATERI 10</div><h2>🎯 <span class="blue">SEMAKIN TAHUN, TANTANGAN BERBEDA</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
 
 <div class="footer">Norton Bali Computer • Presentasi</div>
 <div class="navigation">
@@ -302,36 +289,6 @@ document.addEventListener("touchend",e=>{
  if(distance>70)previousSlide();
 });
 
-function openFeedback(){
- document.getElementById("feedbackModal").classList.add("active");
- loadFeedback();
-}
-function closeFeedback(){
- document.getElementById("feedbackModal").classList.remove("active");
-}
-function saveFeedback(){
- const name=document.getElementById("feedbackName").value.trim()||"Anonim";
- const message=document.getElementById("feedbackMessage").value.trim();
- if(!message){alert("Silakan isi saran atau kritik terlebih dahulu.");return}
- let feedbacks=JSON.parse(localStorage.getItem("nortonBaliFeedback")||"[]");
- feedbacks.push({name,message,date:new Date().toLocaleString("id-ID")});
- localStorage.setItem("nortonBaliFeedback",JSON.stringify(feedbacks));
- document.getElementById("feedbackName").value="";
- document.getElementById("feedbackMessage").value="";
- document.getElementById("feedbackStatus").innerText="✓ Saran & kritik berhasil disimpan";
- loadFeedback();
-}
-function loadFeedback(){
- const list=document.getElementById("feedbackList");
- const feedbacks=JSON.parse(localStorage.getItem("nortonBaliFeedback")||"[]");
- if(!feedbacks.length){list.innerHTML="";return}
- list.innerHTML=feedbacks.slice().reverse().map(x=>`
- <div class="feedback-item"><b>${escapeHtml(x.name)}</b> • ${escapeHtml(x.date)}<br>${escapeHtml(x.message)}</div>
- `).join("");
-}
-function escapeHtml(text){
- return text.replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]));
-}
 showSlide(0);
 </script>
 </body>
