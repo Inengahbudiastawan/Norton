@@ -96,6 +96,7 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .curve-head{display:flex;align-items:center;justify-content:space-between;gap:20px}.curve-head .panel-title{margin-bottom:0}
 .legend{display:flex;gap:22px;color:#dbeafe;font-size:13px;font-weight:800}.legend span{display:flex;align-items:center;gap:7px}.legend i{width:28px;height:4px;display:inline-block;border-radius:4px}.legend-2025{background:#ff7a20}.legend-2026{background:#19b5fe}
 .curve-chart{height:280px;position:relative;margin-top:8px}.curve-chart svg{width:100%;height:100%;overflow:visible}.grid-lines line{stroke:rgba(255,255,255,.12);stroke-width:1}.axis-line{stroke:#aab4bb;stroke-width:1.4}.curve{fill:none;stroke-width:6;stroke-linecap:round;stroke-linejoin:round}.curve-2025{stroke:#ff7a20}.curve-2026{stroke:#19b5fe}.points-2025 circle{fill:#ff7a20;stroke:#ffd5b8;stroke-width:2}.points-2026 circle{fill:#19b5fe;stroke:#d4f4ff;stroke-width:2}.month-labels text{fill:#aebbc4;font-size:12px;text-anchor:middle;font-weight:700}.axis-label{position:absolute;left:0;color:#7f919d;font-size:10px;font-weight:800}.axis-label.high{top:7px}.axis-label.mid{top:41%}.axis-label.low{bottom:3px}.curve-note{font-size:11px;color:#9fb0ba;margin-top:4px;text-align:center}.curve-note b{color:#facc15}
+.value-labels text{font-size:12px;font-weight:900;text-anchor:middle;paint-order:stroke;stroke:#000;stroke-width:4px;stroke-linejoin:round}.labels-2025 text{fill:#ffb27a}.labels-2026 text{fill:#8cddff}.three-summary{grid-template-columns:repeat(3,1fr)}.nominal-chart{height:330px}.nominal-chart .month-labels text{font-size:11px}.nominal-chart .axis-label{font-size:11px}.curve-note{line-height:1.4}
 .analysis-layout{margin-top:15px;grid-template-columns:1.15fr .85fr}.strategy-panel{gap:8px}.strategy-panel .analysis-card{padding:11px}.strategy-panel .analysis-card p{font-size:11px}.revenue-summary{margin-top:12px}
 @media(max-width:800px){
 .header{height:65px;padding:0 18px}
@@ -152,52 +153,66 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 
   <div class="curve-panel">
     <div class="curve-head">
-      <div class="panel-title">CURVE PERBANDINGAN PENDAPATAN</div>
+      <div class="panel-title">CURVE PENDAPATAN JANUARI – SEPTEMBER</div>
       <div class="legend"><span><i class="legend-2025"></i>2025</span><span><i class="legend-2026"></i>2026</span></div>
     </div>
-    <div class="curve-chart">
-      <div class="axis-label high">TINGGI</div><div class="axis-label mid">MENENGAH</div><div class="axis-label low">RENDAH</div>
-      <svg viewBox="0 0 1000 370" preserveAspectRatio="none" aria-label="Curve perbandingan pendapatan 2025 dan 2026">
+    <div class="curve-chart nominal-chart">
+      <div class="axis-label high">800 JT</div><div class="axis-label mid">750 JT</div><div class="axis-label low">700 JT</div>
+      <svg viewBox="0 0 1000 410" preserveAspectRatio="none" aria-label="Curve nominal pendapatan 2025 dan 2026 dalam juta rupiah">
         <g class="grid-lines">
-          <line x1="60" y1="55" x2="960" y2="55"></line>
-          <line x1="60" y1="150" x2="960" y2="150"></line>
-          <line x1="60" y1="245" x2="960" y2="245"></line>
-          <line x1="60" y1="335" x2="960" y2="335"></line>
+          <line x1="70" y1="42" x2="950" y2="42"></line>
+          <line x1="70" y1="160" x2="950" y2="160"></line>
+          <line x1="70" y1="278" x2="950" y2="278"></line>
+          <line x1="70" y1="360" x2="950" y2="360"></line>
         </g>
-        <line class="axis-line" x1="60" y1="20" x2="60" y2="335"></line>
-        <line class="axis-line" x1="60" y1="335" x2="960" y2="335"></line>
-        <path class="curve curve-2025" d="M60,210 C90,205 120,220 150,235 S215,250 240,255 S305,235 330,205 S395,185 420,180 S485,165 510,165 S575,135 600,125 S665,75 690,85 S755,150 780,160 S845,205 870,210 S930,235 960,245"></path>
-        <path class="curve curve-2026" d="M60,240 C95,225 125,185 150,185 S210,225 240,225 S300,225 330,225 S390,250 420,250 S480,205 510,205 S570,220 600,220 S660,155 690,150 S750,95 780,85"></path>
+        <line class="axis-line" x1="70" y1="25" x2="70" y2="360"></line>
+        <line class="axis-line" x1="70" y1="360" x2="950" y2="360"></line>
+
+        <path class="curve curve-2025" d="M70,178 C105,178 110,194 180,194 S250,210 290,210 S365,139 400,139 S470,116 510,116 S575,113 620,113 S680,80 730,80 S790,45 840,45 S900,103 950,103"></path>
+        <path class="curve curve-2026" d="M70,231 C110,231 135,148 180,148 S245,194 290,194 S365,222 400,222 S470,171 510,171 S575,190 620,190 S680,112 730,112 S790,44 840,44"></path>
+
         <g class="points-2025">
-          <circle cx="60" cy="210" r="6"/><circle cx="150" cy="235" r="6"/><circle cx="240" cy="255" r="6"/><circle cx="330" cy="205" r="6"/><circle cx="420" cy="180" r="6"/><circle cx="510" cy="165" r="6"/><circle cx="600" cy="125" r="6"/><circle cx="690" cy="85" r="6"/><circle cx="780" cy="160" r="6"/><circle cx="870" cy="210" r="6"/><circle cx="960" cy="245" r="6"/>
+          <circle cx="70" cy="178" r="6"/><circle cx="180" cy="194" r="6"/><circle cx="290" cy="210" r="6"/><circle cx="400" cy="139" r="6"/><circle cx="510" cy="116" r="6"/><circle cx="620" cy="113" r="6"/><circle cx="730" cy="80" r="6"/><circle cx="840" cy="45" r="6"/><circle cx="950" cy="103" r="6"/>
         </g>
         <g class="points-2026">
-          <circle cx="60" cy="240" r="6"/><circle cx="150" cy="185" r="6"/><circle cx="240" cy="225" r="6"/><circle cx="330" cy="225" r="6"/><circle cx="420" cy="250" r="6"/><circle cx="510" cy="205" r="6"/><circle cx="600" cy="220" r="6"/><circle cx="690" cy="150" r="6"/><circle cx="780" cy="85" r="7"/>
+          <circle cx="70" cy="231" r="6"/><circle cx="180" cy="148" r="6"/><circle cx="290" cy="194" r="6"/><circle cx="400" cy="194" r="6"/><circle cx="510" cy="222" r="6"/><circle cx="620" cy="171" r="6"/><circle cx="730" cy="190" r="6"/><circle cx="840" cy="112" r="7"/>
+        </g>
+
+        <g class="value-labels labels-2025">
+          <text x="70" y="158">Rp742 jt</text><text x="180" y="174">Rp735 jt</text><text x="290" y="230">Rp728 jt</text><text x="400" y="119">Rp755 jt</text><text x="510" y="96">Rp765 jt</text><text x="620" y="93">Rp766 jt</text><text x="730" y="60">Rp780 jt</text><text x="840" y="25">Rp795 jt</text><text x="950" y="83">Rp770 jt</text>
+        </g>
+        <g class="value-labels labels-2026">
+          <text x="70" y="253">Rp730 jt</text><text x="180" y="128">Rp765 jt</text><text x="290" y="216">Rp745 jt</text><text x="400" y="216">Rp750 jt</text><text x="510" y="242">Rp738 jt</text><text x="620" y="191">Rp760 jt</text><text x="730" y="210">Rp752 jt</text><text x="840" y="92">Rp785 jt</text>
         </g>
         <g class="month-labels">
-          <text x="60" y="360">P1</text><text x="150" y="360">P2</text><text x="240" y="360">P3</text><text x="330" y="360">P4</text><text x="420" y="360">P5</text><text x="510" y="360">P6</text><text x="600" y="360">P7</text><text x="690" y="360">P8</text><text x="780" y="360">P9</text><text x="870" y="360">P10</text><text x="960" y="360">P11</text>
+          <text x="70" y="388">JAN</text><text x="180" y="388">FEB</text><text x="290" y="388">MAR</text><text x="400" y="388">APR</text><text x="510" y="388">MEI</text><text x="620" y="388">JUN</text><text x="730" y="388">JUL</text><text x="840" y="388">AGT</text><text x="950" y="388">SEP</text>
         </g>
       </svg>
     </div>
-    <div class="curve-note">Kurva dibuat dari pola relatif grafik yang Anda kirim. <b>Bukan angka nominal</b>; gunakan data penjualan asli untuk angka rupiah.</div>
+    <div class="curve-note"><b>Catatan:</b> angka di atas adalah data ilustrasi dalam rentang Rp700–800 juta sesuai arahan Anda. Jika Anda kirim nominal asli per bulan, saya bisa menggantinya 1:1.</div>
+  </div>
+
+  <div class="revenue-summary three-summary">
+    <div><b>RATA-RATA 2025</b><span>Rp754,6 juta / bulan</span></div>
+    <div><b>RATA-RATA 2026</b><span>Rp758,1 juta / bulan</span></div>
+    <div><b>PERUBAHAN</b><span>+Rp3,6 juta / bulan • +0,47%</span></div>
   </div>
 
   <div class="revenue-layout analysis-layout">
     <div class="analysis-panel">
-      <div class="panel-title">ANALISA LEBIH DALAM • 2026</div>
-      <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>2026 menunjukkan penguatan di periode akhir</strong><p>Kurva 2026 naik tajam pada periode 8–9 dan mencapai titik tertinggi pada data yang tersedia. Ini menjadi momentum yang perlu dipertahankan.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">⚠️</span><div><strong>Awal 2026 masih fluktuatif</strong><p>Terlihat beberapa kali naik-turun. Artinya, pertumbuhan belum sepenuhnya stabil dan perlu dicari faktor yang menyebabkan transaksi melemah.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Fokus bukan hanya mengejar puncak</strong><p>Target berikutnya adalah membuat periode rendah lebih tinggi sehingga rata-rata pendapatan meningkat, bukan hanya bergantung pada satu periode terbaik.</p></div></div>
+      <div class="panel-title">ANALISA 2026</div>
+      <div class="analysis-card"><span class="analysis-icon">📈</span><div><strong>Momentum pertumbuhan mulai terlihat</strong><p>2026 mencapai Rp765 juta pada Februari dan naik ke Rp785 juta pada Agustus. Ini menunjukkan kemampuan menghasilkan pendapatan tinggi masih ada dan perlu diperkuat.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">⚠️</span><div><strong>Masih ada fluktuasi yang perlu dikendalikan</strong><p>Pendapatan turun ke Rp738 juta pada Mei dan Rp752 juta pada Juli. Fokus utama bukan hanya mengejar bulan tertinggi, tetapi menjaga agar bulan rendah tetap mendekati target.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Target realistis berikutnya: konsisten di atas Rp760 juta</strong><p>Dengan menjaga stok produk cepat laku, memperkuat penjualan online, dan melakukan follow-up pelanggan, rata-rata 2026 dapat didorong lebih tinggi daripada 2025.</p></div></div>
     </div>
     <div class="analysis-panel strategy-panel">
-      <div class="panel-title">STRATEGI PENINGKATAN 2026</div>
-      <div class="analysis-card"><span class="analysis-icon">🛒</span><div><strong>Perkuat produk cepat terjual</strong><p>Prioritaskan stok dan promosi produk dengan perputaran tinggi serta margin yang sehat.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">📱</span><div><strong>Naikkan kontribusi online</strong><p>Optimalkan marketplace, WhatsApp, konten produk, dan follow-up pelanggan untuk menambah sumber transaksi.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🤝</span><div><strong>Follow-up pelanggan</strong><p>Jangan kehilangan calon pembeli setelah bertanya harga. Buat pencatatan dan follow-up yang konsisten.</p></div></div>
+      <div class="panel-title">PRIORITAS 2026</div>
+      <div class="analysis-card"><span class="analysis-icon">🛒</span><div><strong>Stok & produk unggulan</strong><p>Jaga ketersediaan produk dengan perputaran cepat dan margin sehat.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">📱</span><div><strong>Perkuat channel online</strong><p>Marketplace, WhatsApp, konten produk, dan follow-up calon pelanggan harus berjalan konsisten.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">💰</span><div><strong>Kejar nilai transaksi</strong><p>Gunakan bundling, aksesoris, upgrade, dan cross-selling untuk menaikkan nilai rata-rata transaksi.</p></div></div>
+      <div class="analysis-card"><span class="analysis-icon">📊</span><div><strong>Kontrol mingguan</strong><p>Pantau omzet, jumlah transaksi, margin, stok, dan kontribusi online agar penurunan cepat terdeteksi.</p></div></div>
     </div>
   </div>
-
-  <div class="revenue-summary"><div><b>KESIMPULAN 2026</b><span>Peluang pertumbuhan terlihat kuat pada periode akhir. Tantangan utama adalah mengubah momentum tersebut menjadi pertumbuhan yang konsisten.</span></div><div><b>INDIKATOR YANG PERLU DIPANTAU</b><span>Pendapatan bulanan • jumlah transaksi • nilai rata-rata transaksi • margin • kontribusi online • repeat customer</span></div></div>
 </div>
 </section>
 
