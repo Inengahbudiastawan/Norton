@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Norton Bali Computer - Presentasi Executive</title>
+<title>Norton Bali Computer - Presentasi Executive & Absensi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 /* ===== BASE RESET & FLUID LAYOUT ===== */
-*{margin:0;padding:0;box-sizing:border-box}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html, body {
   width: 100%;
   height: 100%;
@@ -105,11 +105,12 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
 .slide2 { background-image: url("https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=2000&q=85"); }
 .slide3 { background-image: url("https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=2000&q=85"); }
 .slide4 { background-image: url("https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=2000&q=85"); }
+.slide5 { background-image: url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2000&q=85"); }
 
 /* ===== SLIDE 1: MENU MATERI ===== */
 .material-menu {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 16px 36px; margin-top: 20px; width: 100%; max-width: 980px; margin-x: auto;
+  gap: 16px 36px; margin: 20px auto 0; width: 100%; max-width: 980px;
 }
 .menu-col { display: flex; flex-direction: column; gap: 14px; }
 .menu-item { display: flex; align-items: center; gap: 14px; cursor: pointer; }
@@ -182,7 +183,7 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
 .ytext, .xtext { fill: #94a3b8 !important; font-size: 10.5px !important; font-weight: 800 !important; }
 .xtext { text-anchor: middle !important; }
 
-/* ===== PANEL ANALISA (UKURAN TEKS EXTRA BESAR & SANGAT JELAS) ===== */
+/* ===== PANEL ANALISA ===== */
 .analysis-panel {
   background: rgba(15, 23, 42, 0.95); 
   border: 2px solid rgba(56, 189, 248, 0.45);
@@ -250,6 +251,70 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
   flex: 1;
 }
 
+/* ===== SLIDE 5: TABEL ABSENSI & KESEHATAN ===== */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid rgba(56, 189, 248, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  margin-bottom: 12px;
+}
+.attendance-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 13.5px;
+}
+.attendance-table th {
+  background: rgba(2, 132, 199, 0.85);
+  color: #fff;
+  font-weight: 900;
+  padding: 10px 8px;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid #38bdf8;
+}
+.attendance-table td {
+  padding: 9px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  color: #e2e8f0;
+}
+.attendance-table tr:hover {
+  background: rgba(56, 189, 248, 0.1);
+}
+.attendance-table td:nth-child(2) {
+  text-align: left;
+  font-weight: 800;
+  color: #fff;
+}
+.health-status-box {
+  background: rgba(20, 83, 45, 0.7);
+  border: 1.5px solid #4ade80;
+  border-radius: 10px;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+.health-status-box span {
+  font-size: 24px;
+}
+.health-status-box p {
+  color: #dcfce7;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+.health-status-box strong {
+  color: #facc15;
+}
+
 /* ===== NAVIGATION & FOOTER ===== */
 .slide-number {
   position: fixed; top: 16px; right: 24px; z-index: 1001;
@@ -278,7 +343,7 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
   .header-logo { width: 26px; height: 26px; }
   .header-title { font-size: 14px; letter-spacing: 1px; }
   
-  .slide { padding: 55px 10px 35px; }
+  .slide { padding: 55px 8px 35px; }
   .slide-number { top: 10px; right: 10px; font-size: 10px; }
   .footer-text { display: none; }
   
@@ -287,16 +352,12 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
   .menu-number { width: 40px; height: 40px; flex: 0 0 40px; font-size: 16px; }
   .menu-text { height: 40px; font-size: 14px; }
   
-  .analysis-panel { padding: 8px 10px; }
-  .analysis-panel .panel-title { font-size: 12px; }
-  .analysis-card { padding: 6px 10px; gap: 8px; border-left-width: 4px; }
-  .analysis-card strong { font-size: 12px; min-width: 120px; }
-  .analysis-card p { font-size: 11.5px; }
-  .analysis-icon { font-size: 15px; }
+  .attendance-table { font-size: 11px; }
+  .attendance-table th, .attendance-table td { padding: 6px 4px; }
+  .health-status-box { padding: 8px 12px; gap: 8px; }
+  .health-status-box p { font-size: 12px; }
+  .health-status-box span { font-size: 18px; }
   
-  .value-2025, .value-2026, .value-online, .value-pelanggan { font-size: 9.5px !important; stroke-width: 2px !important; }
-  .curve-panel { padding: 6px 8px; min-height: 120px; }
-  .legend { font-size: 10px; gap: 8px; }
   .navigation { right: 8px; bottom: 4px; }
   .navigation button { width: 30px; height: 30px; font-size: 13px; }
 }
@@ -311,7 +372,7 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
   </div>
 </header>
 
-<div class="slide-number" id="slideNum">01 / 04</div>
+<div class="slide-number" id="slideNum">01 / 05</div>
 
 <!-- SLIDE 1: MENU UTAMA -->
 <section class="slide slide1 active">
@@ -323,6 +384,7 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
       <div class="menu-col">
         <div class="menu-item" onclick="showSlide(0)"><span class="menu-number">1</span><span class="menu-text">PENDAPATAN</span></div>
         <div class="menu-item" onclick="showSlide(1)"><span class="menu-number">2</span><span class="menu-text">PERBANDINGAN PENDAPATAN</span></div>
+        <div class="menu-item" onclick="showSlide(4)"><span class="menu-number">5</span><span class="menu-text">REKAP ABSENSI & KESEHATAN</span></div>
       </div>
       <div class="menu-col">
         <div class="menu-item" onclick="showSlide(2)"><span class="menu-number">3</span><span class="menu-text">BELANJA ONLINE</span></div>
@@ -342,7 +404,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
     </div>
     
     <div class="chart-layout">
-      <!-- GRAFIK CURVE PENDAPATAN -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">PERTUMBUHAN CURVE REAL (JUTA RUPIAH)</div>
@@ -418,7 +479,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA SLIDE 2 -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERFORMA 2026</div>
         <div class="analysis-grid">
@@ -443,7 +503,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
     </div>
 
     <div class="chart-layout">
-      <!-- GRAFIK CURVE BELANJA ONLINE -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">TREN TRANSAKSI ONLINE BULANAN (JUMLAH TRANSAKSI)</div>
@@ -515,7 +574,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA SLIDE 3 -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE</div>
         <div class="analysis-grid">
@@ -530,7 +588,7 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
   </div>
 </section>
 
-<!-- SLIDE 4: PERTUMBUHAN PELANGGAN (QTY) -->
+<!-- SLIDE 4: PERTUMBUHAN PELANGGAN -->
 <section class="slide slide4">
   <div class="grid-bg"></div>
   <div class="content">
@@ -540,7 +598,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
     </div>
 
     <div class="chart-layout">
-      <!-- GRAFIK CURVE PELANGGAN -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">TREN JUMLAH PELANGGAN TRANSAKSI (ORANG/QTY)</div>
@@ -609,7 +666,6 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA SLIDE 4 -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERTUMBUHAN PELANGGAN</div>
         <div class="analysis-grid">
@@ -619,6 +675,114 @@ h2 { font-size: clamp(22px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; ma
           <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">⚖️</span><strong>Baseline Stabil</strong><p>Tingkat kunjungan pelanggan terjaga konsisten di kisaran <strong style="color: #38bdf8;">1.200–1.300 orang/bulan</strong>.</p></div>
           <div class="analysis-card" style="border-left-color: #ff7a20;"><span class="analysis-icon">🎯</span><strong>Strategi Retensi</strong><p>Mengoptimalkan <i>repeat order</i> agar basis pelanggan terus bertumbuh secara berkelanjutan.</p></div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SLIDE 5: REKAP ABSENSI & KESEHATAN KARYAWAN -->
+<section class="slide slide5">
+  <div class="grid-bg"></div>
+  <div class="content">
+    <div class="slide-header">
+      <div class="small-title">MATERI 05 • SUMBER DAYA MANUSIA</div>
+      <h2>📋 <span class="highlight">REKAPITULASI ABSENSI</span> & KONDISI KARYAWAN</h2>
+    </div>
+
+    <div style="display: flex; flex-direction: column; gap: 14px; justify-content: center; height: 100%;">
+      <div class="table-container">
+        <table class="attendance-table">
+          <thead>
+            <tr>
+              <th>NO</th>
+              <th>NAMA KARYAWAN</th>
+              <th>ABSENSI</th>
+              <th>WAJIB KERJA</th>
+              <th>LIBUR</th>
+              <th>CUTI</th>
+              <th>SAKIT</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>I Gede Juli Suparwata</td>
+              <td>287,00</td>
+              <td>26</td>
+              <td>4X</td>
+              <td>1X</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Dewi Alpianti</td>
+              <td>264,15</td>
+              <td>27</td>
+              <td>4X</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Ni Wayan Marsiningsih</td>
+              <td>263,08</td>
+              <td>27</td>
+              <td>4X</td>
+              <td>1X</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Teoktista Dilma</td>
+              <td>258,43</td>
+              <td>26</td>
+              <td>5X</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Ni Nengah Nastiti Dwiarini</td>
+              <td>255,63</td>
+              <td>25</td>
+              <td>4X</td>
+              <td>2X</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Apolonaris Antariksa</td>
+              <td>251,54</td>
+              <td>26</td>
+              <td>5X</td>
+              <td>-</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>I Nengah Wardika</td>
+              <td>238,52</td>
+              <td>24</td>
+              <td>4X</td>
+              <td>3X</td>
+              <td>-</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>I Nengah Budiastawan</td>
+              <td>231,68</td>
+              <td>23</td>
+              <td>5X</td>
+              <td>3X</td>
+              <td>-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="health-status-box">
+        <span>🟢</span>
+        <p>KETERANGAN KESEHATAN: Seluruh jajaran karyawan berada dalam kondisi <strong>SEHAT</strong>, <strong>NILIH (TIDAK ADA) KASUS SAKIT</strong> sepanjang periode pencatatan.</p>
       </div>
     </div>
   </div>
@@ -646,26 +810,29 @@ function showSlide(index) {
   
   currentSlide = index;
   progress.style.width = ((currentSlide + 1) / slides.length * 100) + "%";
-  slideNum.innerText = (currentSlide + 1 < 10 ? "0" : "") + (currentSlide + 1) + " / " + slides.length;
+  slideNum.innerText = (currentSlide + 1 < 10 ? "0" : "") + (currentSlide + 1) + " / " + (slides.length < 10 ? "0" : "") + slides.length;
 }
 
-function nextSlide() { if (currentSlide < slides.length - 1) showSlide(currentSlide + 1); }
-function previousSlide() { if (currentSlide > 0) showSlide(currentSlide - 1); }
+function nextSlide() {
+  if (currentSlide < slides.length - 1) showSlide(currentSlide + 1);
+}
 
-document.addEventListener("keydown", e => {
-  if (["ArrowRight", "ArrowDown", "PageDown", " "].includes(e.key)) { e.preventDefault(); nextSlide(); }
-  if (["ArrowLeft", "ArrowUp", "PageUp"].includes(e.key)) { e.preventDefault(); previousSlide(); }
+function previousSlide() {
+  if (currentSlide > 0) showSlide(currentSlide - 1);
+}
+
+// Navigasi via Keyboard (Panah Kiri & Kanan)
+document.addEventListener("keydown", function(e) {
+  if (e.key === "ArrowRight" || e.key === "Space") {
+    nextSlide();
+  } else if (e.key === "ArrowLeft") {
+    previousSlide();
+  }
 });
 
-let startX = 0;
-document.addEventListener("touchstart", e => startX = e.touches[0].clientX);
-document.addEventListener("touchend", e => {
-  let diffX = e.changedTouches[0].clientX - startX;
-  if (diffX < -50) nextSlide();
-  if (diffX > 50) previousSlide();
-});
-
+// Inisialisasi slide pertama
 showSlide(0);
 </script>
+
 </body>
 </html>
