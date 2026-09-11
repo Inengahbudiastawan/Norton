@@ -316,23 +316,67 @@ h2 { font-size: clamp(20px, 2.3vw, 28px); font-weight: 900; line-height: 1.2; ma
   margin: 0;
 }
 
-/* ===== KHUSUS SLIDE 5: VISI PROKER BANNER & BOX ===== */
+/* ===== KHUSUS SLIDE 5: VISI PROKER & TARGET IMAGE ===== */
 .proker-banner {
   background: linear-gradient(90deg, #0284c7, #2563eb);
   border: 2px solid #38bdf8;
   border-radius: 12px;
-  padding: 12px 20px;
+  padding: 10px 20px;
   text-align: center;
   box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 .proker-banner h3 {
-  font-size: clamp(14px, 1.8vw, 18px);
+  font-size: clamp(13px, 1.6vw, 17px);
   font-weight: 900;
   letter-spacing: 1px;
   color: #fff;
   text-transform: uppercase;
 }
 .proker-banner h3 span { color: #facc15; }
+
+.slide5-container {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 16px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.slide5-left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.slide5-target-card {
+  background: rgba(15, 23, 42, 0.92);
+  border: 2px solid rgba(56, 189, 248, 0.4);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+  height: 100%;
+}
+.slide5-target-card img {
+  width: 100%;
+  max-height: 160px;
+  object-fit: contain;
+  border-radius: 8px;
+  filter: drop-shadow(0 4px 12px rgba(56, 189, 248, 0.3));
+}
+.slide5-target-card span {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
 
 /* ===== NAVIGATION & FOOTER ===== */
 .slide-number {
@@ -370,6 +414,9 @@ h2 { font-size: clamp(20px, 2.3vw, 28px); font-weight: 900; line-height: 1.2; ma
   .menu-col { gap: 6px; }
   .menu-number { width: 38px; height: 38px; flex: 0 0 38px; font-size: 15px; }
   .menu-text { height: 38px; font-size: 13px; }
+  
+  .slide5-container { grid-template-columns: 1fr; gap: 10px; }
+  .slide5-target-card img { max-height: 110px; }
   
   .analysis-panel { padding: 8px 12px; }
   .analysis-panel .panel-title { font-size: 11.5px; }
@@ -728,48 +775,58 @@ h2 { font-size: clamp(20px, 2.3vw, 28px); font-weight: 900; line-height: 1.2; ma
 <!-- SLIDE 5: VISI PROKER & VISI UTAMA -->
 <section class="slide slide5">
   <div class="grid-bg"></div>
-  <div class="content" style="justify-content: center; gap: 20px;">
+  <div class="content" style="justify-content: center; gap: 16px;">
     
     <!-- BANNER VISI PROKER -->
     <div class="proker-banner">
       <h3>VISI PROKER : <span>PENINGKATAN QTY PELANGGAN MENGEDEPANKAN BELANJA ONLINE</span></h3>
     </div>
 
-    <div class="slide-header" style="margin-top: 5px;">
-      <h2>🎯 <span class="highlight">VISI UTAMA</span></h2>
-    </div>
+    <div class="slide5-container">
+      <div class="slide5-left">
+        <div class="slide-header" style="text-align: left; margin-bottom: 2px;">
+          <h2>🎯 <span class="highlight">VISI UTAMA & CAPAIAN</span></h2>
+        </div>
 
-    <!-- TABEL VISI UTAMA & CAPAIAN -->
-    <div class="table-container">
-      <table class="ranking-table">
-        <thead>
-          <tr>
-            <th style="width: 50px; text-align: center;" rowspan="2">No</th>
-            <th style="width: 220px;" rowspan="2">Program Kerja</th>
-            <th rowspan="2">Indikator</th>
-            <th style="width: 80px; text-align: center;" rowspan="2">Baseline</th>
-            <th style="width: 80px; text-align: center;" rowspan="2">Target</th>
-            <th style="text-align: center;" colspan="3">Capaian</th>
-          </tr>
-          <tr>
-            <th style="text-align: center; background: #0369a1;">Juli</th>
-            <th style="text-align: center; background: #0369a1;">Agustus</th>
-            <th style="text-align: center; background: #0369a1;">September</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="text-align: center; font-weight: 900;">1</td>
-            <td><strong>Peningkatan Qty pelanggan mengedepankan belanja online</strong></td>
-            <td>Meningkatnya kunjungan</td>
-            <td style="text-align: center; font-weight: 900; color: #38bdf8;">42</td>
-            <td style="text-align: center; font-weight: 900; color: #facc15;">55</td>
-            <td style="text-align: center; font-weight: 900;">43</td>
-            <td style="text-align: center; font-weight: 900;">43</td>
-            <td style="text-align: center; color: #94a3b8;">-</td>
-          </tr>
-        </tbody>
-      </table>
+        <!-- TABEL VISI UTAMA & CAPAIAN -->
+        <div class="table-container">
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th style="width: 45px; text-align: center;" rowspan="2">No</th>
+                <th style="width: 200px;" rowspan="2">Program Kerja</th>
+                <th rowspan="2">Indikator</th>
+                <th style="width: 65px; text-align: center;" rowspan="2">Baseline</th>
+                <th style="width: 65px; text-align: center;" rowspan="2">Target</th>
+                <th style="text-align: center;" colspan="3">Capaian</th>
+              </tr>
+              <tr>
+                <th style="text-align: center; background: #0369a1;">Juli</th>
+                <th style="text-align: center; background: #0369a1;">Agustus</th>
+                <th style="text-align: center; background: #0369a1;">September</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-align: center; font-weight: 900;">1</td>
+                <td><strong>Peningkatan Qty pelanggan mengedepankan belanja online</strong></td>
+                <td>Meningkatnya kunjungan</td>
+                <td style="text-align: center; font-weight: 900; color: #38bdf8;">42</td>
+                <td style="text-align: center; font-weight: 900; color: #facc15;">55</td>
+                <td style="text-align: center; font-weight: 900;">43</td>
+                <td style="text-align: center; font-weight: 900;">43</td>
+                <td style="text-align: center; color: #94a3b8;">-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- KOTAK GAMBAR TARGET.PNG -->
+      <div class="slide5-target-card">
+        <img src="target.png" alt="Target Archery" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80'">
+        <span>🎯 TARGET & STRATEGI</span>
+      </div>
     </div>
 
     <!-- FOKUS PERBAIKAN -->
