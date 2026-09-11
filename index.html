@@ -5,68 +5,83 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Norton Bali Computer - Presentasi</title>
 <style>
+/* ===== BASE & RESET ===== */
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{
   width:100%;
   height:100%;
   overflow:hidden;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   background:#020617;
   color:#ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.header{position:fixed;top:0;left:0;width:100%;height:82px;display:flex;align-items:center;justify-content:center;padding:0 38px;z-index:1000;background:rgba(2,6,23,.92);border-bottom:1px solid rgba(255,255,255,.2);backdrop-filter:blur(18px)}
-.header-brand{
-    display:flex;
-    align-items:center;
-    gap:16px;
+/* ===== HEADER ===== */
+.header{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 24px;
+  z-index:1000;
+  background:rgba(2,6,23,0.92);
+  border-bottom:2px solid rgba(56,189,248,0.3);
+  backdrop-filter:blur(16px);
 }
-.header-logo{
-    width:52px;
-    height:52px;
-    object-fit:contain;
-    filter:drop-shadow(0 0 10px rgba(56,189,248,.4));
-}
-.header-title{
-    font-size:30px;
-    font-weight:900;
-    letter-spacing:3px;
-    color:#ffffff;
-    text-shadow:0 0 20px rgba(56,189,248,.4);
-}
+.header-brand{display:flex;align-items:center;gap:12px}
+.header-logo{width:46px;height:46px;object-fit:contain;filter:drop-shadow(0 0 8px rgba(56,189,248,0.5))}
+.header-title{font-size:24px;font-weight:900;letter-spacing:2px;color:#ffffff}
 .header-title span{color:#38bdf8}
 
-.slide{width:100vw;height:100vh;position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:100px 3vw 70px;text-align:center;overflow:hidden;background-size:cover;background-position:center}
+/* ===== SLIDE GENERAL ===== */
+.slide{
+  width:100vw;
+  height:100vh;
+  position:absolute;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:90px 24px 60px;
+  text-align:center;
+  overflow:hidden;
+  background-size:cover;
+  background-position:center;
+}
 .slide.active{display:flex}
-.slide::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,6,23,.96),rgba(2,6,23,.85),rgba(2,6,23,.70));z-index:0}
-.slide::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(56,189,248,.25),transparent 30%),radial-gradient(circle at 15% 85%,rgba(37,99,235,.20),transparent 35%);z-index:1}
-.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:45px 45px;z-index:2;pointer-events:none}
+.slide::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(2,6,23,0.95) 0%,rgba(2,6,23,0.85) 50%,rgba(2,6,23,0.95) 100%);z-index:0}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:40px 40px;z-index:2;pointer-events:none}
 .content{width:100%;max-width:1200px;position:relative;z-index:5}
 
-/* PERBAIKAN TIPOGRAFI SLIDE */
-.small-title{color:#38bdf8;font-size:17px;letter-spacing:4px;font-weight:800;margin-bottom:18px;text-transform:uppercase;text-shadow:0 2px 4px rgba(0,0,0,.8)}
-h1{font-size:clamp(44px,7vw,85px);line-height:1.05;margin-bottom:20px;font-weight:900;letter-spacing:1px;color:#ffffff;text-shadow:0 4px 12px rgba(0,0,0,.7)}
-h2{font-size:clamp(36px,5vw,65px);line-height:1.1;margin-bottom:25px;font-weight:900;letter-spacing:.5px;color:#ffffff;text-shadow:0 3px 10px rgba(0,0,0,.8)}
-p{font-size:clamp(19px,2vw,25px);line-height:1.6;color:#f1f5f9;font-weight:600;text-shadow:0 2px 4px rgba(0,0,0,.8)}
+/* TYPOGRAPHY CLEAR & STRONG */
+.small-title{color:#38bdf8;font-size:15px;letter-spacing:3px;font-weight:900;margin-bottom:12px;text-transform:uppercase}
+h1{font-size:clamp(36px, 6vw, 64px);line-height:1.1;margin-bottom:20px;font-weight:900;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.9)}
+h2{font-size:clamp(28px, 4.5vw, 48px);line-height:1.2;margin-bottom:20px;font-weight:900;color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,0.9)}
+p{font-size:clamp(16px, 2vw, 22px);line-height:1.6;color:#f8fafc;font-weight:600}
 
-.highlight{color:#facc15;font-weight:900;text-shadow:0 0 10px rgba(250,204,21,.3)}
-.blue{color:#38bdf8;font-weight:900;text-shadow:0 0 10px rgba(56,189,248,.3)}
+.highlight{color:#facc15;font-weight:900}
+.blue{color:#38bdf8;font-weight:900}
 
+/* BACKGROUND IMAGES */
 .slide1{background-image:url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=2000&q=85")}
 .slide2{background-image:url("https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=2000&q=85")}
 .slide3{background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=85")}
 .slide4{background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85")}
 
-/* MENU MATERI LEBIH JELAS & KONTRAS */
-.material-menu{display:grid;grid-template-columns:1fr 1fr;gap:24px 80px;margin:26px auto 0;max-width:980px;text-align:left}
-.menu-col{display:flex;flex-direction:column;gap:20px}
-.menu-item{display:flex;align-items:center;gap:16px;cursor:pointer}
+/* ===== SLIDE 1 MENU MATERI ===== */
+.material-menu{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin:20px auto 0;max-width:1000px;text-align:left}
+.menu-col{display:flex;flex-direction:column;gap:14px}
+.menu-item{display:flex;align-items:center;gap:14px;cursor:pointer}
 .menu-number{
-  flex:0 0 72px;
-  width:72px;
-  height:72px;
+  flex:0 0 58px;
+  width:58px;
+  height:58px;
   border-radius:50%;
   display:flex;
   align-items:center;
@@ -74,138 +89,124 @@ p{font-size:clamp(19px,2vw,25px);line-height:1.6;color:#f1f5f9;font-weight:600;t
   background:#0284c7;
   border:3px solid #38bdf8;
   color:#ffffff;
-  font-size:32px;
+  font-size:26px;
   font-weight:900;
-  box-shadow:0 4px 14px rgba(0,0,0,.6);
-  transition:.25s;
+  box-shadow:0 4px 10px rgba(0,0,0,0.5);
+  transition:.2s;
 }
 .menu-item span:last-child{
-  min-width:315px;
-  min-height:76px;
+  flex:1;
+  min-height:58px;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:10px 18px;
+  padding:8px 16px;
   background:#ffffff;
   color:#0f172a;
-  border:3px solid #0284c7;
-  border-radius:14px;
-  font-size:22px;
-  line-height:1.15;
+  border:2.5px solid #0284c7;
+  border-radius:12px;
+  font-size:18px;
+  line-height:1.2;
   font-weight:900;
-  letter-spacing:.3px;
-  box-shadow:0 4px 12px rgba(0,0,0,.4);
-  transition:.25s
+  box-shadow:0 4px 12px rgba(0,0,0,0.3);
+  transition:.2s;
 }
-.menu-item:hover .menu-number{transform:scale(1.08);background:#0369a1;border-color:#7dd3fc}
-.menu-item:hover span:last-child{transform:translateY(-2px);background:#f8fafc;border-color:#38bdf8;color:#0284c7}
+.menu-item:hover .menu-number{transform:scale(1.05);background:#0369a1}
+.menu-item:hover span:last-child{background:#f0f9ff;border-color:#38bdf8;color:#0284c7}
 
-.box{max-width:920px;margin:30px auto;padding:35px;background:rgba(15,23,42,.75);border:2px solid rgba(255,255,255,.25);border-radius:25px;backdrop-filter:blur(15px);box-shadow:0 20px 40px rgba(0,0,0,.6)}
-.list{text-align:left;max-width:720px;margin:20px auto}
-.list div{padding:16px 22px;margin:12px 0;background:rgba(255,255,255,.12);border-radius:12px;border-left:6px solid #38bdf8;font-size:20px;font-weight:800;color:#ffffff;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+/* ===== GENERAL CONTENT BOX ===== */
+.box{max-width:880px;margin:20px auto;padding:28px;background:rgba(15,23,42,0.85);border:2px solid rgba(255,255,255,0.25);border-radius:20px;backdrop-filter:blur(12px)}
+.list{text-align:left;max-width:680px;margin:16px auto}
+.list div{padding:14px 18px;margin:10px 0;background:rgba(255,255,255,0.1);border-radius:10px;border-left:5px solid #38bdf8;font-size:18px;font-weight:800;color:#ffffff}
 
-.slide-number{position:absolute;top:95px;right:30px;z-index:20;padding:8px 16px;border-radius:20px;background:rgba(0,0,0,.6);border:1.5px solid rgba(255,255,255,.3);font-size:14px;font-weight:800;color:#ffffff}
-.navigation{position:fixed;right:25px;bottom:25px;z-index:100;display:flex;gap:12px}
-.navigation button{border:2px solid #ffffff;background:#ffffff;color:#0f172a;width:52px;height:52px;border-radius:50%;font-size:24px;font-weight:900;cursor:pointer;transition:.25s;box-shadow:0 4px 12px rgba(0,0,0,.5)}
-.navigation button:hover{background:#38bdf8;color:#ffffff;border-color:#38bdf8;transform:scale(1.1)}
-.progress{position:fixed;left:0;bottom:0;height:5px;width:9%;background:linear-gradient(90deg,#38bdf8,#2563eb);z-index:200;transition:width .35s ease}
-.footer{position:fixed;bottom:22px;left:30px;z-index:100;color:#cbd5e1;font-size:14px;font-weight:700;text-shadow:0 1px 3px rgba(0,0,0,.8)}
+/* ===== NAVIGATION & FOOTER ===== */
+.slide-number{position:absolute;top:86px;right:20px;z-index:20;padding:6px 14px;border-radius:20px;background:rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.3);font-size:13px;font-weight:800;color:#38bdf8}
+.navigation{position:fixed;right:20px;bottom:20px;z-index:100;display:flex;gap:10px}
+.navigation button{border:none;background:#ffffff;color:#0f172a;width:48px;height:48px;border-radius:50%;font-size:22px;font-weight:900;cursor:pointer;transition:.2s;box-shadow:0 4px 12px rgba(0,0,0,0.4)}
+.navigation button:hover{background:#38bdf8;color:#ffffff;transform:scale(1.1)}
+.progress{position:fixed;left:0;bottom:0;height:4px;width:9%;background:linear-gradient(90deg,#38bdf8,#2563eb);z-index:200;transition:width .35s ease}
+.footer{position:fixed;bottom:20px;left:20px;z-index:100;color:#94a3b8;font-size:13px;font-weight:700}
 
-/* ===== SLIDE 2 ANALISA GRAFIK (FONT JELAS) ===== */
-.revenue-slide{background:#020617!important;color:#fff;overflow:hidden}
-.revenue-slide .revenue-content{position:relative;z-index:10;max-width:1500px;width:calc(100% - 40px);margin:0 auto}
-.revenue-slide .revenue-subtitle{font-size:16px;font-weight:800;color:#e2e8f0;margin-bottom:10px}
-.revenue-slide .curve-panel{display:block!important;visibility:visible!important;opacity:1!important;background:#090d16;border:2px solid #0284c7;border-radius:12px;padding:14px 20px 10px;height:410px;box-sizing:border-box}
-.revenue-slide .curve-head{display:flex;align-items:center;justify-content:space-between;height:32px}
-.revenue-slide .panel-title{font-size:20px;font-weight:900;letter-spacing:1.5px;color:#ffffff}
-.revenue-slide .legend{display:flex;gap:24px;font-size:15px;font-weight:900;color:#ffffff}
-.revenue-slide .legend span{display:flex;align-items:center;gap:8px}
-.revenue-slide .legend i{display:inline-block;width:32px;height:6px;border-radius:4px}
+/* ===== SLIDE 2 ANALISA GRAFIK ===== */
+.revenue-slide{background:#020617!important;overflow-y:auto!important}
+.revenue-slide .revenue-content{position:relative;z-index:10;max-width:1400px;width:100%;margin:0 auto}
+.revenue-slide .revenue-subtitle{font-size:14px;font-weight:800;color:#cbd5e1;margin-bottom:12px}
+
+.revenue-slide .curve-panel{background:#090d16;border:2px solid #0284c7;border-radius:12px;padding:12px 16px;margin-bottom:12px}
+.revenue-slide .curve-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.revenue-slide .panel-title{font-size:16px;font-weight:900;letter-spacing:1px;color:#ffffff}
+.revenue-slide .legend{display:flex;gap:16px;font-size:13px;font-weight:900;color:#ffffff}
+.revenue-slide .legend span{display:flex;align-items:center;gap:6px}
+.revenue-slide .legend i{display:inline-block;width:24px;height:5px;border-radius:3px}
 .revenue-slide .legend-2025{background:#ff7a20}
 .revenue-slide .legend-2026{background:#38bdf8}
-.revenue-slide .curve-chart{display:block!important;height:335px;width:100%;position:relative}
-.revenue-slide .curve-chart svg{display:block!important;width:100%!important;height:100%!important;overflow:visible}
+
+.revenue-slide .curve-chart{height:260px;width:100%;position:relative}
+.revenue-slide .curve-chart svg{width:100%!important;height:100%!important;overflow:visible}
 .revenue-slide .curve-grid line{stroke:#1e293b!important;stroke-width:1.5!important}
 .revenue-slide .curve-axis{stroke:#64748b!important;stroke-width:2!important}
-.revenue-slide .curve{fill:none!important;stroke-width:5!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.revenue-slide .curve{fill:none!important;stroke-width:4.5!important;stroke-linecap:round!important;stroke-linejoin:round!important}
 .revenue-slide .curve-2025{stroke:#ff7a20!important}
 .revenue-slide .curve-2026{stroke:#38bdf8!important}
-.revenue-slide .point-2025{fill:#ff7a20!important;stroke:#fff!important;stroke-width:2.5!important}
-.revenue-slide .point-2026{fill:#38bdf8!important;stroke:#fff!important;stroke-width:2.5!important}
+.revenue-slide .point-2025{fill:#ff7a20!important;stroke:#fff!important;stroke-width:2!important}
+.revenue-slide .point-2026{fill:#38bdf8!important;stroke:#fff!important;stroke-width:2!important}
 
-/* TEKS ANGKA PADA GRAFIK */
-.revenue-slide .value-2025,.revenue-slide .value-2026{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;font-size:14px!important;font-weight:900!important;text-anchor:middle!important;paint-order:stroke!important;stroke:#000000!important;stroke-width:4px!important}
+/* TEXT OUTLINE DI SVG GRAFIK AGAR TETAP TERBACA */
+.revenue-slide .value-2025,.revenue-slide .value-2026{font-family:sans-serif!important;font-size:12px!important;font-weight:900!important;text-anchor:middle!important;paint-order:stroke!important;stroke:#000000!important;stroke-width:3.5px!important}
 .revenue-slide .value-2025{fill:#ffc299!important}
 .revenue-slide .value-2026{fill:#bae6fd!important}
-.revenue-slide .ytext,.revenue-slide .xtext{fill:#f1f5f9!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif!important;font-weight:900!important}
-.revenue-slide .ytext{font-size:13px!important}
-.revenue-slide .xtext{font-size:13px!important;text-anchor:middle!important}
-.revenue-slide .curve-note{font-size:12px;font-weight:700;color:#94a3b8;text-align:center;margin-top:2px}
+.revenue-slide .ytext,.revenue-slide .xtext{fill:#f1f5f9!important;font-family:sans-serif!important;font-weight:900!important;font-size:12px!important}
+.revenue-slide .xtext{text-anchor:middle!important}
+.revenue-slide .curve-note{font-size:11px;font-weight:700;color:#94a3b8;text-align:center;margin-top:4px}
 
-.revenue-slide .analysis-layout{display:grid;grid-template-columns:1fr;gap:10px;margin-top:12px}
-.revenue-slide .analysis-panel{background:#090d16;border:2px solid #0369a1;border-radius:10px;padding:12px 16px}
-.revenue-slide .analysis-panel .panel-title{font-size:18px;margin-bottom:8px;color:#38bdf8;font-weight:900}
-.revenue-slide .analysis-layout .analysis-card{display:inline-flex;vertical-align:top;width:19%;margin-right:.7%;box-sizing:border-box;min-height:90px;padding:10px;gap:8px;background:#0f172a;border:1.5px solid #0284c7;border-radius:8px}
-.revenue-slide .analysis-layout .analysis-card:last-child{margin-right:0}
-.revenue-slide .analysis-icon{font-size:22px}
-.revenue-slide .analysis-card strong{font-size:13px;font-weight:900;color:#ffffff;display:block}
-.revenue-slide .analysis-card p{font-size:11px;line-height:1.35;margin:4px 0 0;color:#e2e8f0;font-weight:700}
+.revenue-slide .analysis-panel{background:#090d16;border:2px solid #0369a1;border-radius:12px;padding:12px 16px;margin-bottom:12px;text-align:left}
+.revenue-slide .analysis-panel .panel-title{font-size:15px;margin-bottom:10px;color:#38bdf8;font-weight:900}
+.revenue-slide .analysis-grid{display:grid;grid-template-columns:repeat(5, 1fr);gap:10px}
+.revenue-slide .analysis-card{background:#0f172a;border:1.5px solid #0284c7;border-radius:8px;padding:10px;display:flex;flex-direction:column;gap:6px}
+.revenue-slide .analysis-icon{font-size:20px}
+.revenue-slide .analysis-card strong{font-size:12px;font-weight:900;color:#ffffff;line-height:1.2}
+.revenue-slide .analysis-card p{font-size:11px;line-height:1.3;color:#cbd5e1;font-weight:600}
 
-.revenue-slide .revenue-summary{display:flex;gap:12px;margin-top:10px}
-.revenue-slide .revenue-summary>div{flex:1;padding:10px 14px;background:#0f172a;border-left:5px solid #38bdf8;border-radius:6px;border-top:1px solid #1e293b;border-right:1px solid #1e293b;border-bottom:1px solid #1e293b}
-.revenue-slide .revenue-summary b{font-size:12px;color:#38bdf8;display:block;font-weight:900;letter-spacing:.5px}
-.revenue-slide .revenue-summary span{font-size:18px;color:#ffffff;font-weight:900}
+.revenue-slide .revenue-summary{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.revenue-slide .revenue-summary>div{padding:10px 14px;background:#0f172a;border-left:5px solid #38bdf8;border-radius:6px;border-top:1px solid #1e293b;border-right:1px solid #1e293b;border-bottom:1px solid #1e293b;text-align:left}
+.revenue-slide .revenue-summary b{font-size:11px;color:#38bdf8;display:block;font-weight:900}
+.revenue-slide .revenue-summary span{font-size:16px;color:#ffffff;font-weight:900}
 
-.revenue-slide .revenue-bottom{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:10px}
-.revenue-slide .bottom-card{padding:12px;border:1.5px solid #0284c7;border-radius:8px;background:#0f172a}
-.revenue-slide .bottom-card h3{font-size:13px;margin-bottom:6px;color:#facc15;font-weight:900}
-.revenue-slide .bottom-card p{font-size:12px;line-height:1.4;color:#f1f5f9;font-weight:700}
+.revenue-slide .revenue-bottom{display:grid;grid-template-columns:repeat(3, 1fr);gap:10px;text-align:left}
+.revenue-slide .bottom-card{padding:10px 12px;border:1.5px solid #0284c7;border-radius:8px;background:#0f172a}
+.revenue-slide .bottom-card h3{font-size:12px;margin-bottom:4px;color:#facc15;font-weight:900}
+.revenue-slide .bottom-card p{font-size:11px;line-height:1.3;color:#e2e8f0;font-weight:600}
 
-/* RESPONSIVE LAYOUT POLISH */
-@media(max-width:900px){
-  .material-menu{grid-template-columns:1fr;gap:14px;margin-top:18px}
-  .revenue-slide{overflow:auto!important}
-  .revenue-slide .curve-panel{height:350px}
-  .revenue-slide .curve-chart{height:280px}
-  .revenue-slide .analysis-layout .analysis-card{width:100%;margin:4px 0}
-  .revenue-slide .revenue-summary{display:grid;grid-template-columns:1fr 1fr}
-  .revenue-slide .revenue-bottom{grid-template-columns:1fr}
-}
-
-@media(max-width:600px){
-  .header{height:65px;padding:0 16px}
-  .header-title{font-size:18px;letter-spacing:1px}
-  .header-logo{width:40px;height:40px}
-  .slide{padding:75px 12px 65px}
-  .small-title{font-size:12px;letter-spacing:2px;margin-bottom:8px}
-  h1{font-size:clamp(34px,9vw,48px)!important}
-  h2{font-size:clamp(28px,7vw,40px);margin-bottom:14px}
-  p{font-size:16px;line-height:1.45}
+/* ===== RESPONSIVE KHUSUS LAYAR HP (MOBILE) ===== */
+@media(max-width:850px){
+  .header{height:62px;padding:0 16px}
+  .header-logo{width:36px;height:36px}
+  .header-title{font-size:16px;letter-spacing:1px}
   
-  .material-menu{gap:10px;margin-top:12px}
-  .menu-item{gap:8px}
-  .menu-number{width:48px;height:48px;flex-basis:48px;font-size:22px;border-width:2px}
-  .menu-item span:last-child{min-height:48px;font-size:16px;padding:8px 10px;border-radius:10px;border-width:2px}
-  
-  .box{padding:18px;border-radius:16px;margin-top:14px}
-  .list div{padding:12px 14px;margin:8px 0;font-size:15px;border-left-width:4px}
-  .slide-number{top:72px;right:12px;font-size:11px;padding:5px 10px}
+  .slide{padding:72px 12px 65px;align-items:flex-start;overflow-y:auto}
+  .slide-number{top:70px;right:12px;font-size:11px;padding:4px 10px}
   .footer{display:none}
-  .navigation button{width:44px;height:44px;font-size:20px}
   
-  .revenue-slide{padding:72px 8px 60px!important}
-  .revenue-slide .panel-title{font-size:14px}
+  .material-menu{grid-template-columns:1fr;gap:10px;margin-top:10px}
+  .menu-col{gap:10px}
+  .menu-number{width:46px;height:46px;flex:0 0 46px;font-size:20px;border-width:2px}
+  .menu-item span:last-child{min-height:46px;font-size:15px;padding:6px 10px;border-radius:10px}
+  
+  .box{padding:16px;border-radius:14px;margin:12px auto}
+  .list div{padding:10px 12px;font-size:14px;margin:6px 0}
+  
+  .navigation{right:12px;bottom:12px}
+  .navigation button{width:42px;height:42px;font-size:18px}
+  
+  /* REVENUE SLIDE MOBILE FIT */
+  .revenue-slide .analysis-grid{grid-template-columns:1fr}
+  .revenue-slide .revenue-summary{grid-template-columns:1fr}
+  .revenue-slide .revenue-bottom{grid-template-columns:1fr}
+  .revenue-slide .curve-chart{height:200px}
+  .revenue-slide .value-2025,.revenue-slide .value-2026{font-size:9px!important;stroke-width:2px!important}
+  .revenue-slide .ytext,.revenue-slide .xtext{font-size:9px!important}
   .revenue-slide .legend{gap:10px;font-size:11px}
-  .revenue-slide .curve-panel{padding:8px 6px 6px;min-height:270px}
-  .revenue-slide .curve-chart{height:225px}
-  .revenue-slide .value-2025,.revenue-slide .value-2026{font-size:10px!important}
-  .revenue-slide .ytext,.revenue-slide .xtext{font-size:10px!important}
-  .revenue-slide .analysis-card strong{font-size:12px}
-  .revenue-slide .analysis-card p{font-size:10px}
-  .revenue-slide .revenue-summary span{font-size:14px}
-  .revenue-slide .bottom-card h3{font-size:11px}
-  .revenue-slide .bottom-card p{font-size:10px}
 }
 </style>
 </head>
@@ -218,10 +219,11 @@ p{font-size:clamp(19px,2vw,25px);line-height:1.6;color:#f1f5f9;font-weight:600;t
   </div>
 </header>
 
+<!-- SLIDE 1: MENU UTAMA -->
 <section class="slide slide1 active">
 <div class="grid"></div><div class="slide-number">MATERI</div>
 <div class="content">
-<h1 style="font-size:52px;margin-bottom:4px;">MATERI PRESENTASI</h1>
+<h1 style="margin-bottom:6px;">MATERI PRESENTASI</h1>
 <div class="material-menu">
   <div class="menu-col">
     <div class="menu-item" onclick="showSlide(1)"><span class="menu-number">1</span><span>PENDAPATAN</span></div>
@@ -241,13 +243,15 @@ p{font-size:clamp(19px,2vw,25px);line-height:1.6;color:#f1f5f9;font-weight:600;t
 </div>
 </section>
 
+<!-- SLIDE 2: GRAFIK PENDAPATAN -->
 <section class="slide slide2 revenue-slide">
 <div class="grid"></div><div class="slide-number">02 / 11</div>
 <div class="content revenue-content">
   <div class="small-title">MATERI 01 • ANALISA PERBANDINGAN</div>
   <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
-  <div class="revenue-subtitle">Satuan: juta rupiah (JT) • 2026: Januari–September</div>
+  <div class="revenue-subtitle">Satuan: Juta Rupiah (JT) • Data 2026: Januari – September</div>
 
+  <!-- GRAFIK CURVE -->
   <div class="curve-panel">
     <div class="curve-head">
       <div class="panel-title">CURVE PENDAPATAN</div>
@@ -255,78 +259,96 @@ p{font-size:clamp(19px,2vw,25px);line-height:1.6;color:#f1f5f9;font-weight:600;t
     </div>
     <div class="curve-chart">
       <svg viewBox="0 0 1200 390" preserveAspectRatio="none" aria-label="Curve pendapatan 2025 dan 2026">
-        <g class="curve-grid"><line x1="65" y1="330" x2="1165" y2="330"/><line x1="65" y1="271" x2="1165" y2="271"/><line x1="65" y1="212" x2="1165" y2="212"/><line x1="65" y1="153" x2="1165" y2="153"/><line x1="65" y1="94" x2="1165" y2="94"/><line x1="65" y1="35" x2="1165" y2="35"/></g>
-        <line class="curve-axis" x1="65" y1="35" x2="65" y2="330"/><line class="curve-axis" x1="65" y1="330" x2="1165" y2="330"/>
-        <g><text x="15" y="334" class="ytext">80</text><text x="15" y="275" class="ytext">100</text><text x="15" y="216" class="ytext">120</text><text x="15" y="157" class="ytext">140</text><text x="15" y="98" class="ytext">160</text><text x="15" y="39" class="ytext">180</text></g>
+        <g class="curve-grid">
+          <line x1="65" y1="330" x2="1165" y2="330"/><line x1="65" y1="271" x2="1165" y2="271"/>
+          <line x1="65" y1="212" x2="1165" y2="212"/><line x1="65" y1="153" x2="1165" y2="153"/>
+          <line x1="65" y1="94" x2="1165" y2="94"/><line x1="65" y1="35" x2="1165" y2="35"/>
+        </g>
+        <line class="curve-axis" x1="65" y1="35" x2="65" y2="330"/>
+        <line class="curve-axis" x1="65" y1="330" x2="1165" y2="330"/>
+        
+        <!-- Y AXIS -->
+        <g><text x="18" y="334" class="ytext">80</text><text x="18" y="275" class="ytext">100</text><text x="18" y="216" class="ytext">120</text><text x="18" y="157" class="ytext">140</text><text x="18" y="98" class="ytext">160</text><text x="18" y="39" class="ytext">180</text></g>
+        
+        <!-- CURVES -->
         <path class="curve curve-2025" d="M65 262.1 C115 262.1 115 288.7 165 288.7 C215 288.7 215 300.5 265 300.5 C315 300.5 315 300.5 365 300.5 C415 300.5 415 238.6 465 238.6 C515 238.6 515 212 565 212 C615 212 615 203.2 665 203.2 C715 203.2 715 161.9 765 161.9 C815 161.9 815 73.4 865 73.4 C915 73.4 915 164.8 965 164.8 C1015 164.8 1015 217.9 1065 217.9 C1115 217.9 1115 271 1165 271"/>
         <path class="curve curve-2026" d="M65 241.5 C115 241.5 115 167.8 165 167.8 C215 167.8 215 238.6 265 238.6 C315 238.6 315 235.6 365 235.6 C415 235.6 415 250.3 465 250.3 C515 250.3 515 197.2 565 197.2 C615 197.2 615 212 665 212 C715 212 715 123.5 765 123.5 C815 123.5 815 73.4 865 73.4"/>
+        
+        <!-- POINTS -->
         <g>
-          <circle class="point-2025" cx="65" cy="262.1" r="5.5"/><circle class="point-2025" cx="165" cy="288.7" r="5.5"/><circle class="point-2025" cx="265" cy="300.5" r="5.5"/><circle class="point-2025" cx="365" cy="300.5" r="5.5"/><circle class="point-2025" cx="465" cy="238.6" r="5.5"/><circle class="point-2025" cx="565" cy="212" r="5.5"/><circle class="point-2025" cx="665" cy="203.2" r="5.5"/><circle class="point-2025" cx="765" cy="161.9" r="5.5"/><circle class="point-2025" cx="865" cy="73.4" r="5.5"/><circle class="point-2025" cx="965" cy="164.8" r="5.5"/><circle class="point-2025" cx="1065" cy="217.9" r="5.5"/><circle class="point-2025" cx="1165" cy="271" r="5.5"/>
-          <circle class="point-2026" cx="65" cy="241.5" r="5.5"/><circle class="point-2026" cx="165" cy="167.8" r="5.5"/><circle class="point-2026" cx="265" cy="238.6" r="5.5"/><circle class="point-2026" cx="365" cy="235.6" r="5.5"/><circle class="point-2026" cx="465" cy="250.3" r="5.5"/><circle class="point-2026" cx="565" cy="197.2" r="5.5"/><circle class="point-2026" cx="665" cy="212" r="5.5"/><circle class="point-2026" cx="765" cy="123.5" r="5.5"/><circle class="point-2026" cx="865" cy="73.4" r="5.5"/>
+          <circle class="point-2025" cx="65" cy="262.1" r="5"/><circle class="point-2025" cx="165" cy="288.7" r="5"/><circle class="point-2025" cx="265" cy="300.5" r="5"/><circle class="point-2025" cx="365" cy="300.5" r="5"/><circle class="point-2025" cx="465" cy="238.6" r="5"/><circle class="point-2025" cx="565" cy="212" r="5"/><circle class="point-2025" cx="665" cy="203.2" r="5"/><circle class="point-2025" cx="765" cy="161.9" r="5"/><circle class="point-2025" cx="865" cy="73.4" r="5"/><circle class="point-2025" cx="965" cy="164.8" r="5"/><circle class="point-2025" cx="1065" cy="217.9" r="5"/><circle class="point-2025" cx="1165" cy="271" r="5"/>
+          <circle class="point-2026" cx="65" cy="241.5" r="5"/><circle class="point-2026" cx="165" cy="167.8" r="5"/><circle class="point-2026" cx="265" cy="238.6" r="5"/><circle class="point-2026" cx="365" cy="235.6" r="5"/><circle class="point-2026" cx="465" cy="250.3" r="5"/><circle class="point-2026" cx="565" cy="197.2" r="5"/><circle class="point-2026" cx="665" cy="212" r="5"/><circle class="point-2026" cx="765" cy="123.5" r="5"/><circle class="point-2026" cx="865" cy="73.4" r="5"/>
         </g>
         
-        <g class="labels-2025"><text class="value-2025" x="65" y="248">Rp103</text><text class="value-2025" x="165" y="275">Rp94</text><text class="value-2025" x="265" y="287">Rp90</text><text class="value-2025" x="365" y="287">Rp90</text><text class="value-2025" x="465" y="225">Rp111</text><text class="value-2025" x="565" y="198">Rp120</text><text class="value-2025" x="665" y="189">Rp123</text><text class="value-2025" x="765" y="148">Rp137</text><text class="value-2025" x="865" y="59">Rp167</text><text class="value-2025" x="965" y="151">Rp136</text><text class="value-2025" x="1065" y="204">Rp118</text><text class="value-2025" x="1165" y="257">Rp100</text></g>
-        <g class="labels-2026"><text class="value-2026" x="65" y="263">Rp110</text><text class="value-2026" x="165" y="189">Rp135</text><text class="value-2026" x="265" y="260">Rp111</text><text class="value-2026" x="365" y="257">Rp112</text><text class="value-2026" x="465" y="271">Rp107</text><text class="value-2026" x="565" y="218">Rp125</text><text class="value-2026" x="665" y="233">Rp120</text><text class="value-2026" x="765" y="141">Rp150</text><text class="value-2026" x="865" y="94">Rp167</text></g>
-        <g><text x="65" y="365" class="xtext">JAN</text><text x="165" y="365" class="xtext">FEB</text><text x="265" y="365" class="xtext">MAR</text><text x="365" y="365" class="xtext">APR</text><text x="465" y="365" class="xtext">MEI</text><text x="565" y="365" class="xtext">JUN</text><text x="665" y="365" class="xtext">JUL</text><text x="765" y="365" class="xtext">AGS</text><text x="865" y="365" class="xtext">SEP</text><text x="965" y="365" class="xtext">OKT</text><text x="1065" y="365" class="xtext">NOV</text><text x="1165" y="365" class="xtext">DES</text></g>
+        <!-- NUMERIC VALUES -->
+        <g class="labels-2025"><text class="value-2025" x="65" y="248">103JT</text><text class="value-2025" x="165" y="275">94JT</text><text class="value-2025" x="265" y="287">90JT</text><text class="value-2025" x="365" y="287">90JT</text><text class="value-2025" x="465" y="225">111JT</text><text class="value-2025" x="565" y="198">120JT</text><text class="value-2025" x="665" y="189">123JT</text><text class="value-2025" x="765" y="148">137JT</text><text class="value-2025" x="865" y="59">167JT</text><text class="value-2025" x="965" y="151">136JT</text><text class="value-2025" x="1065" y="204">118JT</text><text class="value-2025" x="1165" y="257">100JT</text></g>
+        <g class="labels-2026"><text class="value-2026" x="65" y="263">110JT</text><text class="value-2026" x="165" y="189">135JT</text><text class="value-2026" x="265" y="260">111JT</text><text class="value-2026" x="365" y="257">112JT</text><text class="value-2026" x="465" y="271">107JT</text><text class="value-2026" x="565" y="218">125JT</text><text class="value-2026" x="665" y="233">120JT</text><text class="value-2026" x="765" y="141">150JT</text><text class="value-2026" x="865" y="94">167JT</text></g>
+        
+        <!-- X AXIS -->
+        <g><text x="65" y="360" class="xtext">JAN</text><text x="165" y="360" class="xtext">FEB</text><text x="265" y="360" class="xtext">MAR</text><text x="365" y="360" class="xtext">APR</text><text x="465" y="360" class="xtext">MEI</text><text x="565" y="360" class="xtext">JUN</text><text x="665" y="360" class="xtext">JUL</text><text x="765" y="360" class="xtext">AGS</text><text x="865" y="360" class="xtext">SEP</text><text x="965" y="360" class="xtext">OKT</text><text x="1065" y="360" class="xtext">NOV</text><text x="1165" y="360" class="xtext">DES</text></g>
       </svg>
     </div>
-    <div class="curve-note">Data pendapatan real dalam jutaan rupiah • Tahun 2026 tersedia hingga September</div>
+    <div class="curve-note">Perbandingan Angka Pendapatan Real dalam Jutaan Rupiah</div>
   </div>
 
-  <div class="analysis-layout">
-    <div class="analysis-panel">
-      <div class="panel-title">ANALISA POSITIF 2026</div>
-      <div class="analysis-card"><span class="analysis-icon">📈</span><div><strong>Pendapatan Lebih Kuat</strong><p>Jan–Sep 2026 mencapai Rp1.137 juta (+Rp102 juta vs Jan–Sep 2025).</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>Awal Tahun Solid</strong><p>Februari Rp135jt, Maret Rp111jt, April Rp112jt (konsisten di atas 2025).</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🏆</span><div><strong>Puncak Agustus–Sep</strong><p>Agustus mencapai Rp150jt & September menyamai rekor Rp167jt.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">💡</span><div><strong>Efisiensi Nilai Barang</strong><p>Stok barang stabil di Rp700–800jt dengan hasil pendapatan lebih tinggi.</p></div></div>
-      <div class="analysis-card"><span class="analysis-icon">🎯</span><div><strong>Peluang Strategis</strong><p>Atur perputaran stok cepat untuk antisipasi kenaikan harga komponen.</p></div></div>
+  <!-- PANELS ANALISA -->
+  <div class="analysis-panel">
+    <div class="panel-title">ANALISA POSITIF PERFORMA 2026</div>
+    <div class="analysis-grid">
+      <div class="analysis-card"><span class="analysis-icon">📈</span><strong>Pendapatan Naik</strong><p>Jan–Sep 2026 total Rp1.137 juta (+Rp102JT vs 2025).</p></div>
+      <div class="analysis-card"><span class="analysis-icon">🚀</span><strong>Start Awal Kuat</strong><p>Februari Rp135JT, Maret Rp111JT, & April Rp112JT.</p></div>
+      <div class="analysis-card"><span class="analysis-icon">🏆</span><strong>Puncak September</strong><p>Agustus naik Rp150JT & September konsisten di Rp167JT.</p></div>
+      <div class="analysis-card"><span class="analysis-icon">💡</span><strong>Efisiensi Stok</strong><p>Nilai barang stabil di Rp700–800JT dengan omset lebih tinggi.</p></div>
+      <div class="analysis-card"><span class="analysis-icon">🎯</span><strong>Strategi Tepat</strong><p>Antisipasi kenaikan harga komponen berjalan optimal.</p></div>
     </div>
   </div>
 
   <div class="revenue-summary">
-    <div><b>TOTAL JAN–SEP 2025</b><span>Rp1.035 Juta</span></div>
-    <div><b>TOTAL JAN–SEP 2026</b><span>Rp1.137 Juta</span></div>
+    <div><b>TOTAL JAN–SEP 2025</b><span>Rp1.035 JUTA</span></div>
+    <div><b>TOTAL JAN–SEP 2026</b><span>Rp1.137 JUTA</span></div>
   </div>
 
   <div class="revenue-bottom">
-    <div class="bottom-card"><h3>⚠ TANTANGAN 2026</h3><p>Kenaikan harga komponen & kelangkaan chip menuntut pengelolaan stok yang presisi.</p></div>
-    <div class="bottom-card"><h3>💡 PELUANG</h3><p>Nilai stok barang stabil di <strong>Rp700–800 juta</strong> menunjukkan margin & rotasi barang makin membaik.</p></div>
-    <div class="bottom-card"><h3>✅ ARAH STRATEGI</h3><p>Fokus produk fast-moving, maksimalkan penjualan online, serta rutin melakukan evaluasi target.</p></div>
+    <div class="bottom-card"><h3>⚠ TANTANGAN 2026</h3><p>Kelangkaan chip & kenaikan kurs mata uang menuntut pengaturan stok yang lebih disiplin.</p></div>
+    <div class="bottom-card"><h3>💡 PELUANG</h3><p>Margin dan perputaran barang di kisaran <strong>Rp700–800 juta</strong> masih memiliki ruang tumbuh.</p></div>
+    <div class="bottom-card"><h3>✅ STRATEGI UTAMA</h3><p>Fokus pada barang cepat laku (fast-moving), penjualan online, dan program bundling.</p></div>
   </div>
 </div>
 </section>
 
+<!-- SLIDE 3: KINERJA KARYAWAN -->
 <section class="slide slide3">
 <div class="grid"></div><div class="slide-number">03 / 11</div>
 <div class="content">
 <div class="small-title">MATERI 02</div><h2>👨‍💼 <span class="blue">KINERJA KARYAWAN</span></h2>
-<div class="box"><p>Kinerja karyawan menjadi bagian penting dalam mencapai target perusahaan.</p>
-<div class="list"><div>⭐ Kualitas Pekerjaan</div><div>⚡ Produktivitas</div><div>🤝 Kerja Sama Team</div><div>🎯 Pencapaian Target</div><div>💡 Inisiatif dan Tanggung Jawab</div></div></div>
+<div class="box"><p>Kinerja karyawan merupakan pilar utama dalam mencapai target perusahaan.</p>
+<div class="list"><div>⭐ Kualitas Pekerjaan</div><div>⚡ Produktivitas Kerja</div><div>🤝 Kerja Sama Tim</div><div>🎯 Pencapean Target</div><div>💡 Inisiatif & Tanggung Jawab</div></div></div>
 </div>
 </section>
 
+<!-- SLIDE 4: ABSENSI -->
 <section class="slide slide4">
 <div class="grid"></div><div class="slide-number">04 / 11</div>
 <div class="content">
-<div class="small-title">MATERI 03</div><h2>🕐 <span class="highlight">ABSENSI</span></h2>
-<div class="box"><p>Absensi digunakan untuk melihat tingkat kehadiran dan kedisiplinan karyawan.</p>
-<div class="list"><div>🟢 Kehadiran</div><div>⏰ Ketepatan Waktu</div><div>📅 Jumlah Hari Kerja</div><div>📝 Izin / Cuti</div><div>📊 Evaluasi Kedisiplinan</div></div></div>
+<div class="small-title">MATERI 03</div><h2>🕐 <span class="highlight">ABSENSI & KEDISIPLINAN</span></h2>
+<div class="box"><p>Evaluasi kehadiran dan ketepatan waktu untuk menjaga efisiensi operasional.</p>
+<div class="list"><div>🟢 Kehadiran Rutin</div><div>⏰ Ketepatan Waktu</div><div>📅 Jumlah Hari Kerja Effective</div><div>📝 Pengelolaan Izin / Cuti</div><div>📊 Evaluasi Kedisiplinan Tim</div></div></div>
 </div>
 </section>
 
-<section class="slide"><div class="grid"></div><div class="slide-number">05 / 11</div><div class="content"><div class="small-title">MATERI 04</div><h2>🏢 <span class="blue">KUNJUNGAN KE KOPERASI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">06 / 11</div><div class="content"><div class="small-title">MATERI 05</div><h2>📢 <span class="highlight">DISTRIBUSI INFORMASI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">07 / 11</div><div class="content"><div class="small-title">MATERI 06</div><h2>🌐 <span class="blue">TRANSFORMASI CITRA OFFLINE KE ONLINE</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">08 / 11</div><div class="content"><div class="small-title">MATERI 07</div><h2>⭐ <span class="highlight">MENJADI SDM UNGGUL</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">09 / 11</div><div class="content"><div class="small-title">MATERI 08</div><h2>📋 <span class="blue">PROKER</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide"><div class="grid"></div><div class="slide-number">10 / 11</div><div class="content"><div class="small-title">MATERI 09</div><h2>🕐 <span class="highlight">ABSENSI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
-<section class="slide final-slide"><div class="grid"></div><div class="slide-number">11 / 11 • SLIDE TERAKHIR</div><div class="content"><div class="small-title">MATERI 10</div><h2>🎯 <span class="blue">SEMAKIN TAHUN, TANTANGAN BERBEDA</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<!-- SLIDE LAINNYA -->
+<section class="slide"><div class="grid"></div><div class="slide-number">05 / 11</div><div class="content"><div class="small-title">MATERI 04</div><h2>🏢 <span class="blue">KUNJUNGAN KE KOPERASI</span></h2><div class="box"><p>Materi kunjungan lapangan dan kerjasama koperasi.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">06 / 11</div><div class="content"><div class="small-title">MATERI 05</div><h2>📢 <span class="highlight">DISTRIBUSI INFORMASI</span></h2><div class="box"><p>Sistem alur komunikasi internal dan eksternal.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">07 / 11</div><div class="content"><div class="small-title">MATERI 06</div><h2>🌐 <span class="blue">TRANSFORMASI OFFLINE KE ONLINE</span></h2><div class="box"><p>Strategi digitalisasi toko dan perluasan pasar marketplace.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">08 / 11</div><div class="content"><div class="small-title">MATERI 07</div><h2>⭐ <span class="highlight">MENJADI SDM UNGGUL</span></h2><div class="box"><p>Pengembangan kapasitas dan keterampilan tim.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">09 / 11</div><div class="content"><div class="small-title">MATERI 08</div><h2>📋 <span class="blue">PROGRAM KERJA (PROKER)</span></h2><div class="box"><p>Rencana aksi dan jadwal pelaksanaan program kerja.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">10 / 11</div><div class="content"><div class="small-title">MATERI 09</div><h2>🕐 <span class="highlight">EVALUASI ABSENSI</span></h2><div class="box"><p>Rekapitulasi dan penegakan aturan kerja.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">11 / 11</div><div class="content"><div class="small-title">MATERI 10</div><h2>🎯 <span class="blue">TANTANGAN BISNIS DEPAN</span></h2><div class="box"><p>Menghadapi perubahan teknologi dan kompetisi pasar.</p></div></div></section>
 
 <div class="footer">Norton Bali Computer • Presentasi</div>
 <div class="navigation">
-<button onclick="previousSlide()" title="Slide sebelumnya">←</button>
-<button onclick="nextSlide()" title="Slide berikutnya">→</button>
+<button onclick="previousSlide()" title="Kembali">←</button>
+<button onclick="nextSlide()" title="Lanjut">→</button>
 </div>
 <div class="progress" id="progress"></div>
 
@@ -336,28 +358,27 @@ const slides=document.querySelectorAll(".slide");
 const progress=document.getElementById("progress");
 
 function showSlide(number){
- if(number<0)number=0;
- if(number>=slides.length)number=slides.length-1;
- slides.forEach(slide=>slide.classList.remove("active"));
- slides[number].classList.add("active");
- currentSlide=number;
- progress.style.width=((currentSlide+1)/slides.length*100)+"%";
+  if(number<0)number=0;
+  if(number>=slides.length)number=slides.length-1;
+  slides.forEach(slide=>slide.classList.remove("active"));
+  slides[number].classList.add("active");
+  currentSlide=number;
+  progress.style.width=((currentSlide+1)/slides.length*100)+"%";
 }
 function nextSlide(){if(currentSlide<slides.length-1)showSlide(currentSlide+1)}
 function previousSlide(){if(currentSlide>0)showSlide(currentSlide-1)}
 
 document.addEventListener("keydown",e=>{
- if(e.key==="ArrowRight"||e.key==="ArrowDown"||e.key==="PageDown"||e.key===" "){e.preventDefault();nextSlide()}
- if(e.key==="ArrowLeft"||e.key==="ArrowUp"||e.key==="PageUp"){e.preventDefault();previousSlide()}
- if(e.key==="Escape")closeFeedback();
+  if(e.key==="ArrowRight"||e.key==="ArrowDown"||e.key==="PageDown"||e.key===" "){e.preventDefault();nextSlide()}
+  if(e.key==="ArrowLeft"||e.key==="ArrowUp"||e.key==="PageUp"){e.preventDefault();previousSlide()}
 });
 
 let startX=0;
 document.addEventListener("touchstart",e=>startX=e.touches[0].clientX);
 document.addEventListener("touchend",e=>{
- const distance=e.changedTouches[0].clientX-startX;
- if(distance<-70)nextSlide();
- if(distance>70)previousSlide();
+  const distance=e.changedTouches[0].clientX-startX;
+  if(distance<-60)nextSlide();
+  if(distance>60)previousSlide();
 });
 
 showSlide(0);
