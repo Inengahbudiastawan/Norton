@@ -66,7 +66,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 90px 24px 60px;
+  padding: 95px 24px 50px;
   background-size: cover;
   background-position: center;
 }
@@ -85,14 +85,18 @@ html, body {
 .content {
   width: 100%; max-width: 1280px;
   height: 100%;
-  display: flex; flex-direction: column; justify-content: center;
+  display: flex; flex-direction: column; justify-content: flex-start;
   position: relative; z-index: 5;
 }
 
-/* ===== TYPOGRAPHY ===== */
-.small-title { color: #38bdf8; font-size: 13px; letter-spacing: 2.5px; font-weight: 800; margin-bottom: 6px; text-transform: uppercase; }
+/* ===== TYPOGRAPHY & HEADER SLIDE ===== */
+.slide-header {
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+.small-title { color: #38bdf8; font-size: 13px; letter-spacing: 2.5px; font-weight: 800; margin-bottom: 4px; text-transform: uppercase; }
 h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: #fff; }
-h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; margin-bottom: 12px; color: #fff; }
+h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; margin-bottom: 0; color: #fff; }
 .highlight { color: #facc15; }
 
 /* ===== BACKGROUND IMAGES ===== */
@@ -103,7 +107,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 /* ===== SLIDE 1: MENU MATERI ===== */
 .material-menu {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px 30px; margin-top: 16px; width: 100%; max-width: 960px; margin: 0 auto;
+  gap: 12px 30px; margin-top: 16px; width: 100%; max-width: 960px; margin-x: auto;
 }
 .menu-col { display: flex; flex-direction: column; gap: 10px; }
 .menu-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
@@ -122,7 +126,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .menu-item:hover .menu-number { transform: scale(1.08); background: #0369a1; }
 .menu-item:hover .menu-text { background: #38bdf8; color: #fff; border-color: #38bdf8; }
 
-/* ===== COMMON GRAFIK & ANALISA ===== */
+/* ===== LAYOUT GRAFIK & ANALISA ===== */
 .chart-layout {
   display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;
 }
@@ -130,6 +134,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0284c7;
   border-radius: 14px; padding: 12px 16px; flex: 1;
   display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 220px;
 }
 .curve-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
 .panel-title { font-size: 14px; font-weight: 900; letter-spacing: 1px; color: #fff; }
@@ -140,7 +145,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .legend-2026 { background: #38bdf8; }
 .legend-online { background: #facc15; }
 
-.curve-chart { width: 100%; height: 100%; min-height: 180px; position: relative; }
+.curve-chart { width: 100%; height: 100%; min-height: 160px; position: relative; }
 .curve-chart svg { width: 100%; height: 100%; overflow: visible; }
 .curve-grid line { stroke: rgba(255, 255, 255, 0.08) !important; stroke-width: 1 !important; }
 .curve-axis { stroke: #475569 !important; stroke-width: 1.5 !important; }
@@ -154,10 +159,10 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .point-2026 { fill: #38bdf8 !important; stroke: #fff !important; stroke-width: 2 !important; }
 .point-online { fill: #facc15 !important; stroke: #fff !important; stroke-width: 2 !important; }
 
-/* STRUKTUR ANGKA GRAFIK ULTRA TAJAM */
+/* ANGKA GRAFIK ULTRA TAJAM */
 .value-2025, .value-2026, .value-online {
   font-family: 'Urbanist', sans-serif !important;
-  font-size: 14px !important;
+  font-size: 13px !important;
   font-weight: 900 !important;
   text-anchor: middle !important;
   paint-order: stroke fill !important;
@@ -172,20 +177,21 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .ytext, .xtext { fill: #94a3b8 !important; font-size: 11px !important; font-weight: 800 !important; }
 .xtext { text-anchor: middle !important; }
 
-/* PANELS ANALISA */
+/* PANELS ANALISA (POSISI TENGAH) ===== */
 .analysis-panel {
   background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0369a1;
-  border-radius: 12px; padding: 12px 14px;
+  border-radius: 12px; padding: 10px 14px;
+  width: 100%; max-width: 1100px; margin: 0 auto;
 }
-.analysis-panel .panel-title { font-size: 13px; margin-bottom: 8px; color: #38bdf8; }
+.analysis-panel .panel-title { font-size: 13px; margin-bottom: 8px; color: #38bdf8; text-align: center; }
 .analysis-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
 .analysis-card {
   background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3);
   border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px;
 }
 .analysis-icon { font-size: 16px; }
-.analysis-card strong { font-size: 12px; font-weight: 800; color: #fff; }
-.analysis-card p { font-size: 11px; line-height: 1.25; color: #cbd5e1; font-weight: 600; }
+.analysis-card strong { font-size: 11px; font-weight: 800; color: #fff; }
+.analysis-card p { font-size: 10px; line-height: 1.25; color: #cbd5e1; font-weight: 600; }
 
 /* ===== NAVIGATION & FOOTER ===== */
 .slide-number {
@@ -203,7 +209,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .progress { position: fixed; left: 0; bottom: 0; height: 3px; width: 33.33%; background: linear-gradient(90deg, #38bdf8, #2563eb); z-index: 1001; transition: width .3s; }
 .footer-text { position: fixed; bottom: 18px; left: 24px; z-index: 1000; color: #64748b; font-size: 12px; font-weight: 700; }
 
-/* ===== RESPONSIVE MOBILE OPTIMIZATION ===== */
+/* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 850px) {
   .header { height: 68px; padding: 0 12px; }
   .header-brand { gap: 10px; }
@@ -223,7 +229,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   .analysis-card { flex-direction: row; align-items: center; gap: 10px; padding: 6px 10px; }
   .analysis-card p { font-size: 10px; }
   
-  .value-2025, .value-2026, .value-online { font-size: 11px !important; stroke-width: 3px !important; }
+  .value-2025, .value-2026, .value-online { font-size: 10px !important; stroke-width: 3px !important; }
   .curve-panel { padding: 8px 10px; }
   .legend { font-size: 11px; gap: 10px; }
   .navigation { right: 12px; bottom: 10px; }
@@ -245,7 +251,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 <!-- SLIDE 1: MENU UTAMA -->
 <section class="slide slide1 active">
   <div class="grid-bg"></div>
-  <div class="content">
+  <div class="content" style="justify-content: center;">
     <div class="small-title" style="text-align: center;">AGENDA PRESENTASI</div>
     <h1 style="text-align: center; margin-bottom: 10px;">MATERI PRESENTASI</h1>
     <div class="material-menu">
@@ -266,8 +272,10 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 <section class="slide slide2">
   <div class="grid-bg"></div>
   <div class="content">
-    <div class="small-title">MATERI 01 • ANALISA PERBANDINGAN</div>
-    <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
+    <div class="slide-header">
+      <div class="small-title">MATERI 01 • ANALISA PERBANDINGAN</div>
+      <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
+    </div>
     
     <div class="chart-layout">
       <!-- GRAFIK CURVE PENDAPATAN -->
@@ -351,7 +359,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA -->
+      <!-- ANALISA PERFORMA (TENGAH) -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERFORMA 2026</div>
         <div class="analysis-grid">
@@ -366,12 +374,14 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   </div>
 </section>
 
-<!-- SLIDE 3: BELANJA ONLINE (CURVE GRAFIK & ANALISA) -->
+<!-- SLIDE 3: BELANJA ONLINE (JUDUL RAPI & ANALISA DI TENGAH) -->
 <section class="slide slide3">
   <div class="grid-bg"></div>
   <div class="content">
-    <div class="small-title">MATERI 03 • TREN TRANSAKSI DIGITAL</div>
-    <h2>🛒 <span class="highlight">BELANJA ONLINE</span> (COD, OJOL & E-COMMERCE)</h2>
+    <div class="slide-header">
+      <div class="small-title">MATERI 03 • TREN TRANSAKSI DIGITAL</div>
+      <h2>🛒 <span class="highlight">BELANJA ONLINE</span> (COD, OJOL & E-COMMERCE)</h2>
+    </div>
 
     <div class="chart-layout">
       <!-- GRAFIK CURVE BELANJA ONLINE -->
@@ -404,7 +414,6 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
             </g>
             
             <!-- CURVE PATH TRANSAKSI ONLINE -->
-            <!-- Scale: Y 300 = 100 tx, Y 40 = 300 tx (1.3 px per tx) -->
             <path class="curve curve-online" d="M 80 208 C 135 208, 135 237, 180 237 C 235 237, 235 207, 280 207 C 335 207, 335 188, 380 188 C 435 188, 435 211, 480 211 C 535 211, 535 160, 580 160 C 635 160, 635 193, 680 193 C 735 193, 735 208, 780 208 C 835 208, 835 182, 880 182 C 935 182, 935 39, 980 39"/>
             
             <!-- POINTS -->
@@ -421,7 +430,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
               <circle class="point-online" cx="980" cy="39" r="6"/>
             </g>
             
-            <!-- NUMERIC VALUES ULTRA CLEAR -->
+            <!-- NUMERIC VALUES -->
             <g>
               <text class="value-online" x="80" y="190">165</text>
               <text class="value-online" x="180" y="262">145</text>
@@ -452,7 +461,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA TRANSAKSI ONLINE -->
+      <!-- ANALISA PERFORMA (TENGAH) -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE & PELANGGAN AGUSTUS</div>
         <div class="analysis-grid">
