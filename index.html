@@ -25,7 +25,7 @@ html, body {
 .header {
   position: fixed;
   top: 0; left: 0; width: 100%;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -42,13 +42,13 @@ html, body {
   gap: 16px; 
 }
 .header-logo { 
-  width: 52px; 
-  height: 52px; 
+  width: 44px; 
+  height: 44px; 
   object-fit: contain; 
   filter: drop-shadow(0 0 10px rgba(56,189,248,0.5)); 
 }
 .header-title { 
-  font-size: 28px; 
+  font-size: 24px; 
   font-weight: 900; 
   letter-spacing: 2px; 
   color: #fff; 
@@ -64,9 +64,9 @@ html, body {
   inset: 0;
   display: none;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  padding: 95px 24px 50px;
+  padding: 80px 24px 60px; /* Jarak bawah ditambah agar tidak kena footer */
   background-size: cover;
   background-position: center;
 }
@@ -85,18 +85,18 @@ html, body {
 .content {
   width: 100%; max-width: 1280px;
   height: 100%;
-  display: flex; flex-direction: column; justify-content: flex-start;
+  display: flex; flex-direction: column; justify-content: space-between;
   position: relative; z-index: 5;
 }
 
 /* ===== TYPOGRAPHY & HEADER SLIDE ===== */
 .slide-header {
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   flex-shrink: 0;
 }
-.small-title { color: #38bdf8; font-size: 13px; letter-spacing: 2.5px; font-weight: 800; margin-bottom: 4px; text-transform: uppercase; }
-h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: #fff; }
-h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; margin-bottom: 0; color: #fff; }
+.small-title { color: #38bdf8; font-size: 12px; letter-spacing: 2.5px; font-weight: 800; margin-bottom: 2px; text-transform: uppercase; }
+h1 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; line-height: 1.1; margin-bottom: 12px; color: #fff; }
+h2 { font-size: clamp(20px, 2.5vw, 30px); font-weight: 900; line-height: 1.2; margin-bottom: 0; color: #fff; }
 .highlight { color: #facc15; }
 
 /* ===== BACKGROUND IMAGES ===== */
@@ -128,28 +128,28 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
 
 /* ===== LAYOUT GRAFIK & ANALISA ===== */
 .chart-layout {
-  display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;
+  display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 10px;
 }
 .curve-panel {
   background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0284c7;
-  border-radius: 14px; padding: 12px 16px; flex: 1;
+  border-radius: 14px; padding: 10px 14px; flex: 1;
   display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 220px;
+  min-height: 180px;
 }
-.curve-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
-.panel-title { font-size: 14px; font-weight: 900; letter-spacing: 1px; color: #fff; }
-.legend { display: flex; gap: 16px; font-size: 13px; font-weight: 800; }
+.curve-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.panel-title { font-size: 13px; font-weight: 900; letter-spacing: 1px; color: #fff; }
+.legend { display: flex; gap: 16px; font-size: 12px; font-weight: 800; }
 .legend span { display: flex; align-items: center; gap: 6px; }
-.legend i { display: inline-block; width: 22px; height: 5px; border-radius: 3px; }
+.legend i { display: inline-block; width: 20px; height: 4px; border-radius: 3px; }
 .legend-2025 { background: #ff7a20; }
 .legend-2026 { background: #38bdf8; }
 .legend-online { background: #facc15; }
 
-.curve-chart { width: 100%; height: 100%; min-height: 160px; position: relative; }
+.curve-chart { width: 100%; height: 100%; min-height: 140px; position: relative; }
 .curve-chart svg { width: 100%; height: 100%; overflow: visible; }
 .curve-grid line { stroke: rgba(255, 255, 255, 0.08) !important; stroke-width: 1 !important; }
 .curve-axis { stroke: #475569 !important; stroke-width: 1.5 !important; }
-.curve { fill: none !important; stroke-width: 4.5 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+.curve { fill: none !important; stroke-width: 4 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
 
 .curve-2025 { stroke: #ff7a20 !important; }
 .curve-2026 { stroke: #38bdf8 !important; }
@@ -159,15 +159,14 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
 .point-2026 { fill: #38bdf8 !important; stroke: #fff !important; stroke-width: 2 !important; }
 .point-online { fill: #facc15 !important; stroke: #fff !important; stroke-width: 2 !important; }
 
-/* ANGKA GRAFIK ULTRA TAJAM */
 .value-2025, .value-2026, .value-online {
   font-family: 'Urbanist', sans-serif !important;
-  font-size: 13px !important;
+  font-size: 12px !important;
   font-weight: 900 !important;
   text-anchor: middle !important;
   paint-order: stroke fill !important;
   stroke: #000000 !important;
-  stroke-width: 4px !important;
+  stroke-width: 3.5px !important;
   stroke-linejoin: round !important;
 }
 .value-2025 { fill: #ffaa66 !important; }
@@ -177,63 +176,69 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
 .ytext, .xtext { fill: #94a3b8 !important; font-size: 11px !important; font-weight: 800 !important; }
 .xtext { text-anchor: middle !important; }
 
-/* PANELS ANALISA (POSISI TENGAH) ===== */
+/* PANELS ANALISA (POSISI TENGAH BERJARAK DARI FOOTER) ===== */
 .analysis-panel {
-  background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0369a1;
+  background: rgba(9, 13, 22, 0.95); border: 1.5px solid #0369a1;
   border-radius: 12px; padding: 10px 14px;
   width: 100%; max-width: 1100px; margin: 0 auto;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
 }
-.analysis-panel .panel-title { font-size: 13px; margin-bottom: 8px; color: #38bdf8; text-align: center; }
-.analysis-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+.analysis-panel .panel-title { font-size: 12px; margin-bottom: 6px; color: #38bdf8; text-align: center; }
+.analysis-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .analysis-card {
   background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 4px;
+  border-radius: 8px; padding: 8px; display: flex; flex-direction: column; gap: 3px;
 }
-.analysis-icon { font-size: 16px; }
+.analysis-icon { font-size: 15px; }
 .analysis-card strong { font-size: 11px; font-weight: 800; color: #fff; }
-.analysis-card p { font-size: 10px; line-height: 1.25; color: #cbd5e1; font-weight: 600; }
+.analysis-card p { font-size: 10px; line-height: 1.2; color: #cbd5e1; font-weight: 600; }
 
-/* ===== NAVIGATION & FOOTER ===== */
+/* ===== NAVIGATION & FOOTER (TIDAK HALANGI BACAAN) ===== */
 .slide-number {
-  position: fixed; top: 26px; right: 24px; z-index: 1001;
+  position: fixed; top: 20px; right: 24px; z-index: 1001;
   padding: 4px 12px; border-radius: 20px; background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.2); font-size: 12px; font-weight: 800; color: #38bdf8;
+  border: 1px solid rgba(255,255,255,0.2); font-size: 11px; font-weight: 800; color: #38bdf8;
 }
-.navigation { position: fixed; right: 20px; bottom: 16px; z-index: 1001; display: flex; gap: 8px; }
+.navigation { 
+  position: fixed; right: 20px; bottom: 8px; z-index: 1001; display: flex; gap: 6px; 
+}
 .navigation button {
-  border: none; background: #fff; color: #0f172a; width: 40px; height: 40px;
-  border-radius: 50%; font-size: 18px; font-weight: 900; cursor: pointer; transition: .2s;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  border: none; background: rgba(255, 255, 255, 0.9); color: #0f172a; width: 32px; height: 32px;
+  border-radius: 50%; font-size: 14px; font-weight: 900; cursor: pointer; transition: .2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 .navigation button:hover { background: #38bdf8; color: #fff; transform: scale(1.08); }
 .progress { position: fixed; left: 0; bottom: 0; height: 3px; width: 33.33%; background: linear-gradient(90deg, #38bdf8, #2563eb); z-index: 1001; transition: width .3s; }
-.footer-text { position: fixed; bottom: 18px; left: 24px; z-index: 1000; color: #64748b; font-size: 12px; font-weight: 700; }
+.footer-text { 
+  position: fixed; bottom: 10px; left: 24px; z-index: 1000; color: #64748b; font-size: 11px; font-weight: 700;
+  background: rgba(2, 6, 23, 0.7); padding: 2px 8px; border-radius: 4px;
+}
 
 /* ===== RESPONSIVE MOBILE ===== */
 @media (max-width: 850px) {
-  .header { height: 68px; padding: 0 12px; }
-  .header-brand { gap: 10px; }
-  .header-logo { width: 40px; height: 40px; }
-  .header-title { font-size: 18px; letter-spacing: 1px; }
+  .header { height: 60px; padding: 0 12px; }
+  .header-brand { gap: 8px; }
+  .header-logo { width: 32px; height: 32px; }
+  .header-title { font-size: 16px; letter-spacing: 1px; }
   
-  .slide { padding: 76px 12px 50px; }
-  .slide-number { top: 20px; right: 12px; font-size: 11px; }
+  .slide { padding: 68px 12px 48px; }
+  .slide-number { top: 16px; right: 12px; font-size: 10px; }
   .footer-text { display: none; }
   
   .material-menu { grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
   .menu-col { gap: 8px; }
-  .menu-number { width: 38px; height: 38px; flex: 0 0 38px; font-size: 15px; }
-  .menu-text { height: 38px; font-size: 13px; }
+  .menu-number { width: 36px; height: 36px; flex: 0 0 36px; font-size: 14px; }
+  .menu-text { height: 36px; font-size: 12px; }
   
   .analysis-grid { grid-template-columns: 1fr; gap: 6px; }
   .analysis-card { flex-direction: row; align-items: center; gap: 10px; padding: 6px 10px; }
   .analysis-card p { font-size: 10px; }
   
-  .value-2025, .value-2026, .value-online { font-size: 10px !important; stroke-width: 3px !important; }
+  .value-2025, .value-2026, .value-online { font-size: 10px !important; stroke-width: 2.5px !important; }
   .curve-panel { padding: 8px 10px; }
-  .legend { font-size: 11px; gap: 10px; }
-  .navigation { right: 12px; bottom: 10px; }
-  .navigation button { width: 36px; height: 36px; font-size: 16px; }
+  .legend { font-size: 10px; gap: 8px; }
+  .navigation { right: 10px; bottom: 6px; }
+  .navigation button { width: 30px; height: 30px; font-size: 13px; }
 }
 </style>
 </head>
@@ -246,7 +251,7 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
   </div>
 </header>
 
-<div class="slide-number" id="slideNum">01 / 03</div>
+<div class="slide-number" id="slideNum">03 / 03</div>
 
 <!-- SLIDE 1: MENU UTAMA -->
 <section class="slide slide1 active">
@@ -300,7 +305,6 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
             <line class="curve-axis" x1="60" y1="30" x2="60" y2="300"/>
             <line class="curve-axis" x1="60" y1="300" x2="1170" y2="300"/>
             
-            <!-- Y AXIS -->
             <g>
               <text x="15" y="304" class="ytext">80JT</text>
               <text x="15" y="244" class="ytext">100JT</text>
@@ -309,17 +313,14 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
               <text x="15" y="64" class="ytext">160JT</text>
             </g>
             
-            <!-- CURVE PATHS -->
             <path class="curve curve-2025" d="M60 231 C110 231 110 258 160 258 C210 258 210 270 260 270 C310 270 310 270 360 270 C410 270 410 207 460 207 C510 207 510 180 560 180 C610 180 610 171 660 171 C710 171 710 129 760 129 C810 129 810 39 860 39 C910 39 910 132 960 132 C1010 132 1010 186 1060 186 C1110 186 1110 240 1160 240"/>
             <path class="curve curve-2026" d="M60 210 C110 210 110 135 160 135 C210 135 210 207 260 207 C310 207 310 204 360 204 C410 204 410 219 460 219 C510 219 510 165 560 165 C610 165 610 180 660 180 C710 180 710 90 760 90 C810 90 810 39 860 39"/>
             
-            <!-- POINTS -->
             <g>
               <circle class="point-2025" cx="60" cy="231" r="5"/><circle class="point-2025" cx="160" cy="258" r="5"/><circle class="point-2025" cx="260" cy="270" r="5"/><circle class="point-2025" cx="360" cy="270" r="5"/><circle class="point-2025" cx="460" cy="207" r="5"/><circle class="point-2025" cx="560" cy="180" r="5"/><circle class="point-2025" cx="660" cy="171" r="5"/><circle class="point-2025" cx="760" cy="129" r="5"/><circle class="point-2025" cx="860" cy="39" r="5"/><circle class="point-2025" cx="960" cy="132" r="5"/><circle class="point-2025" cx="1060" cy="186" r="5"/><circle class="point-2025" cx="1160" cy="240" r="5"/>
               <circle class="point-2026" cx="60" cy="210" r="5"/><circle class="point-2026" cx="160" cy="135" r="5"/><circle class="point-2026" cx="260" cy="207" r="5"/><circle class="point-2026" cx="360" cy="204" r="5"/><circle class="point-2026" cx="460" cy="219" r="5"/><circle class="point-2026" cx="560" cy="165" r="5"/><circle class="point-2026" cx="660" cy="180" r="5"/><circle class="point-2026" cx="760" cy="90" r="5"/><circle class="point-2026" cx="860" cy="39" r="5"/>
             </g>
             
-            <!-- NUMERIC VALUES ULTRA CLEAR -->
             <g>
               <text class="value-2025" x="60" y="254">103JT</text>
               <text class="value-2025" x="160" y="280">94JT</text>
@@ -346,7 +347,6 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
               <text class="value-2026" x="860" y="62">167JT</text>
             </g>
             
-            <!-- X AXIS -->
             <g>
               <text x="60" y="325" class="xtext">JAN</text><text x="160" y="325" class="xtext">FEB</text>
               <text x="260" y="325" class="xtext">MAR</text><text x="360" y="325" class="xtext">APR</text>
@@ -359,7 +359,7 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA (TENGAH) -->
+      <!-- ANALISA PERFORMA -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERFORMA 2026</div>
         <div class="analysis-grid">
@@ -374,7 +374,7 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
   </div>
 </section>
 
-<!-- SLIDE 3: BELANJA ONLINE (JUDUL RAPI & ANALISA DI TENGAH) -->
+<!-- SLIDE 3: BELANJA ONLINE (TIDAK TERLINDUNGI FOOTER/NAVIGASI) -->
 <section class="slide slide3">
   <div class="grid-bg"></div>
   <div class="content">
@@ -404,7 +404,6 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
             <line class="curve-axis" x1="60" y1="40" x2="60" y2="300"/>
             <line class="curve-axis" x1="60" y1="300" x2="1040" y2="300"/>
             
-            <!-- Y AXIS -->
             <g>
               <text x="15" y="304" class="ytext">100</text>
               <text x="15" y="234" class="ytext">150</text>
@@ -413,24 +412,21 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
               <text x="15" y="44" class="ytext">300</text>
             </g>
             
-            <!-- CURVE PATH TRANSAKSI ONLINE -->
             <path class="curve curve-online" d="M 80 208 C 135 208, 135 237, 180 237 C 235 237, 235 207, 280 207 C 335 207, 335 188, 380 188 C 435 188, 435 211, 480 211 C 535 211, 535 160, 580 160 C 635 160, 635 193, 680 193 C 735 193, 735 208, 780 208 C 835 208, 835 182, 880 182 C 935 182, 935 39, 980 39"/>
             
-            <!-- POINTS -->
             <g>
-              <circle class="point-online" cx="80" cy="208" r="6"/>
-              <circle class="point-online" cx="180" cy="237" r="6"/>
-              <circle class="point-online" cx="280" cy="207" r="6"/>
-              <circle class="point-online" cx="380" cy="188" r="6"/>
-              <circle class="point-online" cx="480" cy="211" r="6"/>
-              <circle class="point-online" cx="580" cy="160" r="6"/>
-              <circle class="point-online" cx="680" cy="193" r="6"/>
-              <circle class="point-online" cx="780" cy="208" r="6"/>
-              <circle class="point-online" cx="880" cy="182" r="6"/>
-              <circle class="point-online" cx="980" cy="39" r="6"/>
+              <circle class="point-online" cx="80" cy="208" r="5"/>
+              <circle class="point-online" cx="180" cy="237" r="5"/>
+              <circle class="point-online" cx="280" cy="207" r="5"/>
+              <circle class="point-online" cx="380" cy="188" r="5"/>
+              <circle class="point-online" cx="480" cy="211" r="5"/>
+              <circle class="point-online" cx="580" cy="160" r="5"/>
+              <circle class="point-online" cx="680" cy="193" r="5"/>
+              <circle class="point-online" cx="780" cy="208" r="5"/>
+              <circle class="point-online" cx="880" cy="182" r="5"/>
+              <circle class="point-online" cx="980" cy="39" r="5"/>
             </g>
             
-            <!-- NUMERIC VALUES -->
             <g>
               <text class="value-online" x="80" y="190">165</text>
               <text class="value-online" x="180" y="262">145</text>
@@ -444,7 +440,6 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
               <text class="value-online" x="980" y="25" style="fill: #facc15 !important;">301 (Puncak)</text>
             </g>
             
-            <!-- X AXIS -->
             <g>
               <text x="80" y="325" class="xtext">NOP</text>
               <text x="180" y="325" class="xtext">DES</text>
@@ -461,7 +456,7 @@ h2 { font-size: clamp(22px, 3vw, 36px); font-weight: 900; line-height: 1.2; marg
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA (TENGAH) -->
+      <!-- ANALISA PERFORMA (BEBAS HAMBATAN FOOTER/TOMBOL) -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE & PELANGGAN AGUSTUS</div>
         <div class="analysis-grid">
