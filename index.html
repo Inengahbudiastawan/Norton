@@ -41,7 +41,13 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .slide2{background-image:url("https://images.unsplash.com/photo-1517336714739-489689fd1ca8?auto=format&fit=crop&w=2000&q=85")}
 .slide3{background-image:url("https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=2000&q=85")}
 .slide4{background-image:url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2000&q=85")}
-.materials{display:grid;grid-template-columns:repeat(3,1fr);gap:25px;margin-top:40px}
+.material-menu{display:grid;grid-template-columns:1fr 1fr;gap:28px 90px;margin:26px auto 0;max-width:980px;text-align:left}
+.menu-col{display:flex;flex-direction:column;gap:22px}
+.menu-item{display:flex;align-items:center;gap:16px;cursor:pointer}
+.menu-number{flex:0 0 76px;width:76px;height:76px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#0879c9;border:2px solid #07527f;color:#fff;font-size:30px;font-weight:400;box-shadow:0 4px 12px rgba(0,0,0,.35);transition:.25s}
+.menu-item span:last-child{min-width:315px;min-height:78px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px 18px;background:#f8f8f8;color:#050505;border:2px solid #0a5575;border-radius:12px;font-size:23px;line-height:1.08;font-weight:800;box-shadow:0 3px 8px rgba(0,0,0,.25);transition:.25s}
+.menu-item:hover .menu-number{transform:scale(1.06);background:#1298ed}
+.menu-item:hover span:last-child{transform:translateY(-2px);border-color:#1298ed}
 .material{padding:35px 25px;border-radius:25px;cursor:pointer;background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(255,255,255,.04));border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(15px);box-shadow:0 20px 50px rgba(0,0,0,.4);transition:.3s}
 .material:hover{transform:translateY(-10px) scale(1.02);border-color:#38bdf8;box-shadow:0 25px 60px rgba(0,0,0,.5),0 0 30px rgba(56,189,248,.15)}
 .material-icon{font-size:55px;margin-bottom:15px}.material h3{font-size:25px;margin-bottom:10px}.material p{font-size:15px;color:#cbd5e1}
@@ -52,7 +58,7 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .navigation{position:fixed;right:25px;bottom:25px;z-index:100;display:flex;gap:10px}
 .navigation button{border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.9);color:#111827;width:50px;height:50px;border-radius:50%;font-size:22px;cursor:pointer;transition:.25s}
 .navigation button:hover{background:#38bdf8;color:#fff;transform:scale(1.1)}
-.progress{position:fixed;left:0;bottom:0;height:4px;width:25%;background:linear-gradient(90deg,#38bdf8,#2563eb);z-index:200;transition:width .35s ease}
+.progress{position:fixed;left:0;bottom:0;height:4px;width:9%;background:linear-gradient(90deg,#38bdf8,#2563eb);z-index:200;transition:width .35s ease}
 .footer{position:fixed;bottom:22px;left:30px;z-index:100;color:#94a3b8;font-size:12px}
 
 /* Saran & Kritik */
@@ -76,7 +82,9 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 .header-brand{gap:10px}
 .header-logo{width:42px;height:42px}
 .header-title{font-size:19px;letter-spacing:1.5px}
-.slide{padding:85px 20px 85px}.materials{grid-template-columns:1fr;gap:12px;margin-top:20px}
+.slide{padding:85px 20px 85px}.material-menu{grid-template-columns:1fr;gap:12px;margin-top:18px;max-width:650px}
+.menu-col{gap:12px}.menu-item{gap:10px}.menu-number{width:48px;height:48px;flex-basis:48px;font-size:20px}
+.menu-item span:last-child{min-width:0;min-height:48px;flex:1;font-size:15px;padding:7px 10px}
 .material{padding:16px;display:flex;align-items:center;text-align:left;gap:15px}.material-icon{font-size:35px;margin:0}
 .material h3{font-size:18px}.material p{font-size:12px}.slide-number{top:75px;right:18px;font-size:10px}
 .navigation{right:15px;bottom:15px}.navigation button{width:43px;height:43px;font-size:18px}
@@ -94,21 +102,30 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 </header>
 
 <section class="slide slide1 active">
-<div class="grid"></div><div class="slide-number">01 / 04</div>
+<div class="grid"></div><div class="slide-number">MATERI</div>
 <div class="content">
-<div class="small-title">NORTON BALI COMPUTER</div>
-<h1>MATERI <span class="highlight">PRESENTASI</span></h1>
-<p>Pilih materi yang ingin dibahas</p>
-<div class="materials">
-<div class="material" onclick="showSlide(1)"><div class="material-icon">📈</div><div><div class="material-number">MATERI 01</div><h3>Pendapatan</h3><p>Target, pencapaian dan perkembangan pendapatan.</p></div></div>
-<div class="material" onclick="showSlide(2)"><div class="material-icon">👨‍💼</div><div><div class="material-number">MATERI 02</div><h3>Kinerja Karyawan</h3><p>Penilaian, produktivitas dan hasil kerja karyawan.</p></div></div>
-<div class="material" onclick="showSlide(3)"><div class="material-icon">🕐</div><div><div class="material-number">MATERI 03</div><h3>Absensi</h3><p>Kehadiran, kedisiplinan dan ketepatan waktu.</p></div></div>
+<h1 style="font-size:52px;margin-bottom:4px;">MATERI</h1>
+<div class="material-menu">
+  <div class="menu-col">
+    <div class="menu-item" onclick="showSlide(1)"><span class="menu-number">1</span><span>PENDAPATAN</span></div>
+    <div class="menu-item" onclick="showSlide(2)"><span class="menu-number">2</span><span>PERBANDINGAN<br>PENDAPATAN</span></div>
+    <div class="menu-item" onclick="showSlide(3)"><span class="menu-number">3</span><span>BELANJA<br>ONLINE</span></div>
+    <div class="menu-item" onclick="showSlide(4)"><span class="menu-number">4</span><span>KUNJUNGAN KE<br>KOPERASI</span></div>
+    <div class="menu-item" onclick="showSlide(5)"><span class="menu-number">5</span><span>DISTRIBUSI<br>INFORMASI</span></div>
+  </div>
+  <div class="menu-col">
+    <div class="menu-item" onclick="showSlide(6)"><span class="menu-number">6</span><span>TRANSFORMASI<br>CITRA OFFLINE<br>KE ONLINE</span></div>
+    <div class="menu-item" onclick="showSlide(7)"><span class="menu-number">7</span><span>MENJADI SDM<br>UNGGUL</span></div>
+    <div class="menu-item" onclick="showSlide(8)"><span class="menu-number">8</span><span>PROKER</span></div>
+    <div class="menu-item" onclick="showSlide(9)"><span class="menu-number">9</span><span>ABSENSI</span></div>
+    <div class="menu-item" onclick="showSlide(10)"><span class="menu-number">10</span><span>SEMAKIN TAHUN<br>TANTANGAN<br>BERBEDA</span></div>
+  </div>
 </div>
 </div>
 </section>
 
 <section class="slide slide2">
-<div class="grid"></div><div class="slide-number">02 / 04</div>
+<div class="grid"></div><div class="slide-number">02 / 11</div>
 <div class="content">
 <div class="small-title">MATERI 01</div><h2>📈 <span class="highlight">PENDAPATAN</span></h2>
 <div class="box"><p>Pendapatan menjadi salah satu indikator utama perkembangan Norton Bali Computer.</p>
@@ -117,7 +134,7 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 </section>
 
 <section class="slide slide3">
-<div class="grid"></div><div class="slide-number">03 / 04</div>
+<div class="grid"></div><div class="slide-number">03 / 11</div>
 <div class="content">
 <div class="small-title">MATERI 02</div><h2>👨‍💼 <span class="blue">KINERJA KARYAWAN</span></h2>
 <div class="box"><p>Kinerja karyawan menjadi bagian penting dalam mencapai target perusahaan.</p>
@@ -126,13 +143,22 @@ p{font-size:clamp(18px,2vw,24px);line-height:1.6;color:#dbeafe}
 </section>
 
 <section class="slide slide4">
-<div class="grid"></div><div class="slide-number">04 / 04</div>
+<div class="grid"></div><div class="slide-number">04 / 11</div>
 <div class="content">
 <div class="small-title">MATERI 03</div><h2>🕐 <span class="highlight">ABSENSI</span></h2>
 <div class="box"><p>Absensi digunakan untuk melihat tingkat kehadiran dan kedisiplinan karyawan.</p>
 <div class="list"><div>🟢 Kehadiran</div><div>⏰ Ketepatan Waktu</div><div>📅 Jumlah Hari Kerja</div><div>📝 Izin / Cuti</div><div>📊 Evaluasi Kedisiplinan</div></div></div>
 </div>
 </section>
+
+
+<section class="slide"><div class="grid"></div><div class="slide-number">05 / 11</div><div class="content"><div class="small-title">MATERI 04</div><h2>🏢 <span class="blue">KUNJUNGAN KE KOPERASI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">06 / 11</div><div class="content"><div class="small-title">MATERI 05</div><h2>📢 <span class="highlight">DISTRIBUSI INFORMASI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">07 / 11</div><div class="content"><div class="small-title">MATERI 06</div><h2>🌐 <span class="blue">TRANSFORMASI CITRA OFFLINE KE ONLINE</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">08 / 11</div><div class="content"><div class="small-title">MATERI 07</div><h2>⭐ <span class="highlight">MENJADI SDM UNGGUL</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">09 / 11</div><div class="content"><div class="small-title">MATERI 08</div><h2>📋 <span class="blue">PROKER</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">10 / 11</div><div class="content"><div class="small-title">MATERI 09</div><h2>🕐 <span class="highlight">ABSENSI</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
+<section class="slide"><div class="grid"></div><div class="slide-number">11 / 11</div><div class="content"><div class="small-title">MATERI 10</div><h2>🎯 <span class="blue">SEMAKIN TAHUN, TANTANGAN BERBEDA</span></h2><div class="box"><p>Materi dapat diisi di bagian ini.</p></div></div></section>
 
 <button class="feedback-button" onclick="openFeedback()">💬 Saran & Kritik</button>
 
