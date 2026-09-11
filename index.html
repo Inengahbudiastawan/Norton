@@ -21,7 +21,7 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ===== HEADER (LEBIH BESAR & TEPAT DI TENGAH) ===== */
+/* ===== HEADER ===== */
 .header {
   position: fixed;
   top: 0; left: 0; width: 100%;
@@ -56,7 +56,7 @@ html, body {
 }
 .header-title span { color: #38bdf8; }
 
-/* ===== SLIDE CONTAINER (1 VIEWPORT FULL) ===== */
+/* ===== SLIDE CONTAINER ===== */
 .slide {
   width: 100vw;
   height: 100vh;
@@ -94,7 +94,6 @@ html, body {
 h1 { font-size: clamp(32px, 5vw, 56px); font-weight: 900; line-height: 1.1; margin-bottom: 16px; color: #fff; }
 h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; margin-bottom: 12px; color: #fff; }
 .highlight { color: #facc15; }
-.blue { color: #38bdf8; }
 
 /* ===== BACKGROUND IMAGES ===== */
 .slide1 { background-image: url("https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=2000&q=85"); }
@@ -104,7 +103,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 /* ===== SLIDE 1: MENU MATERI ===== */
 .material-menu {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px 30px; margin-top: 16px; width: 100%; max-width: 960px; margin-x: auto;
+  gap: 12px 30px; margin-top: 16px; width: 100%; max-width: 960px; margin: 0 auto;
 }
 .menu-col { display: flex; flex-direction: column; gap: 10px; }
 .menu-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
@@ -123,7 +122,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .menu-item:hover .menu-number { transform: scale(1.08); background: #0369a1; }
 .menu-item:hover .menu-text { background: #38bdf8; color: #fff; border-color: #38bdf8; }
 
-/* ===== SLIDE 2: CURVE GRAFIK & ANALISA ===== */
+/* ===== COMMON GRAFIK & ANALISA ===== */
 .chart-layout {
   display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 12px;
 }
@@ -139,19 +138,24 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 .legend i { display: inline-block; width: 22px; height: 5px; border-radius: 3px; }
 .legend-2025 { background: #ff7a20; }
 .legend-2026 { background: #38bdf8; }
+.legend-online { background: #facc15; }
 
 .curve-chart { width: 100%; height: 100%; min-height: 180px; position: relative; }
 .curve-chart svg { width: 100%; height: 100%; overflow: visible; }
 .curve-grid line { stroke: rgba(255, 255, 255, 0.08) !important; stroke-width: 1 !important; }
 .curve-axis { stroke: #475569 !important; stroke-width: 1.5 !important; }
 .curve { fill: none !important; stroke-width: 4.5 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+
 .curve-2025 { stroke: #ff7a20 !important; }
 .curve-2026 { stroke: #38bdf8 !important; }
+.curve-online { stroke: #facc15 !important; }
+
 .point-2025 { fill: #ff7a20 !important; stroke: #fff !important; stroke-width: 2 !important; }
 .point-2026 { fill: #38bdf8 !important; stroke: #fff !important; stroke-width: 2 !important; }
+.point-online { fill: #facc15 !important; stroke: #fff !important; stroke-width: 2 !important; }
 
 /* STRUKTUR ANGKA GRAFIK ULTRA TAJAM */
-.value-2025, .value-2026 {
+.value-2025, .value-2026, .value-online {
   font-family: 'Urbanist', sans-serif !important;
   font-size: 14px !important;
   font-weight: 900 !important;
@@ -163,6 +167,8 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
 }
 .value-2025 { fill: #ffaa66 !important; }
 .value-2026 { fill: #7dd3fc !important; }
+.value-online { fill: #fef08a !important; }
+
 .ytext, .xtext { fill: #94a3b8 !important; font-size: 11px !important; font-weight: 800 !important; }
 .xtext { text-anchor: middle !important; }
 
@@ -217,7 +223,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   .analysis-card { flex-direction: row; align-items: center; gap: 10px; padding: 6px 10px; }
   .analysis-card p { font-size: 10px; }
   
-  .value-2025, .value-2026 { font-size: 11px !important; stroke-width: 3px !important; }
+  .value-2025, .value-2026, .value-online { font-size: 11px !important; stroke-width: 3px !important; }
   .curve-panel { padding: 8px 10px; }
   .legend { font-size: 11px; gap: 10px; }
   .navigation { right: 12px; bottom: 10px; }
@@ -264,7 +270,7 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
     <h2><span class="highlight">PENDAPATAN</span> 2025 vs 2026</h2>
     
     <div class="chart-layout">
-      <!-- GRAFIK CURVE -->
+      <!-- GRAFIK CURVE PENDAPATAN -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">PERTUMBUHAN CURVE REAL (JUTA RUPIAH)</div>
@@ -360,95 +366,103 @@ h2 { font-size: clamp(24px, 3.5vw, 42px); font-weight: 900; line-height: 1.2; ma
   </div>
 </section>
 
-<!-- SLIDE 3: BELANJA ONLINE -->
+<!-- SLIDE 3: BELANJA ONLINE (CURVE GRAFIK & ANALISA) -->
 <section class="slide slide3">
   <div class="grid-bg"></div>
   <div class="content">
     <div class="small-title">MATERI 03 • TREN TRANSAKSI DIGITAL</div>
     <h2>🛒 <span class="highlight">BELANJA ONLINE</span> (COD, OJOL & E-COMMERCE)</h2>
-    <p style="color: #cbd5e1; font-size: 15px; margin-bottom: 16px; font-weight: 600;">
-      Pelanggan tidak datang ke toko, melainkan bertransaksi via COD, Ojek Online, dan E-Commerce. Dari total <strong style="color: #38bdf8;">1.319 pelanggan</strong> di bulan Agustus, transaksi online mengalami peningkatan pesat.
-    </p>
 
-    <!-- CONTAINER GRID UNTUK TABEL & HIGHLIGHT -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start;">
-      
-      <!-- TABEL DATA BULANAN -->
-      <div style="background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0284c7; border-radius: 12px; padding: 14px; max-height: 380px; overflow-y: auto;">
-        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
-          <thead>
-            <tr style="border-bottom: 2px solid #38bdf8; color: #38bdf8; font-weight: 800;">
-              <th style="padding: 8px;">BULAN</th>
-              <th style="padding: 8px; text-align: right;">TRANSAKSI ONLINE</th>
-            </tr>
-          </thead>
-          <tbody style="font-weight: 700; color: #f8fafc;">
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Nopember</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">165</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Desember</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">145</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Januari</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">166</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Februari</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">179</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Maret</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">163</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">April</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">200</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Mei</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">176</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Juni</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">166</td>
-            </tr>
-            <tr style="border-bottom: 1px solid rgba(255,255,255,0.08);">
-              <td style="padding: 6px 8px;">Juli</td>
-              <td style="padding: 6px 8px; text-align: right; color: #94a3b8;">184</td>
-            </tr>
-            <tr style="background: rgba(56, 189, 248, 0.15); border-left: 4px solid #facc15;">
-              <td style="padding: 8px; font-weight: 900; color: #facc15;">Agustus (Puncak)</td>
-              <td style="padding: 8px; text-align: right; font-weight: 900; color: #facc15; font-size: 16px;">301</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- HIGHLIGHT SUMMARY BOX -->
-      <div style="display: flex; flex-direction: column; gap: 12px;">
-        
-        <div style="background: rgba(15, 23, 42, 0.9); border: 1.5px solid #facc15; border-radius: 12px; padding: 16px; text-align: center;">
-          <div style="font-size: 12px; font-weight: 800; color: #facc15; letter-spacing: 1px;">TOTAL PELANGGAN AGUSTUS</div>
-          <div style="font-size: 38px; font-weight: 900; color: #fff; margin: 4px 0;">1.319 <span style="font-size: 16px; color: #94a3b8;">Orang</span></div>
-          <div style="font-size: 13px; font-weight: 700; color: #38bdf8;">
-            301 Transaksi via COD / Ojol / E-Commerce (~22,8%)
+    <div class="chart-layout">
+      <!-- GRAFIK CURVE BELANJA ONLINE -->
+      <div class="curve-panel">
+        <div class="curve-head">
+          <div class="panel-title">TREN TRANSAKSI ONLINE BULANAN (JUMLAH TRANSAKSI)</div>
+          <div class="legend">
+            <span><i class="legend-online"></i>Transaksi Online</span>
           </div>
         </div>
-
-        <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: 12px; padding: 14px;">
-          <div style="font-size: 13px; font-weight: 800; color: #38bdf8; margin-bottom: 8px;">💡 POIN ANALISA KHUSUS</div>
-          <ul style="font-size: 12px; line-height: 1.5; color: #cbd5e1; font-weight: 600; padding-left: 16px; display: flex; flex-direction: column; gap: 6px;">
-            <li><strong>Lonjakan Rekor:</strong> Transaksi online bulan Agustus mencapai angka tertinggi (301 transaksi), naik 63% dibanding bulan Juli (184).</li>
-            <li><strong>Perubahan Perilaku:</strong> Semakin banyak konsumen memilih pengiriman instan (Ojol/COD) tanpa perlu datang langsung ke toko fisik.</li>
-            <li><strong>Kesiapan Stok:</strong> Perlu peningkatan kecepatan <i>packing</i> dan penyedia kurir instan untuk menjaga kepuasan belanja online.</li>
-          </ul>
+        
+        <div class="curve-chart">
+          <svg viewBox="0 0 1100 360" preserveAspectRatio="none">
+            <g class="curve-grid">
+              <line x1="60" y1="300" x2="1040" y2="300"/>
+              <line x1="60" y1="230" x2="1040" y2="230"/>
+              <line x1="60" y1="160" x2="1040" y2="160"/>
+              <line x1="60" y1="90" x2="1040" y2="90"/>
+            </g>
+            <line class="curve-axis" x1="60" y1="40" x2="60" y2="300"/>
+            <line class="curve-axis" x1="60" y1="300" x2="1040" y2="300"/>
+            
+            <!-- Y AXIS -->
+            <g>
+              <text x="15" y="304" class="ytext">100</text>
+              <text x="15" y="234" class="ytext">150</text>
+              <text x="15" y="164" class="ytext">200</text>
+              <text x="15" y="94" class="ytext">250</text>
+              <text x="15" y="44" class="ytext">300</text>
+            </g>
+            
+            <!-- CURVE PATH TRANSAKSI ONLINE -->
+            <!-- Scale: Y 300 = 100 tx, Y 40 = 300 tx (1.3 px per tx) -->
+            <path class="curve curve-online" d="M 80 208 C 135 208, 135 237, 180 237 C 235 237, 235 207, 280 207 C 335 207, 335 188, 380 188 C 435 188, 435 211, 480 211 C 535 211, 535 160, 580 160 C 635 160, 635 193, 680 193 C 735 193, 735 208, 780 208 C 835 208, 835 182, 880 182 C 935 182, 935 39, 980 39"/>
+            
+            <!-- POINTS -->
+            <g>
+              <circle class="point-online" cx="80" cy="208" r="6"/>
+              <circle class="point-online" cx="180" cy="237" r="6"/>
+              <circle class="point-online" cx="280" cy="207" r="6"/>
+              <circle class="point-online" cx="380" cy="188" r="6"/>
+              <circle class="point-online" cx="480" cy="211" r="6"/>
+              <circle class="point-online" cx="580" cy="160" r="6"/>
+              <circle class="point-online" cx="680" cy="193" r="6"/>
+              <circle class="point-online" cx="780" cy="208" r="6"/>
+              <circle class="point-online" cx="880" cy="182" r="6"/>
+              <circle class="point-online" cx="980" cy="39" r="6"/>
+            </g>
+            
+            <!-- NUMERIC VALUES ULTRA CLEAR -->
+            <g>
+              <text class="value-online" x="80" y="190">165</text>
+              <text class="value-online" x="180" y="262">145</text>
+              <text class="value-online" x="280" y="189">166</text>
+              <text class="value-online" x="380" y="170">179</text>
+              <text class="value-online" x="480" y="236">163</text>
+              <text class="value-online" x="580" y="142">200</text>
+              <text class="value-online" x="680" y="218">176</text>
+              <text class="value-online" x="780" y="233">166</text>
+              <text class="value-online" x="880" y="164">184</text>
+              <text class="value-online" x="980" y="25" style="fill: #facc15 !important;">301 (Puncak)</text>
+            </g>
+            
+            <!-- X AXIS -->
+            <g>
+              <text x="80" y="325" class="xtext">NOP</text>
+              <text x="180" y="325" class="xtext">DES</text>
+              <text x="280" y="325" class="xtext">JAN</text>
+              <text x="380" y="325" class="xtext">FEB</text>
+              <text x="480" y="325" class="xtext">MAR</text>
+              <text x="580" y="325" class="xtext">APR</text>
+              <text x="680" y="325" class="xtext">MEI</text>
+              <text x="780" y="325" class="xtext">JUN</text>
+              <text x="880" y="325" class="xtext">JUL</text>
+              <text x="980" y="325" class="xtext" style="fill: #facc15 !important;">AGS</text>
+            </g>
+          </svg>
         </div>
-
       </div>
 
+      <!-- ANALISA TRANSAKSI ONLINE -->
+      <div class="analysis-panel">
+        <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE & PELANGGAN AGUSTUS</div>
+        <div class="analysis-grid">
+          <div class="analysis-card"><span class="analysis-icon">👥</span><div><strong>Total Pelanggan</strong><p>Terdaftar <strong style="color: #38bdf8;">1.319 pelanggan</strong> di bulan Agustus.</p></div></div>
+          <div class="analysis-card"><span class="analysis-icon">🚀</span><div><strong>Rekor Tertinggi</strong><p>Agustus tembus <strong style="color: #facc15;">301 transaksi</strong> (~22.8% total pelanggan).</p></div></div>
+          <div class="analysis-card"><span class="analysis-icon">📈</span><div><strong>Lonjakan Pesat</strong><p>Naik <strong style="color: #38bdf8;">+63.5%</strong> dibanding Juli (184 transaksi).</p></div></div>
+          <div class="analysis-card"><span class="analysis-icon">🛵</span><div><strong>Perubahan Perilaku</strong><p>Masyarakat makin dominan memilih Ojol, COD & E-Commerce.</p></div></div>
+          <div class="analysis-card"><span class="analysis-icon">📦</span><div><strong>Langkah Operasional</strong><p>Optimasi kecepatan <i>packing</i> & kurir instan jadi prioritas.</p></div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
