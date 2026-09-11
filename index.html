@@ -66,14 +66,14 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 72px 24px 50px;
+  padding: 75px 24px 45px;
   background-size: cover;
   background-position: center;
 }
 .slide.active { display: flex; }
 .slide::before {
   content: ""; position: absolute; inset: 0;
-  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.85) 0%, rgba(2, 6, 23, 0.98) 100%);
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.88) 0%, rgba(2, 6, 23, 0.98) 100%);
   z-index: 0;
 }
 .grid-bg {
@@ -83,7 +83,7 @@ html, body {
   background-size: 32px 32px; z-index: 1; pointer-events: none;
 }
 .content {
-  width: 100%; max-width: 1280px;
+  width: 100%; max-width: 1320px;
   height: 100%;
   display: flex; flex-direction: column; justify-content: space-between;
   position: relative; z-index: 5;
@@ -91,13 +91,13 @@ html, body {
 
 /* ===== TYPOGRAPHY & HEADER SLIDE ===== */
 .slide-header {
-  margin-bottom: 6px;
+  margin-bottom: 8px;
   flex-shrink: 0;
   text-align: center;
 }
-.small-title { color: #38bdf8; font-size: 11px; letter-spacing: 2px; font-weight: 800; margin-bottom: 2px; text-transform: uppercase; }
-h1 { font-size: clamp(26px, 4vw, 44px); font-weight: 900; line-height: 1.1; margin-bottom: 8px; color: #fff; }
-h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; margin-bottom: 0; color: #fff; }
+.small-title { color: #38bdf8; font-size: 12px; letter-spacing: 2px; font-weight: 800; margin-bottom: 2px; text-transform: uppercase; }
+h1 { font-size: clamp(28px, 4vw, 46px); font-weight: 900; line-height: 1.1; margin-bottom: 8px; color: #fff; }
+h2 { font-size: clamp(20px, 2.4vw, 28px); font-weight: 900; line-height: 1.2; margin-bottom: 0; color: #fff; }
 .highlight { color: #facc15; }
 
 /* ===== BACKGROUND IMAGES ===== */
@@ -109,46 +109,46 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
 /* ===== SLIDE 1: MENU MATERI ===== */
 .material-menu {
   display: grid; grid-template-columns: 1fr 1fr;
-  gap: 12px 30px; margin-top: 16px; width: 100%; max-width: 960px; margin-x: auto;
+  gap: 16px 36px; margin-top: 20px; width: 100%; max-width: 980px; margin-x: auto;
 }
-.menu-col { display: flex; flex-direction: column; gap: 10px; }
-.menu-item { display: flex; align-items: center; gap: 12px; cursor: pointer; }
+.menu-col { display: flex; flex-direction: column; gap: 14px; }
+.menu-item { display: flex; align-items: center; gap: 14px; cursor: pointer; }
 .menu-number {
-  flex: 0 0 44px; width: 44px; height: 44px; border-radius: 50%;
+  flex: 0 0 50px; width: 50px; height: 50px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   background: #0284c7; border: 2px solid #38bdf8; color: #fff;
-  font-size: 18px; font-weight: 900; transition: .2s;
+  font-size: 20px; font-weight: 900; transition: .2s;
 }
 .menu-text {
-  flex: 1; height: 44px; display: flex; align-items: center; justify-content: center;
-  text-align: center; padding: 0 14px; background: rgba(255, 255, 255, 0.95);
-  color: #0f172a; border-radius: 10px; font-size: 14px; font-weight: 800;
-  transition: .2s; border: 2px solid #0284c7;
+  flex: 1; height: 50px; display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 0 16px; background: rgba(255, 255, 255, 0.95);
+  color: #0f172a; border-radius: 12px; font-size: 16px; font-weight: 800;
+  transition: .2s; border: 2px solid #0284c7; box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 .menu-item:hover .menu-number { transform: scale(1.08); background: #0369a1; }
 .menu-item:hover .menu-text { background: #38bdf8; color: #fff; border-color: #38bdf8; }
 
 /* ===== LAYOUT GRAFIK & ANALISA ===== */
 .chart-layout {
-  display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 8px;
+  display: flex; flex-direction: column; height: 100%; justify-content: space-between; gap: 10px;
 }
 .curve-panel {
-  background: rgba(9, 13, 22, 0.9); border: 1.5px solid #0284c7;
-  border-radius: 12px; padding: 8px 12px; flex: 1;
+  background: rgba(15, 23, 42, 0.75); border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px; padding: 10px 14px; flex: 1;
   display: flex; flex-direction: column; justify-content: space-between;
-  min-height: 160px;
+  min-height: 150px; backdrop-filter: blur(8px);
 }
-.curve-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px; }
-.panel-title { font-size: 12px; font-weight: 900; letter-spacing: 1px; color: #fff; }
-.legend { display: flex; gap: 14px; font-size: 11px; font-weight: 800; }
-.legend span { display: flex; align-items: center; gap: 5px; }
-.legend i { display: inline-block; width: 18px; height: 4px; border-radius: 3px; }
+.curve-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px; }
+.panel-title { font-size: 13px; font-weight: 900; letter-spacing: 1px; color: #fff; }
+.legend { display: flex; gap: 16px; font-size: 12px; font-weight: 800; }
+.legend span { display: flex; align-items: center; gap: 6px; }
+.legend i { display: inline-block; width: 20px; height: 4px; border-radius: 3px; }
 .legend-2025 { background: #ff7a20; }
 .legend-2026 { background: #38bdf8; }
 .legend-online { background: #facc15; }
 .legend-pelanggan { background: #4ade80; }
 
-.curve-chart { width: 100%; height: 100%; min-height: 120px; position: relative; }
+.curve-chart { width: 100%; height: 100%; min-height: 110px; position: relative; }
 .curve-chart svg { width: 100%; height: 100%; overflow: visible; }
 .curve-grid line { stroke: rgba(255, 255, 255, 0.08) !important; stroke-width: 1 !important; }
 .curve-axis { stroke: #475569 !important; stroke-width: 1.5 !important; }
@@ -170,8 +170,8 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
   font-weight: 900 !important;
   text-anchor: middle !important;
   paint-order: stroke fill !important;
-  stroke: #000000 !important;
-  stroke-width: 3px !important;
+  stroke: #020617 !important;
+  stroke-width: 3.5px !important;
   stroke-linejoin: round !important;
 }
 .value-2025 { fill: #ffaa66 !important; }
@@ -179,50 +179,87 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
 .value-online { fill: #fef08a !important; }
 .value-pelanggan { fill: #86efac !important; }
 
-.ytext, .xtext { fill: #94a3b8 !important; font-size: 10px !important; font-weight: 800 !important; }
+.ytext, .xtext { fill: #94a3b8 !important; font-size: 10.5px !important; font-weight: 800 !important; }
 .xtext { text-anchor: middle !important; }
 
-/* PANELS ANALISA (DI TENGAH & SEJAJAR KE BAWAH) ===== */
+/* ===== PANEL ANALISA (LEBIH BESAR & MEWAH) ===== */
 .analysis-panel {
-  background: rgba(9, 13, 22, 0.95); border: 1.5px solid #0369a1;
-  border-radius: 10px; padding: 8px 12px;
-  width: 100%; max-width: 720px; margin: 0 auto;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  background: rgba(15, 23, 42, 0.92); 
+  border: 1.5px solid rgba(56, 189, 248, 0.4);
+  border-radius: 14px; 
+  padding: 10px 16px;
+  width: 100%; 
+  max-width: 880px; 
+  margin: 0 auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
 }
-.analysis-panel .panel-title { font-size: 11px; margin-bottom: 6px; color: #38bdf8; text-align: center; }
+.analysis-panel .panel-title { 
+  font-size: 12.5px; 
+  font-weight: 900;
+  margin-bottom: 8px; 
+  color: #38bdf8; 
+  text-align: center; 
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
 .analysis-grid { 
   display: flex; 
   flex-direction: column; 
-  gap: 4px; 
+  gap: 6px; 
 }
 .analysis-card {
-  background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3);
-  border-radius: 6px; padding: 4px 10px; 
-  display: flex; flex-direction: row; align-items: center; gap: 10px;
+  background: rgba(30, 41, 59, 0.75); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-left: 4px solid #38bdf8;
+  border-radius: 8px; 
+  padding: 6px 14px; 
+  display: flex; 
+  flex-direction: row; 
+  align-items: center; 
+  gap: 12px;
+  transition: transform 0.2s ease, border-color 0.2s ease;
 }
-.analysis-icon { font-size: 14px; flex-shrink: 0; }
-.analysis-card strong { font-size: 10.5px; font-weight: 800; color: #fff; min-width: 130px; }
-.analysis-card p { font-size: 10px; line-height: 1.2; color: #cbd5e1; font-weight: 600; margin: 0; }
+.analysis-card:hover {
+  background: rgba(30, 41, 59, 0.95);
+  border-color: rgba(56, 189, 248, 0.5);
+  transform: translateX(3px);
+}
+.analysis-icon { font-size: 16px; flex-shrink: 0; }
+.analysis-card strong { 
+  font-size: 12.5px; 
+  font-weight: 800; 
+  color: #f8fafc; 
+  min-width: 170px; 
+  letter-spacing: 0.3px;
+}
+.analysis-card p { 
+  font-size: 12px; 
+  line-height: 1.35; 
+  color: #cbd5e1; 
+  font-weight: 600; 
+  margin: 0; 
+}
 
 /* ===== NAVIGATION & FOOTER ===== */
 .slide-number {
   position: fixed; top: 18px; right: 24px; z-index: 1001;
-  padding: 3px 10px; border-radius: 20px; background: rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.2); font-size: 11px; font-weight: 800; color: #38bdf8;
+  padding: 4px 12px; border-radius: 20px; background: rgba(0,0,0,0.6);
+  border: 1px solid rgba(255,255,255,0.2); font-size: 12px; font-weight: 800; color: #38bdf8;
 }
 .navigation { 
-  position: fixed; right: 20px; bottom: 8px; z-index: 1001; display: flex; gap: 6px; 
+  position: fixed; right: 20px; bottom: 8px; z-index: 1001; display: flex; gap: 8px; 
 }
 .navigation button {
-  border: none; background: rgba(255, 255, 255, 0.9); color: #0f172a; width: 30px; height: 30px;
-  border-radius: 50%; font-size: 13px; font-weight: 900; cursor: pointer; transition: .2s;
+  border: none; background: rgba(255, 255, 255, 0.9); color: #0f172a; width: 32px; height: 32px;
+  border-radius: 50%; font-size: 14px; font-weight: 900; cursor: pointer; transition: .2s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 .navigation button:hover { background: #38bdf8; color: #fff; transform: scale(1.08); }
 .progress { position: fixed; left: 0; bottom: 0; height: 3px; width: 25%; background: linear-gradient(90deg, #38bdf8, #2563eb); z-index: 1001; transition: width .3s; }
 .footer-text { 
-  position: fixed; bottom: 8px; left: 24px; z-index: 1000; color: #64748b; font-size: 10px; font-weight: 700;
-  background: rgba(2, 6, 23, 0.7); padding: 2px 8px; border-radius: 4px;
+  position: fixed; bottom: 8px; left: 24px; z-index: 1000; color: #64748b; font-size: 11px; font-weight: 700;
+  background: rgba(2, 6, 23, 0.7); padding: 2px 10px; border-radius: 4px;
 }
 
 /* ===== RESPONSIVE MOBILE ===== */
@@ -236,18 +273,19 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
   .slide-number { top: 12px; right: 10px; font-size: 10px; }
   .footer-text { display: none; }
   
-  .material-menu { grid-template-columns: 1fr; gap: 8px; margin-top: 8px; }
+  .material-menu { grid-template-columns: 1fr; gap: 10px; margin-top: 10px; }
   .menu-col { gap: 8px; }
-  .menu-number { width: 34px; height: 34px; flex: 0 0 34px; font-size: 13px; }
-  .menu-text { height: 34px; font-size: 11px; }
+  .menu-number { width: 38px; height: 38px; flex: 0 0 38px; font-size: 15px; }
+  .menu-text { height: 38px; font-size: 13px; }
   
-  .analysis-card { padding: 4px 8px; gap: 8px; }
-  .analysis-card strong { font-size: 10px; min-width: 100px; }
-  .analysis-card p { font-size: 9.5px; }
+  .analysis-panel { padding: 8px 10px; }
+  .analysis-card { padding: 5px 8px; gap: 8px; border-left-width: 3px; }
+  .analysis-card strong { font-size: 11px; min-width: 110px; }
+  .analysis-card p { font-size: 10.5px; }
   
-  .value-2025, .value-2026, .value-online, .value-pelanggan { font-size: 9px !important; stroke-width: 2px !important; }
+  .value-2025, .value-2026, .value-online, .value-pelanggan { font-size: 9.5px !important; stroke-width: 2px !important; }
   .curve-panel { padding: 6px 8px; }
-  .legend { font-size: 9px; gap: 6px; }
+  .legend { font-size: 10px; gap: 8px; }
   .navigation { right: 8px; bottom: 4px; }
   .navigation button { width: 28px; height: 28px; font-size: 12px; }
 }
@@ -269,7 +307,7 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
   <div class="grid-bg"></div>
   <div class="content" style="justify-content: center;">
     <div class="small-title" style="text-align: center;">AGENDA PRESENTASI</div>
-    <h1 style="text-align: center; margin-bottom: 10px;">MATERI PRESENTASI</h1>
+    <h1 style="text-align: center; margin-bottom: 12px;">MATERI PRESENTASI</h1>
     <div class="material-menu">
       <div class="menu-col">
         <div class="menu-item" onclick="showSlide(0)"><span class="menu-number">1</span><span class="menu-text">PENDAPATAN</span></div>
@@ -373,11 +411,11 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERFORMA 2026</div>
         <div class="analysis-grid">
-          <div class="analysis-card"><span class="analysis-icon">📈</span><strong>Pendapatan Naik</strong><p>Jan–Sep Rp1.137 Juta (+Rp102JT vs 2025).</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🚀</span><strong>Awal Tahun Kuat</strong><p>Februari melonjak Rp135JT & konsisten di Q1.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🏆</span><strong>Puncak September</strong><p>Agustus Rp150JT & September konsisten Rp167JT.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">💡</span><strong>Efisiensi Stok</strong><p>Stok Rp700–800JT menghasilkan omset lebih tinggi.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🎯</span><strong>Eksekusi Tepat</strong><p>Antisipasi kenaikan harga komponen berjalan presisi.</p></div>
+          <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">📈</span><strong>Pendapatan Naik</strong><p>Jan–Sep mencapai <strong style="color:#38bdf8;">Rp1.137 Juta</strong> (+Rp102JT vs periode sama 2025).</p></div>
+          <div class="analysis-card" style="border-left-color: #facc15;"><span class="analysis-icon">🚀</span><strong>Awal Tahun Kuat</strong><p>Februari melonjak drastis ke <strong style="color:#facc15;">Rp135JT</strong> dan konsisten di Q1.</p></div>
+          <div class="analysis-card" style="border-left-color: #4ade80;"><span class="analysis-icon">🏆</span><strong>Puncak September</strong><p>Agustus tembus <strong style="color:#4ade80;">Rp150JT</strong> & September stabil di rekor puncak <strong style="color:#4ade80;">Rp167JT</strong>.</p></div>
+          <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">💡</span><strong>Efisiensi Stok</strong><p>Pengelolaan stok modal Rp700–800JT berhasil menghasilkan omset lebih optimal.</p></div>
+          <div class="analysis-card" style="border-left-color: #ffaa66;"><span class="analysis-icon">🎯</span><strong>Eksekusi Tepat</strong><p>Antisipasi kenaikan harga komponen global berjalan presisi dan tepat waktu.</p></div>
         </div>
       </div>
     </div>
@@ -468,13 +506,13 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
 
       <!-- ANALISA PERFORMA SLIDE 3 -->
       <div class="analysis-panel">
-        <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE & PELANGGAN AGUSTUS</div>
+        <div class="panel-title">HIGHLIGHT ANALISA BELANJA ONLINE</div>
         <div class="analysis-grid">
-          <div class="analysis-card"><span class="analysis-icon">👥</span><strong>Total Pelanggan</strong><p>Terdaftar <strong style="color: #38bdf8;">1.319 pelanggan</strong> di bulan Agustus.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🚀</span><strong>Rekor Tertinggi</strong><p>Agustus tembus <strong style="color: #facc15;">301 transaksi</strong> (~22.8% total pelanggan).</p></div>
-          <div class="analysis-card"><span class="analysis-icon">📈</span><strong>Lonjakan Pesat</strong><p>Naik <strong style="color: #38bdf8;">+63.5%</strong> dibanding Juli (184 transaksi).</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🛵</span><strong>Perubahan Perilaku</strong><p>Masyarakat makin dominan memilih Ojol, COD & E-Commerce.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">📦</span><strong>Langkah Operasional</strong><p>Optimasi kecepatan <i>packing</i> & kurir instan jadi prioritas.</p></div>
+          <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">👥</span><strong>Total Pelanggan</strong><p>Tercatat sebanyak <strong style="color: #38bdf8;">1.319 pelanggan aktif</strong> di bulan Agustus.</p></div>
+          <div class="analysis-card" style="border-left-color: #facc15;"><span class="analysis-icon">🚀</span><strong>Rekor Tertinggi</strong><p>Agustus berhasil mencetak rekor <strong style="color: #facc15;">301 transaksi online</strong> (~22.8% dari total pelanggan).</p></div>
+          <div class="analysis-card" style="border-left-color: #4ade80;"><span class="analysis-icon">📈</span><strong>Lonjakan Pesat</strong><p>Mengalami kenaikan signifikan <strong style="color: #4ade80;">+63.5%</strong> dibandingkan bulan Juli (184 transaksi).</p></div>
+          <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">🛵</span><strong>Perubahan Perilaku</strong><p>Masyarakat makin dominan memanfaatkan layanan Ojol, COD & E-Commerce.</p></div>
+          <div class="analysis-card" style="border-left-color: #ffaa66;"><span class="analysis-icon">📦</span><strong>Fokus Operasional</strong><p>Peningkatan kecepatan <i>packing</i> & ekspedisi instan menjadi prioritas utama.</p></div>
         </div>
       </div>
     </div>
@@ -519,7 +557,6 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
               <text x="15" y="44" class="ytext">1.500</text>
             </g>
             
-            <!-- Curve Mapping for values: 1205, 1330, 1462, 1173, 1258, 1221, 1280, 1182, 1326 -->
             <path class="curve curve-pelanggan" d="M 80 226 C 130 226, 130 139, 180 139 C 230 139, 230 46, 280 46 C 330 46, 330 248, 380 248 C 430 248, 430 189, 480 189 C 530 189, 530 215, 580 215 C 630 215, 630 174, 680 174 C 730 174, 730 242, 780 242 C 830 242, 830 141, 880 141"/>
             
             <g>
@@ -561,15 +598,15 @@ h2 { font-size: clamp(18px, 2.2vw, 26px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- ANALISA PERFORMA SLIDE 4 (VERTIKAL SEJAJAR KE BAWAH DI TENGAH) -->
+      <!-- ANALISA PERFORMA SLIDE 4 -->
       <div class="analysis-panel">
         <div class="panel-title">HIGHLIGHT ANALISA PERTUMBUHAN PELANGGAN</div>
         <div class="analysis-grid">
-          <div class="analysis-card"><span class="analysis-icon">🏆</span><strong>Puncak Tertinggi (Februari)</strong><p>Rekor <strong style="color: #4ade80;">1.462 pelanggan</strong> dipicu belanja awal tahun & efektivitas promosi.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🔄</span><strong>Koreksi Normal (Maret)</strong><p>Turun ke <strong style="color: #cbd5e1;">1.173 pelanggan</strong> pasca-peak season awal tahun.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">📈</span><strong>Rebound Agustus</strong><p>Melonjak lagi ke <strong style="color: #facc15;">1.326 pelanggan</strong> (+12.2% vs Juli), tren transaksi kembali menguat.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">⚖️</span><strong>Basline Stabil</strong><p>Rata-rata pelanggan terjaga stabil di kisaran <strong style="color: #38bdf8;">1.200–1.300 orang/bulan</strong>.</p></div>
-          <div class="analysis-card"><span class="analysis-icon">🎯</span><strong>Strategi Retensi</strong><p>Fokus tingkatkan repeat order agar angka tidak kembali turun di bawah 1.200.</p></div>
+          <div class="analysis-card" style="border-left-color: #4ade80;"><span class="analysis-icon">🏆</span><strong>Puncak Tertinggi (Februari)</strong><p>Rekor pencapaian <strong style="color: #4ade80;">1.462 pelanggan</strong> didorong oleh belanja awal tahun & promosi efektif.</p></div>
+          <div class="analysis-card" style="border-left-color: #94a3b8;"><span class="analysis-icon">🔄</span><strong>Koreksi Normal (Maret)</strong><p>Penurunan wajar ke <strong style="color: #cbd5e1;">1.173 pelanggan</strong> setelah melewati periode <i>peak season</i> awal tahun.</p></div>
+          <div class="analysis-card" style="border-left-color: #facc15;"><span class="analysis-icon">📈</span><strong>Rebound Agustus</strong><p>Kembali melesat ke <strong style="color: #facc15;">1.326 pelanggan</strong> (+12.2% vs Juli), tren transaksi toko menguat signifikan.</p></div>
+          <div class="analysis-card" style="border-left-color: #38bdf8;"><span class="analysis-icon">⚖️</span><strong>Baseline Stabil</strong><p>Tingkat kunjungan pelanggan terjaga konsisten di kisaran <strong style="color: #38bdf8;">1.200–1.300 orang/bulan</strong>.</p></div>
+          <div class="analysis-card" style="border-left-color: #ff7a20;"><span class="analysis-icon">🎯</span><strong>Strategi Retensi</strong><p>Mengoptimalkan <i>repeat order</i> agar basis pelanggan terus bertumbuh secara berkelanjutan.</p></div>
         </div>
       </div>
     </div>
