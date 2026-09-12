@@ -907,21 +907,27 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     </div>
 
     <div class="slide6-grid">
+      <!-- Card 1 -->
       <div class="koperasi-card">
         <div class="koperasi-img-box">
           <img src="koperasi2.jpeg" alt="Club Med Bali">
+          <div class="img-overlay"></div>
         </div>
         <div class="koperasi-info">
+          <span class="badge">Resort Partner</span>
           <h3>🌴 Koperasi Club Med Bali</h3>
           <p>Kunjungan strategis dalam rangka menjajaki kerja sama penyediaan perangkat IT, komputer, serta pemeliharaan hardware secara berkala bagi karyawan dan fasilitas resort.</p>
         </div>
       </div>
 
+      <!-- Card 2 -->
       <div class="koperasi-card">
         <div class="koperasi-img-box">
           <img src="koperasi.jpeg" alt="Instansi Nata">
+          <div class="img-overlay"></div>
         </div>
         <div class="koperasi-info">
+          <span class="badge">Corporate Partner</span>
           <h3>🏢 Instansi / Koperasi Nata</h3>
           <p>Diskusi kolaborasi pengadaan inventaris kantor dan solusi perangkat komputer untuk mendukung digitalisasi serta efisiensi operasional administratif instansi.</p>
         </div>
@@ -929,6 +935,101 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     </div>
   </div>
 </section>
+
+<!-- CSS KHUSUS SLIDE 6 -->
+<style>
+  .slide6 .slide6-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  .slide6 .koperasi-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  .slide6 .koperasi-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .slide6 .koperasi-img-box {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+  }
+
+  .slide6 .koperasi-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.6s ease;
+  }
+
+  .slide6 .koperasi-card:hover .koperasi-img-box img {
+    transform: scale(1.08);
+  }
+
+  .slide6 .img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .slide6 .koperasi-info {
+    padding: 1.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .slide6 .badge {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.35rem 0.8rem;
+    background: rgba(99, 102, 241, 0.15);
+    color: #818cf8;
+    border-radius: 50px;
+  }
+
+  .slide6 .koperasi-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+  }
+
+  .slide6 .koperasi-info p {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .slide6 .slide6-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
 
 <!-- NAVIGATION CONTROLS -->
 <div class="navigation">
