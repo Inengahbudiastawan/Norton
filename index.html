@@ -1679,6 +1679,197 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     }
   }
 </style>
+  <!-- SLIDE 10: PENUTUP / TERIMA KASIH -->
+<section class="slide slide10">
+  <div class="grid-bg"></div>
+  <div class="glow-effect"></div>
+  <div class="content closing-content">
+    
+    <!-- Logo NBC Besar di Tengah -->
+    <div class="closing-logo-container">
+      <!-- Ubah src di bawah dengan path logo NBC Anda (misal: logo.png) -->
+      <img src="logo.png" alt="NBC Logo" class="closing-logo">
+      <div class="logo-ring"></div>
+    </div>
+
+    <!-- Teks Penutup -->
+    <div class="closing-text">
+      <div class="small-title">THANK YOU • NORTON BALI COMPUTER</div>
+      <h2>Terima <span class="highlight">Kasih</span></h2>
+      <p class="closing-subtitle">Transformasi Digital, Kolaborasi Solid, Menuju Masa Depan Bisnis yang Lebih Unggul.</p>
+    </div>
+
+    <!-- Informasi Kontak / Footer Singkat -->
+    <div class="closing-contact">
+      <div class="contact-item">
+        <span>📍</span> Jimbaran, Badung, Bali
+      </div>
+      <div class="contact-item">
+        <span>🌐</span> www.nortonbalicomputer.com
+      </div>
+      <div class="contact-item">
+        <span>📱</span> Official Support & Partner
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CSS KHUSUS SLIDE 10 -->
+<style>
+  .slide10 {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .slide10 .closing-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    max-width: 900px;
+    margin-inline: auto;
+    gap: 24px;
+    z-index: 2;
+  }
+
+  /* Efek Cahaya / Glow di Tengah Belakang Logo */
+  .slide10 .glow-effect {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+    z-index: 1;
+    pointer-events: none;
+    animation: slowGlow 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes slowGlow {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.6; }
+    100% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+  }
+
+  /* Kontainer Logo NBC Besar */
+  .slide10 .closing-logo-container {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));
+    border: 2px solid rgba(56, 189, 248, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.2);
+    z-index: 2;
+    margin-bottom: 4px;
+  }
+
+  .slide10 .closing-logo {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.5));
+  }
+
+  /* Lingkaran Animasi Keliling Logo */
+  .slide10 .logo-ring {
+    position: absolute;
+    inset: -8px;
+    border: 2px dashed rgba(56, 189, 248, 0.35);
+    border-radius: 50%;
+    animation: rotateRing 20s linear infinite;
+  }
+
+  @keyframes rotateRing {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  /* Teks Utama */
+  .slide10 .closing-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 2;
+  }
+
+  .slide10 h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 1px;
+  }
+
+  .slide10 .closing-subtitle {
+    font-size: 1rem;
+    color: #94a3b8;
+    max-width: 650px;
+    margin: 0 auto;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  /* Baris Kontak / Footer */
+  .slide10 .closing-contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+    z-index: 2;
+  }
+
+  .slide10 .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: #cbd5e1;
+    font-weight: 600;
+  }
+
+  .slide10 .contact-item span {
+    font-size: 1rem;
+  }
+
+  /* Responsif Mobile */
+  @media (max-width: 768px) {
+    .slide10 .closing-logo-container {
+      width: 110px;
+      height: 110px;
+    }
+    .slide10 .closing-logo {
+      width: 65px;
+      height: 65px;
+    }
+    .slide10 h2 {
+      font-size: 2rem;
+    }
+    .slide10 .closing-subtitle {
+      font-size: 0.9rem;
+      padding-inline: 16px;
+    }
+    .slide10 .closing-contact {
+      flex-direction: column;
+      gap: 10px;
+      border-radius: 16px;
+      width: 90%;
+    }
+  }
+</style>
 <div class="footer-text">Norton Bali Computer • Bali Global Group</div>
 <div class="navigation">
   <button onclick="previousSlide()" title="Sebelumnya (Slide Atas)">▲</button>
