@@ -1378,6 +1378,313 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     }
   }
 </style>
+  <!-- SLIDE 9: SDM UNGGUL (PERBEDAAN SDM MAJU DAN MUNDUR) -->
+<section class="slide slide9">
+  <div class="grid-bg"></div>
+  <div class="content">
+    <div class="slide-header">
+      <div class="small-title">MATERI 09 • HUMAN RESOURCES & MINDSET</div>
+      <h2>💡 <span class="highlight">SDM UNGGUL: MAJU VS MUNDUR</span></h2>
+      <p class="slide-subtitle">Transformasi kualitas sumber daya manusia sebagai fondasi utama kesuksesan bisnis digital.</p>
+    </div>
+
+    <div class="slide9-grid">
+      <!-- Card 1: SDM Maju (Progresif) -->
+      <div class="sdm-card maju">
+        <!-- Kotak Gambar SDM Maju -->
+        <div class="sdm-img-box">
+          <img src="sdm_maju.jpeg" alt="SDM Maju Progresif">
+          <div class="sdm-badge maju-badge">
+            <span class="pulse-dot"></span> Progresif & Solutif
+          </div>
+        </div>
+
+        <div class="sdm-content">
+          <div class="sdm-header">
+            <div class="sdm-icon">🌟</div>
+            <h3>SDM Maju (Progresif)</h3>
+          </div>
+          <ul class="sdm-list">
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Growth Mindset:</strong> Selalu haus akan ilmu baru, adaptif terhadap teknologi, dan melihat tantangan sebagai peluang.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Inisiatif & Solutif:</strong> Proaktif mencari jalan keluar saat menghadapi masalah tanpa harus menunggu instruksi.
+              </div>
+            </li>
+            <li>
+              <span class="check-icon">✓</span>
+              <div>
+                <strong>Orientasi Hasil & Kualitas:</strong> Bekerja dengan standar tinggi, efisien, dan bertanggung jawab penuh pada target.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Card 2: SDM Mundur (Stagnan) -->
+      <div class="sdm-card mundur">
+        <!-- Kotak Gambar SDM Mundur -->
+        <div class="sdm-img-box">
+          <img src="sdm_mundur.jpeg" alt="SDM Mundur Stagnan">
+          <div class="sdm-badge mundur-badge">
+            <span class="pulse-dot-red"></span> Stagnan & Pasif
+          </div>
+        </div>
+
+        <div class="sdm-content">
+          <div class="sdm-header">
+            <div class="sdm-icon">⚠️</div>
+            <h3>SDM Mundur (Stagnan)</h3>
+          </div>
+          <ul class="sdm-list">
+            <li>
+              <span class="cross-icon">✕</span>
+              <div>
+                <strong>Fixed Mindset:</strong> Cepat puas, enggan belajar hal baru, dan menolak perubahan sistem digital yang masuk.
+              </div>
+            </li>
+            <li>
+              <span class="cross-icon">✕</span>
+              <div>
+                <strong>Pasif & Menunggu:</strong> Hanya bekerja sebatas menggugurkan kewajiban dan minim inisiatif dalam operasional.
+              </div>
+            </li>
+            <li>
+              <span class="cross-icon">✕</span>
+              <div>
+                <strong>Mental Menyalahkan:</strong> Sering mencari alasan, menyalahkan situasi atau rekan kerja saat terjadi kendala.
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CSS KHUSUS SLIDE 9 -->
+<style>
+  .slide9 .slide-subtitle {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    margin-top: 6px;
+    font-weight: 500;
+  }
+
+  .slide9 .slide9-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 14px;
+    width: 100%;
+    max-width: 1250px;
+    margin-inline: auto;
+  }
+
+  .slide9 .sdm-card {
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+  }
+
+  .slide9 .sdm-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Gaya Kartu SDM Maju */
+  .slide9 .sdm-card.maju {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(14, 116, 144, 0.35));
+    border: 1.5px solid rgba(56, 189, 248, 0.4);
+  }
+  .slide9 .sdm-card.maju:hover {
+    border-color: #38bdf8;
+    box-shadow: 0 15px 35px rgba(56, 189, 248, 0.2);
+  }
+
+  /* Gaya Kartu SDM Mundur */
+  .slide9 .sdm-card.mundur {
+    background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(153, 27, 27, 0.25));
+    border: 1.5px solid rgba(248, 113, 113, 0.3);
+  }
+  .slide9 .sdm-card.mundur:hover {
+    border-color: #f87171;
+    box-shadow: 0 15px 35px rgba(248, 113, 113, 0.15);
+  }
+
+  /* Kotak Gambar */
+  .slide9 .sdm-img-box {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    overflow: hidden;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slide9 .sdm-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.5s ease;
+  }
+
+  .slide9 .sdm-card:hover .sdm-img-box img {
+    transform: scale(1.05);
+  }
+
+  /* Badge di atas gambar */
+  .slide9 .sdm-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 10.5px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    background: rgba(2, 6, 23, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  }
+
+  .slide9 .maju-badge {
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+  }
+
+  .slide9 .mundur-badge {
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+  }
+
+  .slide9 .pulse-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #38bdf8;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #38bdf8;
+  }
+
+  .slide9 .pulse-dot-red {
+    width: 6px;
+    height: 6px;
+    background-color: #f87171;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #f87171;
+  }
+
+  .slide9 .sdm-content {
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .slide9 .sdm-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+  }
+
+  .slide9 .sdm-icon {
+    font-size: 20px;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+  }
+
+  .slide9 .sdm-header h3 {
+    font-size: 16px;
+    font-weight: 900;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.5px;
+  }
+
+  .slide9 .sdm-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .slide9 .sdm-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.45;
+    font-weight: 500;
+  }
+
+  .slide9 .check-icon {
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .slide9 .cross-icon {
+    color: #f87171;
+    background: rgba(248, 113, 113, 0.15);
+    font-weight: bold;
+    min-width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    margin-top: 1px;
+    flex-shrink: 0;
+  }
+
+  .slide9 .sdm-list strong {
+    color: #fff;
+    font-weight: 700;
+  }
+
+  @media (max-width: 850px) {
+    .slide9 .slide9-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .slide9 .sdm-img-box {
+      height: 140px;
+    }
+  }
+</style>
 <div class="footer-text">Norton Bali Computer • Bali Global Group</div>
 <div class="navigation">
   <button onclick="previousSlide()" title="Sebelumnya (Slide Atas)">▲</button>
