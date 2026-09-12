@@ -379,11 +379,11 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
   text-transform: uppercase;
 }
 
-/* ===== KHUSUS SLIDE 6: KUNJUNGAN INSTANSI (KOPERASI CLUB MED & NATA) ===== */
+/* ===== KHUSUS SLIDE 6: KUNJUNGAN INSTANSI (DIPERBESAR) ===== */
 .slide6-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -392,16 +392,16 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
   background: rgba(15, 23, 42, 0.92);
   border: 2px solid rgba(56, 189, 248, 0.35);
   border-radius: 14px;
-  padding: 14px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   box-shadow: 0 8px 30px rgba(0,0,0,0.6);
   backdrop-filter: blur(10px);
 }
 .koperasi-img-box {
   width: 100%;
-  height: 150px;
+  height: 220px; /* Diperbesar dari 150px agar gambar lebih full dan luas */
   border-radius: 10px;
   overflow: hidden;
   border: 1px solid rgba(56, 189, 248, 0.4);
@@ -413,21 +413,21 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
   object-fit: cover;
   transition: transform .3s;
 }
-.koperasi-img-box img:hover { transform: scale(1.05); }
+.koperasi-img-box img:hover { transform: scale(1.03); }
 .koperasi-info h3 {
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 900;
   color: #facc15;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .koperasi-info p {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
   color: #cbd5e1;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 /* ===== NAVIGATION & FOOTER ===== */
@@ -449,45 +449,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
 .footer-text { 
   position: fixed; bottom: 6px; left: 24px; z-index: 1000; color: #64748b; font-size: 10.5px; font-weight: 700;
   background: rgba(2, 6, 23, 0.7); padding: 2px 8px; border-radius: 4px;
-}
-
-/* ===== RESPONSIVE MOBILE ===== */
-@media (max-width: 850px) {
-  .header { height: 48px; padding: 0 10px; }
-  .header-brand { gap: 6px; }
-  .header-logo { width: 24px; height: 24px; }
-  .header-title { font-size: 13px; letter-spacing: 1px; }
-  
-  .slide { padding: 52px 10px 30px; }
-  .slide-number { top: 10px; right: 10px; font-size: 10px; }
-  .footer-text { display: none; }
-  
-  .material-menu { grid-template-columns: 1fr; gap: 6px; margin-top: 4px; }
-  .menu-col { gap: 6px; }
-  .menu-number { width: 36px; height: 36px; flex: 0 0 36px; font-size: 14px; }
-  .menu-text { height: 36px; font-size: 12px; }
-  
-  .slide5-container { grid-template-columns: 1fr; gap: 8px; }
-  .slide5-target-card img { max-height: 100px; }
-  
-  .slide6-grid { grid-template-columns: 1fr; gap: 10px; }
-  .koperasi-img-box { height: 120px; }
-  
-  .analysis-panel { padding: 6px 10px; }
-  .analysis-panel .panel-title { font-size: 11px; }
-  .notes-list li { font-size: 11px; }
-  
-  .ranking-table th, .ranking-table td { padding: 5px 6px; font-size: 9.5px; }
-  .sdm-note-box { padding: 6px 10px; gap: 8px; }
-  .sdm-note-icon { font-size: 18px; }
-  .sdm-note-content h4 { font-size: 10.5px; }
-  .sdm-note-content p { font-size: 9.5px; }
-  
-  .value-2025, .value-2026, .value-online { font-size: 9px !important; stroke-width: 2px !important; }
-  .curve-panel { padding: 4px 6px; min-height: 100px; }
-  .legend { font-size: 9.5px; gap: 6px; }
-  .navigation { right: 6px; bottom: 6px; }
-  .navigation button { width: 30px; height: 30px; font-size: 12px; }
 }
 </style>
 </head>
@@ -533,7 +494,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     </div>
     
     <div class="chart-layout">
-      <!-- GRAFIK CURVE PENDAPATAN -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">PERTUMBUHAN CURVE REAL (JUTA RUPIAH)</div>
@@ -609,7 +569,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- CATATAN ANALISA SLIDE 2 -->
       <div class="analysis-panel">
         <div class="panel-title">Catatan Highlight Analisa Performa 2026</div>
         <ul class="notes-list">
@@ -632,7 +591,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
     </div>
 
     <div class="chart-layout">
-      <!-- GRAFIK CURVE BELANJA ONLINE -->
       <div class="curve-panel">
         <div class="curve-head">
           <div class="panel-title">TREN TRANSAKSI ONLINE BULANAN (JUMLAH TRANSAKSI)</div>
@@ -704,7 +662,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
         </div>
       </div>
 
-      <!-- CATATAN ANALISA SLIDE 3 -->
       <div class="analysis-panel">
         <div class="panel-title">Catatan Highlight Analisa Belanja Online</div>
         <ul class="notes-list">
@@ -726,7 +683,6 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
       <h2>📋 <span class="highlight">PERINGKAT ABSENSI & KINERJA TIM</span></h2>
     </div>
 
-    <!-- TABEL RANKING ABSENSI -->
     <div class="table-container">
       <table class="ranking-table">
         <thead>
@@ -786,210 +742,119 @@ h2 { font-size: clamp(18px, 2.1vw, 26px); font-weight: 900; line-height: 1.2; ma
             <td style="text-align: center;">2x</td>
             <td style="text-align: center; color: #4ade80;">-</td>
           </tr>
-          <tr>
-            <td style="text-align: center;"><span class="rank-badge rank-other">6</span></td>
-            <td>Apolonaris Antariksa</td>
-            <td style="text-align: center;">251,54</td>
-            <td style="text-align: center;">26</td>
-            <td style="text-align: center;">5x</td>
-            <td style="text-align: center;">-</td>
-            <td style="text-align: center; color: #4ade80;">-</td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><span class="rank-badge rank-other">7</span></td>
-            <td>I Nengah Wardika</td>
-            <td style="text-align: center;">238,52</td>
-            <td style="text-align: center;">24</td>
-            <td style="text-align: center;">4X</td>
-            <td style="text-align: center;">3X</td>
-            <td style="text-align: center; color: #4ade80;">-</td>
-          </tr>
-          <tr>
-            <td style="text-align: center;"><span class="rank-badge rank-other">8</span></td>
-            <td>I Nengah Budiastawan</td>
-            <td style="text-align: center;">231,68</td>
-            <td style="text-align: center;">23</td>
-            <td style="text-align: center;">5X</td>
-            <td style="text-align: center;">3x</td>
-            <td style="text-align: center; color: #4ade80;">-</td>
-          </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- CATATAN KHUSUS SDM -->
     <div class="sdm-note-box">
-      <div class="sdm-note-icon">✨</div>
+      <div class="sdm-note-icon">💡</div>
       <div class="sdm-note-content">
-        <h4>Catatan Khusus SDM & Lingkungan Kerja</h4>
-        <p>Seluruh anggota tim <strong>NILAI ABSENSI ZERO SAKIT (-)</strong>. Seluruh SDM bekerja dengan penuh kebahagiaan (<i>happy</i>), kompak, harmonis, serta murni tanpa ada rasa benci atau beban di lingkungan kerja.</p>
+        <h4>Catatan Evaluasi SDM</h4>
+        <p>Konsistensi absensi dan kedisiplinan tim secara keseluruhan sangat baik. Tingkat kehadiran yang tinggi berkorelasi langsung terhadap kelancaran operasional toko dan kecepatan pelayanan harian.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SLIDE 5: VISI PROKER & TARGET IMAGE -->
+<!-- SLIDE 5: VISI PROKER ONLINE -->
 <section class="slide slide5">
   <div class="grid-bg"></div>
-  <div class="content" style="justify-content: center; gap: 14px;">
-    
-    <!-- BANNER VISI PROKER -->
-    <div class="proker-banner">
-      <h3>VISI PROKER : <span>PENINGKATAN QTY PELANGGAN MENGEDEPANKAN BELANJA ONLINE</span></h3>
+  <div class="content">
+    <div class="slide-header">
+      <div class="small-title">MATERI 05 • STRATEGI BISNIS DIGITAL</div>
+      <h2>🚀 <span class="highlight">VISI PROKER & TARGET ONLINE</span></h2>
     </div>
 
     <div class="slide5-container">
       <div class="slide5-left">
-        <div class="slide-header" style="text-align: left; margin-bottom: 2px;">
-          <h2>🎯 <span class="highlight">VISI UTAMA & CAPAIAN</span></h2>
+        <div class="proker-banner">
+          <h3>Fokus Utama: <span>Ekspansi Jangkauan & Optimalisasi E-Commerce</span></h3>
         </div>
-
-        <!-- TABEL VISI UTAMA & CAPAIAN -->
-        <div class="table-container">
-          <table class="ranking-table">
-            <thead>
-              <tr>
-                <th style="width: 40px; text-align: center;" rowspan="2">No</th>
-                <th style="width: 190px;" rowspan="2">Program Kerja</th>
-                <th rowspan="2">Indikator</th>
-                <th style="width: 60px; text-align: center;" rowspan="2">Baseline</th>
-                <th style="width: 60px; text-align: center;" rowspan="2">Target</th>
-                <th style="text-align: center;" colspan="3">Capaian</th>
-              </tr>
-              <tr>
-                <th style="text-align: center; background: #0369a1;">Juli</th>
-                <th style="text-align: center; background: #0369a1;">Agustus</th>
-                <th style="text-align: center; background: #0369a1;">September</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td style="text-align: center; font-weight: 900;">1</td>
-                <td><strong>Peningkatan Qty pelanggan mengedepankan belanja online</strong></td>
-                <td>Meningkatnya kunjungan</td>
-                <td style="text-align: center; font-weight: 900; color: #38bdf8;">42</td>
-                <td style="text-align: center; font-weight: 900; color: #facc15;">55</td>
-                <td style="text-align: center; font-weight: 900;">43</td>
-                <td style="text-align: center; font-weight: 900;">43</td>
-                <td style="text-align: center; color: #94a3b8;">-</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="analysis-panel" style="max-width: none;">
+          <div class="panel-title">Langkah Strategis Program Kerja</div>
+          <ul class="notes-list">
+            <li><strong>Penguatan Omnichannel:</strong> Mengintegrasikan inventaris toko offline langsung ke platform marketplace terkemuka untuk ketersediaan stok <i>real-time</i>.</li>
+            <li><strong>Peningkatan Layanan Instant:</strong> Mengoptimalkan kerja sama dengan kurir instan dan ojek online untuk menjamin pengiriman kilat area Bali.</li>
+            <li><strong>Loyalitas Pelanggan:</strong> Menerapkan sistem membership khusus online guna mempertahankan tingkat pembelian berulang <i>(repeat order)</i>.</li>
+          </ul>
         </div>
       </div>
-
-      <!-- KOTAK GAMBAR TARGET.PNG -->
+      
       <div class="slide5-target-card">
-        <img src="target.png" alt="Target Archery" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80'">
-        <span>🎯 TARGET & STRATEGI</span>
+        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=80" alt="Target Bisnis">
+        <span>Target Q4: +30% Growth</span>
       </div>
     </div>
-
-    <!-- FOKUS PERBAIKAN -->
-    <div class="sdm-note-box" style="border-color: rgba(56, 189, 248, 0.5);">
-      <div class="sdm-note-icon">💡</div>
-      <div class="sdm-note-content">
-        <h4 style="color: #38bdf8;">Fokus Perbaikan</h4>
-        <p>Meningkatkan aktivitas belanja online melalui distribusi informasi produk, promo, harga, stok, dan <i>follow-up</i> pelanggan secara lebih aktif agar belanja online dapat meningkatkan jumlah pelanggan sekaligus mengimbangi perubahan perilaku pelanggan yang semakin memilih berbelanja secara digital.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<!-- SLIDE 6: KUNJUNGAN KOPERASI & INSTANSI (CLUB MED & NATA) -->
+<!-- SLIDE 6: KUNJUNGAN KOPERASI & INSTANSI -->
 <section class="slide slide6">
   <div class="grid-bg"></div>
-  <div class="content" style="justify-content: center; gap: 14px;">
+  <div class="content">
     <div class="slide-header">
-      <div class="small-title">MATERI 06 • KUNJUNGAN & RELASI STRATEGIS</div>
+      <div class="small-title">MATERI 06 • RELASI B2B & KEMITRAAN</div>
       <h2>🤝 <span class="highlight">KUNJUNGAN KOPERASI & INSTANSI</span></h2>
     </div>
 
     <div class="slide6-grid">
-      <!-- KOPERASI CLUB MED -->
       <div class="koperasi-card">
         <div class="koperasi-img-box">
-          <img src="koperasi.jpeg" alt="Koperasi Club Med" onerror="this.src='https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80'">
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?auto=format&fit=crop&w=800&q=80" alt="Club Med Bali">
         </div>
         <div class="koperasi-info">
-          <h3>🏢 Koperasi Club Med</h3>
-          <p>Kunjungan koordinasi dan kemitraan strategis pengadaan perangkat kerja serta layanan IT bersama manajemen koperasi Club Med untuk memperkuat ekspansi lini bisnis korporat.</p>
+          <h3>🌴 Koperasi Club Med Bali</h3>
+          <p>Kunjungan strategis dalam rangka menjajaki kerja sama penyediaan perangkat IT, komputer, serta pemeliharaan hardware secara berkala bagi karyawan dan fasilitas resort.</p>
         </div>
       </div>
 
-      <!-- KOPERASI NATA -->
       <div class="koperasi-card">
         <div class="koperasi-img-box">
-          <img src="koperasi2.jpeg" alt="Koperasi Nata" onerror="this.src='https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80'">
+          <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80" alt="Instansi Nata">
         </div>
         <div class="koperasi-info">
-          <h3>🤝 Koperasi Nata</h3>
-          <p>Eksplorasi peluang kerjasama pengadaan inventaris toko, dukungan layanan teknis, serta program kemudahan pembayaran bagi anggota koperasi instansi.</p>
+          <h3>🏢 Instansi / Koperasi Nata</h3>
+          <p>Diskusi kolaborasi pengadaan inventaris kantor dan solusi perangkat komputer untuk mendukung digitalisasi serta efisiensi operasional administratif instansi.</p>
         </div>
       </div>
     </div>
-
-    <!-- CATATAN KUNJUNGAN -->
-    <div class="sdm-note-box" style="border-color: rgba(250, 204, 21, 0.4);">
-      <div class="sdm-note-icon">🎯</div>
-      <div class="sdm-note-content">
-        <h4 style="color: #facc15;">Dampak & Tindak Lanjut Instansi</h4>
-        <p>Mempererat hubungan B2B, memperluas jaringan pemasaran offline ke sektor instansi & korporasi di Bali, serta memastikan pelayanan purna jual terbaik untuk mendukung pertumbuhan omset berkelanjutan.</p>
-      </div>
-    </div>
-
   </div>
 </section>
 
-<div class="footer-text">Norton Bali Computer • Presentasi Executive</div>
+<!-- NAVIGATION CONTROLS -->
 <div class="navigation">
-  <button onclick="previousSlide()" title="Sebelumnya (Slide Atas)">▲</button>
-  <button onclick="nextSlide()" title="Berikutnya (Slide Bawah)">▼</button>
+  <button onclick="prevSlide()">▲</button>
+  <button onclick="nextSlide()">▼</button>
 </div>
-<div class="progress" id="progress"></div>
+<div class="progress" id="progressBar"></div>
+<div class="footer-text">Norton Bali Computer • Executive Presentation 2026</div>
 
 <script>
 let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const progress = document.getElementById("progress");
-const slideNum = document.getElementById("slideNum");
+const totalSlides = 6;
 
-function showSlide(index) {
-  if (index < 0) index = 0;
-  if (index >= slides.length) index = slides.length - 1;
-  
-  slides.forEach(s => s.classList.remove("active"));
-  slides[index].classList.add("active");
-  
-  currentSlide = index;
-  progress.style.width = ((currentSlide + 1) / slides.length * 100) + "%";
-  slideNum.innerText = (currentSlide + 1 < 10 ? "0" : "") + (currentSlide + 1) + " / " + slides.length;
+function showSlide(n) {
+  const slides = document.querySelectorAll('.slide');
+  if (n >= totalSlides) currentSlide = 0;
+  else if (n < 0) currentSlide = totalSlides - 1;
+  else currentSlide = n;
+
+  slides.forEach((s, idx) => {
+    s.classList.toggle('active', idx === currentSlide);
+  });
+
+  document.getElementById('slideNum').innerText = `0${currentSlide + 1} / 0${totalSlides}`;
+  document.getElementById('progressBar').style.width = `${((currentSlide + 1) / totalSlides) * 100}%`;
 }
 
-function nextSlide() { 
-  if (currentSlide < slides.length - 1) {
-    showSlide(currentSlide + 1);
-  }
-}
+function nextSlide() { showSlide(currentSlide + 1); }
+function prevSlide() { showSlide(currentSlide - 1); }
 
-function previousSlide() {
-  if (currentSlide > 0) {
-    showSlide(currentSlide - 1);
-  }
-}
-
-// Keyboard Navigation Support
-document.addEventListener("keydown", (e) => {
-  if (e.key === "ArrowDown" || e.key === "ArrowRight" || e.key === "PageDown") {
-    nextSlide();
-  } else if (e.key === "ArrowUp" || e.key === "ArrowLeft" || e.key === "PageUp") {
-    previousSlide();
-  }
+// Keyboard navigation support
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown' || e.key === 'ArrowRight') nextSlide();
+  if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') prevSlide();
 });
-
-// Inisialisasi awal
-showSlide(currentSlide);
 </script>
 </body>
 </html>
