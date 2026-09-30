@@ -84,6 +84,7 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .avatar-section::after {
@@ -98,19 +99,34 @@ body {
 
 .avatar-track {
   position: absolute;
-  top: 40px;
+  top: 50%;
   left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  transform: translateY(-50%);
   transition: transform .8s cubic-bezier(.2,.8,.2,1);
 }
 
-.avatar-track.move-1 { transform: translateY(35px); }
-.avatar-track.move-2 { transform: translateY(70px); }
-.avatar-track.move-3 { transform: translateY(105px); }
-.avatar-track.move-4 { transform: translateY(140px); }
-.avatar-track.move-5 { transform: translateY(175px); }
+.avatar-track.move-1 {
+  transform: translateY(calc(-50% + 10px));
+}
+
+.avatar-track.move-2 {
+  transform: translateY(calc(-50% + 20px));
+}
+
+.avatar-track.move-3 {
+  transform: translateY(calc(-50% + 30px));
+}
+
+.avatar-track.move-4 {
+  transform: translateY(calc(-50% + 40px));
+}
+
+.avatar-track.move-5 {
+  transform: translateY(calc(-50% + 50px));
+}
 
 .avatar-wrapper {
   width: 330px;
@@ -121,11 +137,19 @@ body {
   align-items: center;
 
   background:
-    radial-gradient(circle, #60a5fa, #2563eb 50%, #1e40af);
+    radial-gradient(
+      circle,
+      #60a5fa,
+      #2563eb 50%,
+      #1e40af
+    );
 
-  box-shadow: 0 0 50px rgba(37,99,235,.5);
+  box-shadow:
+    0 0 50px rgba(37,99,235,.5);
 
-  transition: transform .3s, box-shadow .3s;
+  transition:
+    transform .3s,
+    box-shadow .3s;
 }
 
 .avatar-wrapper.listening {
@@ -149,54 +173,6 @@ body {
   animation: mouthMove .22s infinite alternate;
 }
 
-.avatar-info {
-  position: absolute;
-  top: 390px;
-  width: 100%;
-  text-align: center;
-}
-
-.avatar-name {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.avatar-role {
-  margin-top: 6px;
-  color: #94a3b8;
-  font-size: 14px;
-}
-
-/* KEUNGGULAN */
-
-.advantages {
-  position: absolute;
-  left: 25px;
-  right: 25px;
-  bottom: 25px;
-
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
-}
-
-.advantage {
-  padding: 10px;
-  border-radius: 12px;
-  background: rgba(15,23,42,.72);
-  border: 1px solid rgba(255,255,255,.08);
-  font-size: 11px;
-  color: #cbd5e1;
-  text-align: center;
-  backdrop-filter: blur(8px);
-}
-
-.advantage strong {
-  display: block;
-  color: white;
-  margin-bottom: 3px;
-}
-
 /* CHAT */
 
 .chat-section {
@@ -207,7 +183,7 @@ body {
 }
 
 .chat-header {
-  padding: 18px 28px;
+  padding: 22px 28px;
   border-bottom: 1px solid rgba(255,255,255,.08);
 }
 
@@ -221,33 +197,6 @@ body {
   color: #94a3b8;
   font-size: 13px;
 }
-
-/* INFO BAR */
-
-.info-bar {
-  display: flex;
-  gap: 8px;
-  padding: 10px 25px;
-  border-bottom: 1px solid rgba(255,255,255,.06);
-  overflow-x: auto;
-}
-
-.info-btn {
-  flex-shrink: 0;
-  border: 1px solid rgba(96,165,250,.25);
-  background: rgba(37,99,235,.12);
-  color: #bfdbfe;
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.info-btn:hover {
-  background: rgba(37,99,235,.25);
-}
-
-/* CHAT */
 
 #chat {
   flex: 1;
@@ -264,6 +213,8 @@ body {
   background: #475569;
   border-radius: 10px;
 }
+
+/* MESSAGE */
 
 .message {
   max-width: 80%;
@@ -382,6 +333,7 @@ body {
   background: #475569;
   color: #94a3b8;
   cursor: not-allowed;
+  animation: none;
 }
 
 #status {
@@ -467,7 +419,7 @@ body {
   }
 
   .avatar-section {
-    height: 500px;
+    height: 380px;
   }
 
   .avatar-wrapper {
@@ -478,14 +430,6 @@ body {
   .avatar {
     width: 195px;
     height: 195px;
-  }
-
-  .avatar-info {
-    top: 300px;
-  }
-
-  .advantages {
-    bottom: 15px;
   }
 
   .chat-section {
@@ -526,8 +470,6 @@ body {
 
 <main class="main">
 
-<!-- AVATAR -->
-
 <section class="avatar-section">
 
   <div id="avatarTrack" class="avatar-track">
@@ -540,11 +482,20 @@ body {
         xmlns="http://www.w3.org/2000/svg"
       >
 
+        <!-- Rambut -->
         <path
-          d="M70 130 C65 60 105 25 150 25 C205 25 235 70 230 135 L210 115 C205 70 180 55 150 55 C115 55 90 80 85 120 Z"
+          d="
+          M70 130
+          C65 60 105 25 150 25
+          C205 25 235 70 230 135
+          L210 115
+          C205 70 180 55 150 55
+          C115 55 90 80 85 120
+          Z"
           fill="#3b2416"
         />
 
+        <!-- Wajah -->
         <ellipse
           cx="150"
           cy="145"
@@ -553,11 +504,19 @@ body {
           fill="#f4c7a1"
         />
 
+        <!-- Rambut depan -->
         <path
-          d="M75 115 C70 55 110 35 150 35 C195 35 225 70 220 115 C195 85 180 75 160 80 C135 90 105 75 75 115 Z"
+          d="
+          M75 115
+          C70 55 110 35 150 35
+          C195 35 225 70 220 115
+          C195 85 180 75 160 80
+          C135 90 105 75 75 115
+          Z"
           fill="#432818"
         />
 
+        <!-- Mata -->
         <ellipse
           cx="120"
           cy="145"
@@ -574,13 +533,18 @@ body {
           fill="#1e293b"
         />
 
+        <!-- Hidung -->
         <path
-          d="M150 150 L143 170 L155 170"
+          d="
+          M150 150
+          L143 170
+          L155 170"
           fill="none"
           stroke="#c08457"
           stroke-width="4"
         />
 
+        <!-- Mulut -->
         <ellipse
           id="mouth"
           class="mouth"
@@ -591,13 +555,24 @@ body {
           fill="#7f1d1d"
         />
 
+        <!-- Baju -->
         <path
-          d="M90 235 C110 215 190 215 210 235 L235 300 L65 300 Z"
+          d="
+          M90 235
+          C110 215 190 215 210 235
+          L235 300
+          L65 300
+          Z"
           fill="#2563eb"
         />
 
+        <!-- Kerah -->
         <path
-          d="M120 230 L150 265 L180 230 Z"
+          d="
+          M120 230
+          L150 265
+          L180 230
+          Z"
           fill="white"
         />
 
@@ -607,48 +582,7 @@ body {
 
   </div>
 
-  <div id="avatarInfo" class="avatar-info">
-
-    <div class="avatar-name">
-      Sarah
-    </div>
-
-    <div id="avatarStatus" class="avatar-role">
-      Customer Service
-    </div>
-
-  </div>
-
-  <!-- KEUNGGULAN -->
-
-  <div class="advantages">
-
-    <div class="advantage">
-      <strong>💻 Banyak Pilihan</strong>
-      Laptop & aksesoris
-    </div>
-
-    <div class="advantage">
-      <strong>💰 Harga Tertera</strong>
-      Informasi harga jelas
-    </div>
-
-    <div class="advantage">
-      <strong>🛡️ Garansi</strong>
-      Mengikuti ketentuan produk
-    </div>
-
-    <div class="advantage">
-      <strong>👩‍💼 Customer Service</strong>
-      Dibantu Sarah
-    </div>
-
-  </div>
-
 </section>
-
-
-<!-- CHAT -->
 
 <section class="chat-section">
 
@@ -664,72 +598,19 @@ body {
 
   </div>
 
-
-  <!-- TOMBOL INFORMASI -->
-
-  <div class="info-bar">
-
-    <button
-      class="info-btn"
-      onclick="tanyaCepat('Apa keunggulan Norton Bali Computer?')"
-    >
-      ⭐ Keunggulan
-    </button>
-
-    <button
-      class="info-btn"
-      onclick="tanyaCepat('Bagaimana garansi produk?')"
-    >
-      🛡️ Garansi
-    </button>
-
-    <button
-      class="info-btn"
-      onclick="tanyaCepat('Ada laptop apa saja?')"
-    >
-      💻 Produk
-    </button>
-
-    <button
-      class="info-btn"
-      onclick="tanyaCepat('Bagaimana cara pesan?')"
-    >
-      🛒 Cara Pesan
-    </button>
-
-  </div>
-
-
   <div id="chat">
 
     <div class="message bot">
+Halo 👋 Saya Sarah,
+Customer Service Norton Bali Computer.
 
-      Halo 👋 Saya Sarah,
-      Customer Service Norton Bali Computer.
-
-      Saya dapat membantu Anda mengenai:
-
-      • Produk dan harga
-      • Stok barang
-      • Laptop
-      • Keyboard
-      • Headset
-      • Flashdisk
-      • Kabel
-      • External HDD
-      • Gamepad
-      • Keunggulan toko
-      • Garansi produk
-      • Cara pemesanan
-      • Pengiriman
-      • Pembayaran
-
-      Silakan tanyakan apa saja 😊
-
+Silakan tanyakan tentang produk,
+harga, stok, laptop, keyboard,
+headset, flashdisk, kabel,
+gamepad, pengiriman, atau layanan kami.
     </div>
 
   </div>
-
 
   <div class="bottom">
 
@@ -738,7 +619,7 @@ body {
       <input
         id="textInput"
         type="text"
-        placeholder="Contoh: garansi laptop berapa lama?"
+        placeholder="Contoh: harga laptop Asus?"
       >
 
       <button id="send">
@@ -746,7 +627,6 @@ body {
       </button>
 
     </div>
-
 
     <div class="mic-row">
 
@@ -776,7 +656,6 @@ body {
 
 </div>
 
-
 <script>
 
 /* ==================================================
@@ -786,80 +665,16 @@ body {
 const DATA = {
 
   perusahaan: {
-
     nama: "Norton Bali Computer",
-
     alamat: "Denpasar, Bali",
-
     telepon: "",
-
     email: "",
-
     jam: "Senin sampai Sabtu, pukul 08.00 sampai 17.00"
-
   },
-
-
-  /* ==================================================
-     KEUNGGULAN
-  ================================================== */
-
-  keunggulan: [
-
-    "Menyediakan berbagai pilihan laptop dari Acer, Asus, HP, Lenovo, Advan dan merek lainnya.",
-
-    "Menyediakan berbagai aksesoris komputer seperti keyboard, headset, flashdisk, kabel, external HDD dan gamepad.",
-
-    "Informasi harga dan produk dapat ditanyakan langsung kepada customer service.",
-
-    "Customer service Sarah dapat membantu memberikan informasi produk, harga dan stok.",
-
-    "Menyediakan pilihan produk untuk kebutuhan kerja, sekolah, multimedia dan gaming.",
-
-    "Melayani kebutuhan komputer dan aksesoris di wilayah Denpasar, Bali serta pengiriman sesuai layanan yang tersedia."
-
-  ],
-
-
-  /* ==================================================
-     GARANSI
-  ================================================== */
-
-  /*
-    PENTING:
-    Durasi garansi resmi toko / distributor belum diberikan
-    pada data awal.
-
-    Karena itu sistem TIDAK mengarang durasi garansi.
-
-    Setelah Anda memiliki ketentuan asli, cukup ubah
-    bagian di bawah ini.
-  */
-
-  garansi: {
-
-    tersedia: true,
-
-    durasi:
-      "Mengikuti ketentuan garansi masing-masing produk dan distributor.",
-
-    keterangan:
-      "Garansi dapat berbeda berdasarkan merek, tipe produk dan ketentuan distributor.",
-
-    klaim:
-      "Untuk informasi dan pengajuan klaim garansi, silakan hubungi customer service Norton Bali Computer dengan menyertakan informasi produk dan bukti pembelian.",
-
-    catatan:
-      "Syarat dan ketentuan garansi mengikuti kebijakan yang berlaku pada produk."
-
-  },
-
-
-  /* ==================================================
-     PRODUK
-  ================================================== */
 
   produk: [
+
+    /* LAPTOP */
 
     {
       nama: "Acer 5 AL14-51M Ci5 8/512GB",
@@ -1140,6 +955,8 @@ const DATA = {
       stok: "Tersedia"
     },
 
+    /* KEYBOARD */
+
     {
       nama: "Logitech MK240",
       kategori: "Keyboard",
@@ -1248,6 +1065,8 @@ const DATA = {
       stok: "Tersedia"
     },
 
+    /* HEADSET */
+
     {
       nama: "Baseus Bass 30 Max Wireless",
       kategori: "Headset",
@@ -1346,6 +1165,8 @@ const DATA = {
       deskripsi: "Headset gaming Gamen Shadow RGB Bluetooth.",
       stok: "Tersedia"
     },
+
+    /* FLASHDISK */
 
     {
       nama: "Kingston Kyson 128GB",
@@ -1446,6 +1267,8 @@ const DATA = {
       stok: "Tersedia"
     },
 
+    /* KABEL / HDD */
+
     {
       nama: "Ugreen HDMI 80401 8K 1M",
       kategori: "Kabel",
@@ -1509,6 +1332,8 @@ const DATA = {
       stok: "Tersedia"
     },
 
+    /* GAMEPAD */
+
     {
       nama: "Rexus Gladius GX2",
       kategori: "Gamepad",
@@ -1528,11 +1353,6 @@ const DATA = {
     }
 
   ],
-
-
-  /* ==================================================
-     FAQ
-  ================================================== */
 
   faq: [
 
@@ -1600,7 +1420,6 @@ const DATA = {
 
 };
 
-
 /* ==================================================
    ELEMENT
 ================================================== */
@@ -1629,13 +1448,9 @@ const avatarTrack =
 const avatarWrapper =
   document.getElementById("avatarWrapper");
 
-const avatarStatus =
-  document.getElementById("avatarStatus");
-
 let conversationCount = 0;
 let recognition = null;
 let isSpeaking = false;
-
 
 /* ==================================================
    TAMBAH PESAN
@@ -1643,11 +1458,14 @@ let isSpeaking = false;
 
 function addMessage(text, type) {
 
-  const div = document.createElement("div");
+  const div =
+    document.createElement("div");
 
-  div.className = "message " + type;
+  div.className =
+    "message " + type;
 
-  div.innerText = text;
+  div.innerText =
+    text;
 
   chat.appendChild(div);
 
@@ -1658,47 +1476,39 @@ function addMessage(text, type) {
 
   conversationCount++;
 
-  const step = conversationCount % 6;
+  const step =
+    conversationCount % 6;
 
-  avatarTrack.className = "avatar-track";
+  avatarTrack.className =
+    "avatar-track";
 
   if (step > 0) {
-    avatarTrack.classList.add("move-" + step);
+    avatarTrack.classList.add(
+      "move-" + step
+    );
   }
 }
 
-
 /* ==================================================
-   TANYA CEPAT
-================================================== */
-
-function tanyaCepat(text) {
-
-  input.value = text;
-
-  proses(text);
-
-}
-
-
-/* ==================================================
-   CARI PRODUK
+   CARI PRODUK SPESIFIK
 ================================================== */
 
 function cariProduk(question) {
 
-  const q = question.toLowerCase();
+  const q =
+    question.toLowerCase();
 
-  return DATA.produk.filter(produk => {
+  return DATA.produk.filter(
+    produk => {
 
-    const nama = produk.nama.toLowerCase();
+      const nama =
+        produk.nama.toLowerCase();
 
-    return q.includes(nama);
+      return q.includes(nama);
 
-  });
-
+    }
+  );
 }
-
 
 /* ==================================================
    CARI BERDASARKAN KATA
@@ -1706,31 +1516,33 @@ function cariProduk(question) {
 
 function cariProdukBerdasarkanKata(question) {
 
-  const q = question.toLowerCase();
+  const q =
+    question.toLowerCase();
 
-  const hasil = DATA.produk.filter(produk => {
+  return DATA.produk.filter(
+    produk => {
 
-    const teks = (
-      produk.nama +
-      " " +
-      produk.kategori +
-      " " +
-      produk.deskripsi
-    ).toLowerCase();
+      const teks =
+        (
+          produk.nama +
+          " " +
+          produk.kategori +
+          " " +
+          produk.deskripsi
+        ).toLowerCase();
 
-    const kata = q.split(/\s+/);
+      const kata =
+        q.split(/\s+/);
 
-    return kata.some(
-      k =>
-        k.length >= 3 &&
-        teks.includes(k)
-    );
+      return kata.some(
+        k =>
+          k.length >= 3 &&
+          teks.includes(k)
+      );
 
-  });
-
-  return hasil;
+    }
+  );
 }
-
 
 /* ==================================================
    JAWAB
@@ -1738,8 +1550,8 @@ function cariProdukBerdasarkanKata(question) {
 
 function jawab(question) {
 
-  const q = question.toLowerCase().trim();
-
+  const q =
+    question.toLowerCase().trim();
 
   /* SALAM */
 
@@ -1761,7 +1573,6 @@ Ada yang bisa saya bantu?`;
 
   }
 
-
   /* TERIMA KASIH */
 
   if (
@@ -1773,52 +1584,6 @@ Ada yang bisa saya bantu?`;
     return "Sama-sama 😊 Senang bisa membantu Anda.";
 
   }
-
-
-  /* KEUNGGULAN */
-
-  if (
-    q.includes("keunggulan") ||
-    q.includes("kelebihan") ||
-    q.includes("kenapa pilih") ||
-    q.includes("mengapa pilih") ||
-    q.includes("keuntungan beli") ||
-    q.includes("apa bagusnya")
-  ) {
-
-    return (
-      "⭐ KEUNGGULAN NORTON BALI COMPUTER\n\n" +
-      DATA.keunggulan
-        .map((item, index) =>
-          `${index + 1}. ${item}`
-        )
-        .join("\n\n") +
-      "\n\nJika Anda sedang mencari produk tertentu, saya juga bisa membantu mengecek pilihan dan harga yang tersedia."
-    );
-
-  }
-
-
-  /* GARANSI */
-
-  if (
-    q.includes("garansi") ||
-    q.includes("jaminan") ||
-    q.includes("warranty") ||
-    q.includes("klaim garansi")
-  ) {
-
-    return (
-      "🛡️ GARANSI PRODUK\n\n" +
-      `Ketersediaan garansi: ${DATA.garansi.tersedia ? "Ada, sesuai ketentuan produk." : "Tidak tersedia"}\n\n` +
-      `Ketentuan: ${DATA.garansi.durasi}\n\n` +
-      `${DATA.garansi.keterangan}\n\n` +
-      `Cara klaim: ${DATA.garansi.klaim}\n\n` +
-      `Catatan: ${DATA.garansi.catatan}`
-    );
-
-  }
-
 
   /* ALAMAT */
 
@@ -1832,7 +1597,6 @@ Ada yang bisa saya bantu?`;
     return `Alamat ${DATA.perusahaan.nama} adalah ${DATA.perusahaan.alamat}.`;
 
   }
-
 
   /* TELEPON */
 
@@ -1853,7 +1617,6 @@ Ada yang bisa saya bantu?`;
 
   }
 
-
   /* EMAIL */
 
   if (q.includes("email")) {
@@ -1868,7 +1631,6 @@ Ada yang bisa saya bantu?`;
 
   }
 
-
   /* JAM */
 
   if (
@@ -1882,14 +1644,15 @@ Ada yang bisa saya bantu?`;
 
   }
 
-
   /* PRODUK SPESIFIK */
 
-  const produkDitemukan = cariProduk(q);
+  const produkDitemukan =
+    cariProduk(q);
 
   if (produkDitemukan.length > 0) {
 
-    const produk = produkDitemukan[0];
+    const produk =
+      produkDitemukan[0];
 
     if (
       q.includes("harga") ||
@@ -1929,6 +1692,67 @@ Stok: ${produk.stok}`;
 
   }
 
+  /* MEREK */
+
+  const merek = [
+    "acer",
+    "asus",
+    "hp",
+    "lenovo",
+    "advan",
+    "logitech",
+    "fantech",
+    "rexus",
+    "jbl",
+    "jete",
+    "baseus",
+    "sandisk",
+    "kingston",
+    "lexar",
+    "olike",
+    "seagate",
+    "ugreen",
+    "robot",
+    "rapoo",
+    "acome",
+    "aisen",
+    "gamen"
+  ];
+
+  const ditemukanMerek =
+    merek.some(
+      m => q.includes(m)
+    );
+
+  if (
+    ditemukanMerek &&
+    (
+      q.includes("harga") ||
+      q.includes("produk") ||
+      q.includes("laptop") ||
+      q.includes("keyboard") ||
+      q.includes("headset") ||
+      q.includes("flashdisk")
+    )
+  ) {
+
+    const hasil =
+      cariProdukBerdasarkanKata(q)
+        .slice(0, 10);
+
+    if (hasil.length) {
+
+      return (
+        "Produk yang sesuai:\n\n" +
+        hasil.map(
+          p =>
+            `${p.nama} — ${p.harga_display}`
+        ).join("\n")
+      );
+
+    }
+
+  }
 
   /* LAPTOP MURAH */
 
@@ -1944,22 +1768,24 @@ Stok: ${produk.stok}`;
     const laptop =
       DATA.produk
         .filter(
-          p => p.kategori.includes("Laptop")
+          p =>
+            p.kategori.includes("Laptop")
         )
         .sort(
-          (a,b) => a.harga - b.harga
+          (a,b) =>
+            a.harga - b.harga
         )
         .slice(0, 8);
 
     return (
-      "💻 Beberapa laptop dengan harga terjangkau:\n\n" +
+      "Beberapa laptop dengan harga terjangkau:\n\n" +
       laptop.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
-
 
   /* KATEGORI KEYBOARD */
 
@@ -1967,20 +1793,21 @@ Stok: ${produk.stok}`;
 
     const hasil =
       DATA.produk.filter(
-        p => p.kategori.includes("Keyboard")
+        p =>
+          p.kategori.includes("Keyboard")
       );
 
     return (
-      "⌨️ DAFTAR KEYBOARD\n\n" +
+      "Daftar keyboard:\n\n" +
       hasil.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
 
-
-  /* HEADSET */
+  /* KATEGORI HEADSET */
 
   if (
     q.includes("headset") ||
@@ -1989,18 +1816,19 @@ Stok: ${produk.stok}`;
 
     const hasil =
       DATA.produk.filter(
-        p => p.kategori.includes("Headset")
+        p =>
+          p.kategori.includes("Headset")
       );
 
     return (
-      "🎧 DAFTAR HEADSET / HEADPHONE\n\n" +
+      "Daftar headset/headphone:\n\n" +
       hasil.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
-
 
   /* FLASHDISK */
 
@@ -2011,18 +1839,19 @@ Stok: ${produk.stok}`;
 
     const hasil =
       DATA.produk.filter(
-        p => p.kategori === "Flashdisk"
+        p =>
+          p.kategori === "Flashdisk"
       );
 
     return (
-      "💾 DAFTAR FLASHDISK\n\n" +
+      "Daftar flashdisk:\n\n" +
       hasil.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
-
 
   /* GAMEPAD */
 
@@ -2030,18 +1859,19 @@ Stok: ${produk.stok}`;
 
     const hasil =
       DATA.produk.filter(
-        p => p.kategori === "Gamepad"
+        p =>
+          p.kategori === "Gamepad"
       );
 
     return (
-      "🎮 DAFTAR GAMEPAD\n\n" +
+      "Daftar gamepad:\n\n" +
       hasil.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
-
 
   /* KABEL */
 
@@ -2052,18 +1882,19 @@ Stok: ${produk.stok}`;
 
     const hasil =
       DATA.produk.filter(
-        p => p.kategori === "Kabel"
+        p =>
+          p.kategori === "Kabel"
       );
 
     return (
-      "🔌 DAFTAR KABEL\n\n" +
+      "Daftar kabel:\n\n" +
       hasil.map(
-        p => `${p.nama} — ${p.harga_display}`
+        p =>
+          `${p.nama} — ${p.harga_display}`
       ).join("\n")
     );
 
   }
-
 
   /* HARGA SEMUA */
 
@@ -2077,35 +1908,42 @@ Stok: ${produk.stok}`;
     let result =
       "PRICE LIST NORTON BALI COMPUTER\n\n";
 
-    DATA.produk.forEach(p => {
+    DATA.produk.forEach(
+      p => {
 
-      result +=
-        `${p.nama} — ${p.harga_display}\n`;
+        result +=
+          `${p.nama} — ${p.harga_display}\n`;
 
-    });
+      }
+    );
 
     return result;
 
   }
 
-
   /* FAQ */
 
-  for (const faq of DATA.faq) {
+  for (
+    const faq of DATA.faq
+  ) {
 
     let cocok = 0;
 
-    faq.kata.forEach(kata => {
+    faq.kata.forEach(
+      kata => {
 
-      if (q.includes(kata)) {
-        cocok++;
+        if (q.includes(kata)) {
+          cocok++;
+        }
+
       }
-
-    });
+    );
 
     if (
       cocok >=
-      Math.ceil(faq.kata.length / 2)
+      Math.ceil(
+        faq.kata.length / 2
+      )
     ) {
 
       return faq.jawaban;
@@ -2114,7 +1952,6 @@ Stok: ${produk.stok}`;
 
   }
 
-
   /* DEFAULT */
 
   return `
@@ -2122,8 +1959,6 @@ Maaf, saya belum menemukan informasi tersebut.
 
 Anda dapat menanyakan:
 
-• Keunggulan Norton Bali Computer
-• Garansi produk
 • Harga produk
 • Nama produk
 • Stok produk
@@ -2144,30 +1979,32 @@ Anda dapat menanyakan:
 
 }
 
-
 /* ==================================================
    STOP SUARA
 ================================================== */
 
 function stopSpeaking() {
 
-  if ("speechSynthesis" in window) {
+  if (
+    "speechSynthesis" in window
+  ) {
+
     window.speechSynthesis.cancel();
+
   }
 
   isSpeaking = false;
 
-  avatarWrapper.classList.remove("speaking");
-
-  avatarStatus.innerText =
-    "Customer Service";
+  avatarWrapper.classList.remove(
+    "speaking"
+  );
 
   status.innerText =
     "Suara dihentikan.";
 
-  stopSpeakingButton.disabled = true;
+  stopSpeakingButton.disabled =
+    true;
 }
-
 
 /* ==================================================
    TEXT TO SPEECH
@@ -2175,70 +2012,86 @@ function stopSpeaking() {
 
 function speak(text) {
 
-  if (!("speechSynthesis" in window)) {
+  if (
+    !("speechSynthesis" in window)
+  ) {
 
     status.innerText =
       "Browser tidak mendukung suara.";
 
     return;
+
   }
 
   window.speechSynthesis.cancel();
 
   const voice =
-    new SpeechSynthesisUtterance(text);
+    new SpeechSynthesisUtterance(
+      text
+    );
 
-  voice.lang = "id-ID";
-  voice.rate = 0.95;
-  voice.pitch = 1;
+  voice.lang =
+    "id-ID";
 
-  isSpeaking = true;
+  voice.rate =
+    0.95;
 
-  stopSpeakingButton.disabled = false;
+  voice.pitch =
+    1;
 
-  avatarWrapper.classList.add("speaking");
+  isSpeaking =
+    true;
 
-  avatarStatus.innerText =
-    "Sarah sedang berbicara...";
+  stopSpeakingButton.disabled =
+    false;
+
+  avatarWrapper.classList.add(
+    "speaking"
+  );
 
   status.innerText =
     "Sarah sedang berbicara. Tekan ⏹ Selesai Bicara untuk menghentikan.";
 
-  voice.onend = () => {
+  voice.onend =
+    () => {
 
-    isSpeaking = false;
+      isSpeaking =
+        false;
 
-    avatarWrapper.classList.remove("speaking");
+      avatarWrapper.classList.remove(
+        "speaking"
+      );
 
-    avatarStatus.innerText =
-      "Customer Service";
+      status.innerText =
+        "Tekan mikrofon untuk berbicara lagi";
 
-    status.innerText =
-      "Tekan mikrofon untuk berbicara lagi";
+      stopSpeakingButton.disabled =
+        true;
 
-    stopSpeakingButton.disabled = true;
+    };
 
-  };
+  voice.onerror =
+    () => {
 
-  voice.onerror = () => {
+      isSpeaking =
+        false;
 
-    isSpeaking = false;
+      avatarWrapper.classList.remove(
+        "speaking"
+      );
 
-    avatarWrapper.classList.remove("speaking");
+      status.innerText =
+        "Suara selesai.";
 
-    avatarStatus.innerText =
-      "Customer Service";
+      stopSpeakingButton.disabled =
+        true;
 
-    status.innerText =
-      "Suara selesai.";
+    };
 
-    stopSpeakingButton.disabled = true;
-
-  };
-
-  window.speechSynthesis.speak(voice);
+  window.speechSynthesis.speak(
+    voice
+  );
 }
-
 
 /* ==================================================
    PROSES PESAN
@@ -2252,79 +2105,97 @@ function proses(text) {
 
   stopSpeaking();
 
-  addMessage(text, "user");
+  addMessage(
+    text,
+    "user"
+  );
 
   status.innerText =
     "Sarah sedang berpikir...";
 
-  avatarStatus.innerText =
-    "Sedang menjawab...";
+  setTimeout(
+    () => {
 
-  setTimeout(() => {
+      const answer =
+        jawab(text);
 
-    const answer = jawab(text);
+      addMessage(
+        answer,
+        "bot"
+      );
 
-    addMessage(answer, "bot");
+      speak(answer);
 
-    speak(answer);
-
-  }, 500);
-
+    },
+    500
+  );
 }
-
 
 /* ==================================================
    KIRIM TEXT
 ================================================== */
 
-send.onclick = () => {
+send.onclick =
+  () => {
 
-  const text = input.value;
+    const text =
+      input.value;
 
-  input.value = "";
+    input.value =
+      "";
 
-  proses(text);
+    proses(text);
 
-};
+  };
 
+input.addEventListener(
+  "keydown",
+  event => {
 
-input.addEventListener("keydown", event => {
+    if (
+      event.key === "Enter"
+    ) {
 
-  if (event.key === "Enter") {
-    send.click();
+      send.click();
+
+    }
+
   }
-
-});
-
+);
 
 /* ==================================================
    STOP BUTTON
 ================================================== */
 
-stopSpeakingButton.onclick = () => {
+stopSpeakingButton.onclick =
+  () => {
 
-  stopSpeaking();
+    stopSpeaking();
 
-  if (recognition) {
+    if (recognition) {
 
-    try {
-      recognition.stop();
+      try {
+        recognition.stop();
+      }
+
+      catch(error) {
+        console.log(error);
+      }
+
     }
 
-    catch(error) {
-      console.log(error);
-    }
+    mic.classList.remove(
+      "active"
+    );
 
-  }
+    mic.innerHTML =
+      "🎤";
 
-  mic.classList.remove("active");
+    avatarWrapper.classList.remove(
+      "listening"
+    );
 
-  mic.innerHTML = "🎤";
-
-  avatarWrapper.classList.remove("listening");
-
-};
-
+  };
 
 /* ==================================================
    VOICE RECOGNITION
@@ -2334,142 +2205,159 @@ const SpeechRecognition =
   window.SpeechRecognition ||
   window.webkitSpeechRecognition;
 
-
 if (SpeechRecognition) {
 
   recognition =
     new SpeechRecognition();
 
-  recognition.lang = "id-ID";
+  recognition.lang =
+    "id-ID";
 
-  recognition.continuous = false;
+  recognition.continuous =
+    false;
 
-  recognition.interimResults = false;
+  recognition.interimResults =
+    false;
 
+  mic.onclick =
+    () => {
 
-  mic.onclick = () => {
+      if (isSpeaking) {
+        stopSpeaking();
+      }
 
-    if (isSpeaking) {
-      stopSpeaking();
-    }
+      try {
 
-    try {
+        recognition.start();
 
-      recognition.start();
+        mic.classList.add(
+          "active"
+        );
 
-      mic.classList.add("active");
+        mic.innerHTML =
+          "🔴";
 
-      mic.innerHTML = "🔴";
+        status.innerText =
+          "Mendengarkan...";
+
+        avatarWrapper.classList.add(
+          "listening"
+        );
+
+      }
+
+      catch(error) {
+        console.log(error);
+      }
+
+    };
+
+  recognition.onresult =
+    event => {
+
+      const text =
+        event.results[0][0].transcript;
+
+      mic.classList.remove(
+        "active"
+      );
+
+      mic.innerHTML =
+        "🎤";
+
+      avatarWrapper.classList.remove(
+        "listening"
+      );
+
+      proses(text);
+
+    };
+
+  recognition.onend =
+    () => {
+
+      mic.classList.remove(
+        "active"
+      );
+
+      mic.innerHTML =
+        "🎤";
+
+      avatarWrapper.classList.remove(
+        "listening"
+      );
+
+    };
+
+  recognition.onerror =
+    event => {
+
+      console.log(
+        event.error
+      );
+
+      mic.classList.remove(
+        "active"
+      );
+
+      mic.innerHTML =
+        "🎤";
+
+      avatarWrapper.classList.remove(
+        "listening"
+      );
 
       status.innerText =
-        "Mendengarkan...";
+        "Silakan coba lagi.";
 
-      avatarStatus.innerText =
-        "Sarah sedang mendengarkan...";
-
-      avatarWrapper.classList.add("listening");
-
-    }
-
-    catch(error) {
-
-      console.log(error);
-
-    }
-
-  };
-
-
-  recognition.onresult = event => {
-
-    const text =
-      event.results[0][0].transcript;
-
-    mic.classList.remove("active");
-
-    mic.innerHTML = "🎤";
-
-    avatarWrapper.classList.remove("listening");
-
-    proses(text);
-
-  };
-
-
-  recognition.onend = () => {
-
-    mic.classList.remove("active");
-
-    mic.innerHTML = "🎤";
-
-    avatarWrapper.classList.remove("listening");
-
-    if (!isSpeaking) {
-
-      avatarStatus.innerText =
-        "Customer Service";
-
-    }
-
-  };
-
-
-  recognition.onerror = event => {
-
-    console.log(event.error);
-
-    mic.classList.remove("active");
-
-    mic.innerHTML = "🎤";
-
-    avatarWrapper.classList.remove("listening");
-
-    status.innerText =
-      "Silakan coba lagi.";
-
-    avatarStatus.innerText =
-      "Customer Service";
-
-  };
+    };
 
 }
 
 else {
 
-  mic.disabled = true;
+  mic.disabled =
+    true;
 
-  mic.style.opacity = "0.5";
+  mic.style.opacity =
+    "0.5";
 
   status.innerText =
     "Browser Anda tidak mendukung voice recognition.";
 
 }
 
-
 /* KONDISI AWAL */
 
-stopSpeakingButton.disabled = true;
-
+stopSpeakingButton.disabled =
+  true;
 
 /* CLEANUP */
 
-window.addEventListener("beforeunload", () => {
+window.addEventListener(
+  "beforeunload",
+  () => {
 
-  if ("speechSynthesis" in window) {
-    window.speechSynthesis.cancel();
-  }
+    if (
+      "speechSynthesis" in window
+    ) {
 
-  if (recognition) {
+      window.speechSynthesis.cancel();
 
-    try {
-      recognition.stop();
     }
 
-    catch(error) {}
+    if (recognition) {
+
+      try {
+        recognition.stop();
+      }
+
+      catch(error) {}
+
+    }
 
   }
-
-});
+);
 
 </script>
 
